@@ -1,18 +1,15 @@
 # HG changeset patch
-# Parent f53913e5268aba4ee1e23204d15dcdf0b2e6a14a
-
+# Parent 0e710545513ae3877af6fe1c9b0ab6132d34a9a0
 diff --git a/devel/glib2/Makefile b/devel/glib2/Makefile
 --- a/devel/glib2/Makefile
 +++ b/devel/glib2/Makefile
-@@ -48,6 +48,12 @@
+@@ -48,6 +48,10 @@
  .include "../../devel/libelf/buildlink3.mk"
  .endif
  
 +
-+
-+# [Gregor] bugs in how it uses libdl
-+pre-build:
-+	sed -i 's/if (msg)/if (!p \&\& msg)/' ${WRKSRC}/gmodule/gmodule-dl.c
++# [Gregor] Nonstandard but common type
++CFLAGS+=	-Dloff_t=off_t
 +
  .include "../../converters/libiconv/buildlink3.mk"
  .include "../../devel/gettext-lib/buildlink3.mk"

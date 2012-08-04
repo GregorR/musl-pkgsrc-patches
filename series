@@ -6,7 +6,6 @@ databases-db4.diff
 devel-bison.diff
 devel-bmake.diff
 devel-flex.diff
-devel-glib2.diff
 devel-gmake.diff
 devel-imake.diff
 devel-libblkid.diff
@@ -74,3 +73,4 @@ sysutils-hal.diff
 mk.diff
 devel-libusb1.diff
 textproc-libxml2.diff
+devel-glib2.diff
