@@ -15,7 +15,6 @@ devel-ncurses.diff
 devel-nspr.diff
 devel-nss.diff
 devel-pcre.diff
-devel-xulrunner.diff
 editors-vim-share.diff
 filesystems-fuse.diff
 graphics-MesaLib.diff
@@ -74,3 +73,4 @@ mk.diff
 devel-libusb1.diff
 textproc-libxml2.diff
 devel-glib2.diff
+devel-xulrunner.diff
