@@ -1,0 +1,14 @@
+# HG changeset patch
+# Parent f8cad0c48f53299a9022fe70338032306df6bacf
+diff --git a/bootstrap/bootstrap b/bootstrap/bootstrap
+--- a/bootstrap/bootstrap
++++ b/bootstrap/bootstrap
+@@ -737,7 +737,7 @@
+ # MACHINE_ARCH on platforms where we override bmake's value.
+ OPSYS=${opsys}
+ export OPSYS
+-if [ "${machine_arch}" != "" ]; then
++if [ "${machine_arch}" != "" -a "${MACHINE_ARCH}" = "" ]; then
+ 	MACHINE_ARCH=${machine_arch}
+ 	export MACHINE_ARCH
+ fi
