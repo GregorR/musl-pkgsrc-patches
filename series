@@ -75,3 +75,4 @@ devel-glib2.diff
 devel-xulrunner.diff
 x11-sessreg.diff
 bootstrap-machine_arch.diff
+net-avahi.diff
