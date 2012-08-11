@@ -63,7 +63,6 @@ x11-vte.diff
 security-openssh.diff
 sysutils-libpciaccess.diff
 x11-modular-xorg-server.diff
-x11-xload.diff
 sysutils-gamin.diff
 sysutils-pciutils.diff
 devel-libowfat.diff
@@ -76,3 +75,4 @@ devel-xulrunner.diff
 x11-sessreg.diff
 bootstrap-machine_arch.diff
 net-avahi.diff
+x11-xload.diff

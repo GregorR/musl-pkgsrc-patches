@@ -1,6 +1,5 @@
 # HG changeset patch
-# Parent fa2d21aec5a7924187930bda5f95f8aeab271202
-
+# Parent c76cb28dacf4452afb505f67874e778b156f06f3
 diff --git a/x11/xload/distinfo b/x11/xload/distinfo
 --- a/x11/xload/distinfo
 +++ b/x11/xload/distinfo
@@ -8,16 +7,16 @@ diff --git a/x11/xload/distinfo b/x11/xload/distinfo
  SHA1 (xload-1.1.1.tar.bz2) = 50f6ee958e6fb609af92cf9403e7bd68720575cb
  RMD160 (xload-1.1.1.tar.bz2) = 8c971e743cbd3e7cfe8ac2747d87ae2d4c0981d5
  Size (xload-1.1.1.tar.bz2) = 130887 bytes
-+SHA1 (patch-aq) = 0b45fe95dc54313063cf5ab8be83b3c657274c47
++SHA1 (patch-aq) = 91846822d3403048ca2b9b9ace3314bd1b880ebe
 diff --git a/x11/xload/patches/patch-aq b/x11/xload/patches/patch-aq
 new file mode 100644
 --- /dev/null
 +++ b/x11/xload/patches/patch-aq
-@@ -0,0 +1,12 @@
-+diff -r f6e1349acbf9 get_rload.c
-+--- get_rload.c	Thu Jul 19 23:47:59 2012 +0000
-++++ get_rload.c	Thu Jul 19 23:49:09 2012 +0000
-+@@ -10,7 +10,7 @@
+@@ -0,0 +1,25 @@
++diff -r 51a31ec23212 get_rload.c
++--- get_rload.c	Sat Aug 11 06:34:00 2012 +0000
+++++ get_rload.c	Sat Aug 11 06:36:34 2012 +0000
++@@ -9,7 +9,7 @@
 + /* Not all OS supports get_rload
 +    steal the STUB idea from get_load
 +  */
@@ -26,3 +25,16 @@ new file mode 100644
 + #define RLOADSTUB
 + #endif
 + 
++diff -r 51a31ec23212 xload.c
++--- xload.c	Sat Aug 11 06:34:00 2012 +0000
+++++ xload.c	Sat Aug 11 06:36:34 2012 +0000
++@@ -77,7 +77,9 @@
++ 
++ #ifdef USE_GETTEXT
++ # include <X11/Xlocale.h>
+++#if 0
++ # include <libintl.h>
+++#endif
++ #else
++ # define gettext(a) (a)
++ #endif
