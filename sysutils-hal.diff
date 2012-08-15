@@ -1,5 +1,5 @@
 # HG changeset patch
-# Parent 803d353e4fe24f75381a9cc9e792ada3f6069409
+# Parent 5b50d2270e8179999ae398f96b7bc83a53df23e1
 
 diff --git a/sysutils/hal/distinfo b/sysutils/hal/distinfo
 --- a/sysutils/hal/distinfo
@@ -8,15 +8,15 @@ diff --git a/sysutils/hal/distinfo b/sysutils/hal/distinfo
  SHA1 (patch-nb) = 1693b7a2faa5bee20a594f0b60b8ff6caea0efdc
  SHA1 (patch-nc) = 32453e49734902749ce24eb4364fc7f531986227
  SHA1 (patch-nd) = 877dcbafaca0cebd3fdce74c5a622721823c153b
-+SHA1 (patch-qq) = f3c604e82e30d16cc47d32f3b9b1945ecdcb781c
++SHA1 (patch-qq) = 92c9523ac758e2157a3b3d8d9e21e8c1588932e3
 diff --git a/sysutils/hal/patches/patch-qq b/sysutils/hal/patches/patch-qq
 new file mode 100644
 --- /dev/null
 +++ b/sysutils/hal/patches/patch-qq
-@@ -0,0 +1,172 @@
-+diff -r a77959eb7b7c hald/linux/addons/addon-hid-ups.c
-+--- hald/linux/addons/addon-hid-ups.c	Fri Jul 20 02:31:44 2012 +0000
-++++ hald/linux/addons/addon-hid-ups.c	Fri Jul 20 02:47:03 2012 +0000
+@@ -0,0 +1,168 @@
++diff -r 47d03a2bd614 hald/linux/addons/addon-hid-ups.c
++--- hald/linux/addons/addon-hid-ups.c	Sat Aug 11 16:54:20 2012 +0000
+++++ hald/linux/addons/addon-hid-ups.c	Sat Aug 11 17:03:17 2012 +0000
 +@@ -46,6 +46,8 @@
 + #include <sys/ioctl.h>
 + #include <unistd.h>
@@ -26,26 +26,22 @@ new file mode 100644
 + #include <glib.h>
 + 
 + #include "libhal/libhal.h"
-+diff -r a77959eb7b7c hald/linux/addons/addon-imac-backlight.c
-+--- hald/linux/addons/addon-imac-backlight.c	Fri Jul 20 02:31:44 2012 +0000
-++++ hald/linux/addons/addon-imac-backlight.c	Fri Jul 20 02:47:03 2012 +0000
-+@@ -27,7 +27,13 @@
-+ #include <string.h>
-+ #include <stdio.h>
-+ #include <stdlib.h>
-++#if 0
-+ #include <sys/io.h>
-++#endif
-++
-++#define outb(x, y) (void) 0
-++#define inb(x) 0
-++#define ioperm(x, y, z) 0
++diff -r 47d03a2bd614 hald/linux/addons/addon-imac-backlight.c
++--- hald/linux/addons/addon-imac-backlight.c	Sat Aug 11 16:54:20 2012 +0000
+++++ hald/linux/addons/addon-imac-backlight.c	Sat Aug 11 17:03:17 2012 +0000
++@@ -37,6 +37,9 @@
++ #include "../../logger.h"
++ #include "../../util_helper_priv.h"
 + 
-+ #include <glib/gmain.h>
-+ #include <dbus/dbus-glib.h>
-+diff -r a77959eb7b7c hald/linux/addons/addon-storage.c
-+--- hald/linux/addons/addon-storage.c	Fri Jul 20 02:31:44 2012 +0000
-++++ hald/linux/addons/addon-storage.c	Fri Jul 20 02:47:03 2012 +0000
+++#define outb(x, y) ((void) 0)
+++#define inb(x) 0
+++
++ static LibHalContext *halctx = NULL;
++ 
++ static void
++diff -r 47d03a2bd614 hald/linux/addons/addon-storage.c
++--- hald/linux/addons/addon-storage.c	Sat Aug 11 16:54:20 2012 +0000
+++++ hald/linux/addons/addon-storage.c	Sat Aug 11 17:03:17 2012 +0000
 +@@ -32,7 +32,9 @@
 + #include <linux/cdrom.h>
 + #include <linux/fs.h>
@@ -72,9 +68,9 @@ new file mode 100644
 + 		close (fd);
 + 	} else {
 + 		fd = open (device_file, O_RDONLY);
-+diff -r a77959eb7b7c hald/linux/probing/linux_dvd_rw_utils.c
-+--- hald/linux/probing/linux_dvd_rw_utils.c	Fri Jul 20 02:31:44 2012 +0000
-++++ hald/linux/probing/linux_dvd_rw_utils.c	Fri Jul 20 02:47:03 2012 +0000
++diff -r 47d03a2bd614 hald/linux/probing/linux_dvd_rw_utils.c
++--- hald/linux/probing/linux_dvd_rw_utils.c	Sat Aug 11 16:54:20 2012 +0000
+++++ hald/linux/probing/linux_dvd_rw_utils.c	Sat Aug 11 17:03:17 2012 +0000
 +@@ -7,6 +7,8 @@
 +  * For further details see http://fy.chalmers.se/~appro/linux/DVD+RW/
 + */
@@ -90,9 +86,9 @@ new file mode 100644
 + }
 ++
 ++#endif
-+diff -r a77959eb7b7c hald/linux/probing/probe-smbios.c
-+--- hald/linux/probing/probe-smbios.c	Fri Jul 20 02:31:44 2012 +0000
-++++ hald/linux/probing/probe-smbios.c	Fri Jul 20 02:47:03 2012 +0000
++diff -r 47d03a2bd614 hald/linux/probing/probe-smbios.c
++--- hald/linux/probing/probe-smbios.c	Sat Aug 11 16:54:20 2012 +0000
+++++ hald/linux/probing/probe-smbios.c	Sat Aug 11 17:03:17 2012 +0000
 +@@ -115,7 +115,7 @@
 + 	int dmiparser_done_system = FALSE;
 + 	int dmiparser_done_chassis = FALSE;
@@ -102,9 +98,9 @@ new file mode 100644
 + 	struct stat s;
 + 	const char *path = NULL;
 + 	const char *possible_paths[] = {
-+diff -r a77959eb7b7c hald/linux/probing/probe-storage.c
-+--- hald/linux/probing/probe-storage.c	Fri Jul 20 02:31:44 2012 +0000
-++++ hald/linux/probing/probe-storage.c	Fri Jul 20 02:47:03 2012 +0000
++diff -r 47d03a2bd614 hald/linux/probing/probe-storage.c
++--- hald/linux/probing/probe-storage.c	Sat Aug 11 16:54:20 2012 +0000
+++++ hald/linux/probing/probe-storage.c	Sat Aug 11 17:03:17 2012 +0000
 +@@ -244,7 +244,10 @@
 + 				
 + 				libhal_changeset_set_property_bool (cs, "storage.cdrom.dvd", TRUE);
@@ -132,9 +128,9 @@ new file mode 100644
 + 		
 + 		close (fd);
 + 	}
-+diff -r a77959eb7b7c hald/linux/probing/probe-volume.c
-+--- hald/linux/probing/probe-volume.c	Fri Jul 20 02:31:44 2012 +0000
-++++ hald/linux/probing/probe-volume.c	Fri Jul 20 02:47:03 2012 +0000
++diff -r 47d03a2bd614 hald/linux/probing/probe-volume.c
++--- hald/linux/probing/probe-volume.c	Sat Aug 11 16:54:20 2012 +0000
+++++ hald/linux/probing/probe-volume.c	Sat Aug 11 17:03:17 2012 +0000
 +@@ -447,7 +447,10 @@
 + 		/* see table 87 - Profile List in MMC-5 for details on disc type
 + 		 * http://www.t10.org/drafts.htm#mmc5
@@ -162,9 +158,9 @@ new file mode 100644
 + 
 + 		/* In November 2005, Kay wrote:
 + 		 *
-+diff -r a77959eb7b7c tools/hal-storage-shared.c
-+--- tools/hal-storage-shared.c	Fri Jul 20 02:31:44 2012 +0000
-++++ tools/hal-storage-shared.c	Fri Jul 20 02:47:03 2012 +0000
++diff -r 47d03a2bd614 tools/hal-storage-shared.c
++--- tools/hal-storage-shared.c	Sat Aug 11 16:54:20 2012 +0000
+++++ tools/hal-storage-shared.c	Sat Aug 11 17:03:17 2012 +0000
 +@@ -55,6 +55,8 @@
 + #include <errno.h>
 + #include <syslog.h>
@@ -174,9 +170,9 @@ new file mode 100644
 + #include "hal-storage-shared.h"
 + 
 + #if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__APPLE__)
-+diff -r a77959eb7b7c tools/hal-system-sonypic.c
-+--- tools/hal-system-sonypic.c	Fri Jul 20 02:31:44 2012 +0000
-++++ tools/hal-system-sonypic.c	Fri Jul 20 02:47:03 2012 +0000
++diff -r 47d03a2bd614 tools/hal-system-sonypic.c
++--- tools/hal-system-sonypic.c	Sat Aug 11 16:54:20 2012 +0000
+++++ tools/hal-system-sonypic.c	Sat Aug 11 17:03:17 2012 +0000
 +@@ -41,7 +41,7 @@
 + #ifdef __linux__
 + #include <linux/sonypi.h>
