@@ -77,3 +77,4 @@ bootstrap-machine_arch.diff
 net-avahi.diff
 x11-xload.diff
 math-nickle.diff
+lang-gawk.diff
