@@ -1,0 +1,27 @@
+# HG changeset patch
+# Parent a7b201a9dbc8ed2daa8e9fb3c79c8d30f445ad6b
+diff --git a/x11/fltk13/distinfo b/x11/fltk13/distinfo
+--- a/x11/fltk13/distinfo
++++ b/x11/fltk13/distinfo
+@@ -12,3 +12,4 @@
+ SHA1 (patch-af) = dc14ca1e0ba878ef2e94a9947c1409165a925e5c
+ SHA1 (patch-ag) = 87e890ac44b864c224855611942d58dd0ba4b2c9
+ SHA1 (patch-test_Makefile) = 9256cea83cf83bef6ad8253c3af14783eb37b4d3
++SHA1 (patch-aq) = fd5e77ab917381bc599a5e9254d20da55c6684c3
+diff --git a/x11/fltk13/patches/patch-aq b/x11/fltk13/patches/patch-aq
+new file mode 100644
+--- /dev/null
++++ b/x11/fltk13/patches/patch-aq
+@@ -0,0 +1,12 @@
++diff -r dc68f9f71d44 src/filename_list.cxx
++--- src/filename_list.cxx	Sat Aug 18 22:53:33 2012 +0000
+++++ src/filename_list.cxx	Sat Aug 18 23:05:04 2012 +0000
++@@ -119,7 +119,7 @@
++   // The vast majority of UNIX systems want the sort function to have this
++   // prototype, most likely so that it can be passed to qsort without any
++   // changes:
++-  int n = scandir(dirloc, list, 0, (int(*)(const void*,const void*))sort);
+++  int n = scandir(dirloc, list, 0, (int(*)(const dirent**,const dirent**))sort);
++ #endif
++ 
++ #ifndef __APPLE__
