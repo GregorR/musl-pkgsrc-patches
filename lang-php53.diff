@@ -1,0 +1,15 @@
+# HG changeset patch
+# Parent 67f989540d4b0ff8d1e46ce4b30a170915effce3
+diff -r 67f989540d4b -r 8aa867aee9dc lang/php53/Makefile
+--- a/lang/php53/Makefile	Sun Aug 26 10:16:42 2012 -0400
++++ b/lang/php53/Makefile	Sun Aug 26 13:43:08 2012 -0400
+@@ -55,5 +55,8 @@
+ 	cd ${WRKSRC}; ${INSTALL_DATA} php.ini-development php.ini-production \
+ 		${DESTDIR}${EGDIR}
+ 	${INSTALL_DATA} ${WRKSRC}/php.gif ${DESTDIR}${PREFIX}/share/php
+-
++	
++# [Gregor] misdetection
++CONFIGURE_ENV+=	ac_cv_type_uint=yes ac_cv_type_ulong=yes	
++	
+ .include "../../mk/bsd.pkg.mk"
