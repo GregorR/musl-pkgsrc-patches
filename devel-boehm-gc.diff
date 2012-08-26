@@ -1,0 +1,50 @@
+# HG changeset patch
+# Parent 0d8e5f84c5982e1047e0e823698803563e2f6f3d
+diff --git a/devel/boehm-gc/Makefile b/devel/boehm-gc/Makefile
+--- a/devel/boehm-gc/Makefile
++++ b/devel/boehm-gc/Makefile
+@@ -40,6 +40,9 @@
+ CFLAGS+=		-D_XOPEN_SOURCE
+ .endif
+ 
++# [Gregor] Without this, needs libc-specific data in (glibc) link.h
++CFLAGS+=	-DUSE_PROC_FOR_LIBRARIES -DNO_GETCONTEXT
++
+ .include "options.mk"
+ 
+ post-install:
+diff --git a/devel/boehm-gc/distinfo b/devel/boehm-gc/distinfo
+--- a/devel/boehm-gc/distinfo
++++ b/devel/boehm-gc/distinfo
+@@ -5,3 +5,4 @@
+ Size (gc-7.2b.tar.gz) = 1261375 bytes
+ SHA1 (patch-ab) = c8b579752169c4400a11cb38d9f28fd5df3d9eb5
+ SHA1 (patch-ac) = 36cfb12c8309f60232b9ba9a5430b6e24957339d
++SHA1 (patch-aq) = 89bbe084f50c7f0e457c7a221b4bafab38a77982
+diff --git a/devel/boehm-gc/patches/patch-aq b/devel/boehm-gc/patches/patch-aq
+new file mode 100644
+--- /dev/null
++++ b/devel/boehm-gc/patches/patch-aq
+@@ -0,0 +1,22 @@
++diff -r 748b34e952a7 dyn_load.c
++--- dyn_load.c	Mon Aug 20 22:47:08 2012 +0000
+++++ dyn_load.c	Mon Aug 20 22:49:09 2012 +0000
++@@ -97,6 +97,7 @@
++     /* If you don't need the "dynamic loading" feature, you may build   */
++     /* the collector with -D IGNORE_DYNAMIC_LOADING.                    */
++ #   include <linker.h>
+++# elif USE_PROC_FOR_LIBRARIES
++ # else
++ #   include <link.h>
++ # endif
++diff -r 748b34e952a7 os_dep.c
++--- os_dep.c	Mon Aug 20 22:47:08 2012 +0000
+++++ os_dep.c	Mon Aug 20 22:49:09 2012 +0000
++@@ -26,6 +26,7 @@
++ #   define __KERNEL__
++ #   include <asm/signal.h>
++ #   undef __KERNEL__
+++# elif 1
++ # else
++     /* Kernels prior to 2.1.1 defined struct sigcontext_struct instead of */
++     /* struct sigcontext.  libc6 (glibc2) uses "struct sigcontext" in     */
