@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 78c22bc7bb277d3533670e415f3fe2745fb8e354
+# Parent e585f3533fca60d1a8e5473b8a99615b6a051640
 
-diff --git a/x11/libXfont/Makefile b/x11/libXfont/Makefile
---- a/x11/libXfont/Makefile
-+++ b/x11/libXfont/Makefile
+diff -r e585f3533fca x11/libXfont/Makefile
+--- a/x11/libXfont/Makefile	Tue Oct 09 17:56:57 2012 -0400
++++ b/x11/libXfont/Makefile	Tue Oct 09 17:57:02 2012 -0400
 @@ -20,6 +20,7 @@
  PKGCONFIG_OVERRIDE+=	xfont.pc.in
  

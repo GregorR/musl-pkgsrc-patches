@@ -1,8 +1,9 @@
 # HG changeset patch
-# Parent 0d8e5f84c5982e1047e0e823698803563e2f6f3d
-diff --git a/devel/boehm-gc/Makefile b/devel/boehm-gc/Makefile
---- a/devel/boehm-gc/Makefile
-+++ b/devel/boehm-gc/Makefile
+# Parent 2cb2122257eb5eae043c86294cbf477e263f2033
+
+diff -r 2cb2122257eb devel/boehm-gc/Makefile
+--- a/devel/boehm-gc/Makefile	Tue Oct 09 17:59:35 2012 -0400
++++ b/devel/boehm-gc/Makefile	Tue Oct 09 17:59:40 2012 -0400
 @@ -40,6 +40,9 @@
  CFLAGS+=		-D_XOPEN_SOURCE
  .endif
@@ -13,18 +14,17 @@ diff --git a/devel/boehm-gc/Makefile b/devel/boehm-gc/Makefile
  .include "options.mk"
  
  post-install:
-diff --git a/devel/boehm-gc/distinfo b/devel/boehm-gc/distinfo
---- a/devel/boehm-gc/distinfo
-+++ b/devel/boehm-gc/distinfo
-@@ -5,3 +5,4 @@
- Size (gc-7.2b.tar.gz) = 1261375 bytes
- SHA1 (patch-ab) = c8b579752169c4400a11cb38d9f28fd5df3d9eb5
- SHA1 (patch-ac) = 36cfb12c8309f60232b9ba9a5430b6e24957339d
+diff -r 2cb2122257eb devel/boehm-gc/distinfo
+--- a/devel/boehm-gc/distinfo	Tue Oct 09 17:59:35 2012 -0400
++++ b/devel/boehm-gc/distinfo	Tue Oct 09 17:59:40 2012 -0400
+@@ -4,3 +4,4 @@
+ RMD160 (gc-7.2d.tar.gz) = e3e191de01cc0f5b3b2570842e897c11fcc8d96d
+ Size (gc-7.2d.tar.gz) = 1263064 bytes
+ SHA1 (patch-ab) = b595e5fb653e078189ad6aadfd932b0c0e9fff4a
 +SHA1 (patch-aq) = 89bbe084f50c7f0e457c7a221b4bafab38a77982
-diff --git a/devel/boehm-gc/patches/patch-aq b/devel/boehm-gc/patches/patch-aq
-new file mode 100644
---- /dev/null
-+++ b/devel/boehm-gc/patches/patch-aq
+diff -r 2cb2122257eb devel/boehm-gc/patches/patch-aq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/devel/boehm-gc/patches/patch-aq	Tue Oct 09 17:59:40 2012 -0400
 @@ -0,0 +1,22 @@
 +diff -r 748b34e952a7 dyn_load.c
 +--- dyn_load.c	Mon Aug 20 22:47:08 2012 +0000

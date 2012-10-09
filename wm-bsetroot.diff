@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 539c5b8c1e1a9465824c09932fa954fc9ddb43c8
+# Parent 76dd2f576b46388e049bc777d0ffec36a65a6918
 
-diff --git a/wm/bsetroot/PLIST b/wm/bsetroot/PLIST
---- a/wm/bsetroot/PLIST
-+++ b/wm/bsetroot/PLIST
+diff -r 76dd2f576b46 wm/bsetroot/PLIST
+--- a/wm/bsetroot/PLIST	Tue Oct 09 17:56:34 2012 -0400
++++ b/wm/bsetroot/PLIST	Tue Oct 09 17:56:39 2012 -0400
 @@ -3,37 +3,3 @@
  bin/bsetroot
  man/man1/bsetbg.1

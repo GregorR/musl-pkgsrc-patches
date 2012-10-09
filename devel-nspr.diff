@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 634363e5e84e930158106aef8415bf509c22707b
+# Parent ce03d6687212650848de24124f9568079c96a10b
 
-diff --git a/devel/nspr/Makefile b/devel/nspr/Makefile
---- a/devel/nspr/Makefile
-+++ b/devel/nspr/Makefile
-@@ -72,6 +72,13 @@
+diff -r ce03d6687212 devel/nspr/Makefile
+--- a/devel/nspr/Makefile	Tue Oct 09 17:52:46 2012 -0400
++++ b/devel/nspr/Makefile	Tue Oct 09 17:52:52 2012 -0400
+@@ -73,6 +73,13 @@
  BUILDLINK_PASSTHRU_DIRS+=	Developer/Headers/FlatCarbon
  .endif
  

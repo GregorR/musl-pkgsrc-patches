@@ -1,17 +1,18 @@
 # HG changeset patch
-# Parent 895d00d78a518bd34177ffe562b9f1bbdb9f3e85
+# Parent 291412bd7af79c87c3a32cacbf7562c5fcc5ed38
 
-diff --git a/devel/flex/PLIST b/devel/flex/PLIST
---- a/devel/flex/PLIST
-+++ b/devel/flex/PLIST
-@@ -6,19 +6,3 @@
- lib/libfl.a
- lib/libfl_pic.a
- man/man1/flex.1
+diff -r 291412bd7af7 devel/flex/PLIST
+--- a/devel/flex/PLIST	Tue Oct 09 17:52:02 2012 -0400
++++ b/devel/flex/PLIST	Tue Oct 09 17:52:09 2012 -0400
+@@ -13,20 +13,3 @@
+ share/doc/flex/README
+ share/doc/flex/README.cvs
+ share/doc/flex/TODO
 -share/locale/ca/LC_MESSAGES/flex.mo
 -share/locale/da/LC_MESSAGES/flex.mo
 -share/locale/de/LC_MESSAGES/flex.mo
 -share/locale/es/LC_MESSAGES/flex.mo
+-share/locale/fi/LC_MESSAGES/flex.mo
 -share/locale/fr/LC_MESSAGES/flex.mo
 -share/locale/ga/LC_MESSAGES/flex.mo
 -share/locale/ko/LC_MESSAGES/flex.mo

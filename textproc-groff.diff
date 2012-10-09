@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 6d53010f381dc5d84487dc09296de852fc365079
+# Parent 2c97154b2d0a23232c14dac8626116d25a316fbb
 
-diff --git a/textproc/groff/PLIST b/textproc/groff/PLIST
---- a/textproc/groff/PLIST
-+++ b/textproc/groff/PLIST
+diff -r 2c97154b2d0a textproc/groff/PLIST
+--- a/textproc/groff/PLIST	Tue Oct 09 17:56:15 2012 -0400
++++ b/textproc/groff/PLIST	Tue Oct 09 17:56:20 2012 -0400
 @@ -15,9 +15,6 @@
  bin/grops
  bin/grotty

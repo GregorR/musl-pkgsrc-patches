@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 2cff2e7332bfa99196cdf4173c96460523b7b1b6
+# Parent f0afd2a0bcf3c7f7ac44d35f53aae671fea605c4
 
-diff --git a/graphics/gimp/PLIST b/graphics/gimp/PLIST
---- a/graphics/gimp/PLIST
-+++ b/graphics/gimp/PLIST
+diff -r f0afd2a0bcf3 graphics/gimp/PLIST
+--- a/graphics/gimp/PLIST	Tue Oct 09 17:53:40 2012 -0400
++++ b/graphics/gimp/PLIST	Tue Oct 09 17:53:45 2012 -0400
 @@ -316,7 +316,6 @@
  lib/gimp/2.0/plug-ins/file-tiff-load
  lib/gimp/2.0/plug-ins/file-tiff-save

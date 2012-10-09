@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent cbc4bfdf7704f40ab82aa320b169bf01d3ee9c6b
+# Parent 8fd7df38fd16c3aeb7d60885cd3397e9850241b0
 
-diff --git a/pkgtools/pkg_install-info/files/install-info.c b/pkgtools/pkg_install-info/files/install-info.c
---- a/pkgtools/pkg_install-info/files/install-info.c
-+++ b/pkgtools/pkg_install-info/files/install-info.c
+diff -r 8fd7df38fd16 pkgtools/pkg_install-info/files/install-info.c
+--- a/pkgtools/pkg_install-info/files/install-info.c	Tue Oct 09 17:55:02 2012 -0400
++++ b/pkgtools/pkg_install-info/files/install-info.c	Tue Oct 09 17:55:07 2012 -0400
 @@ -21,6 +21,8 @@
  #include "system.h"
  #include <getopt.h>
@@ -13,9 +13,9 @@ diff --git a/pkgtools/pkg_install-info/files/install-info.c b/pkgtools/pkg_insta
  static char *progname = "install-info";
  
  int menu_line_equal (), menu_line_lessp ();
-diff --git a/pkgtools/pkg_install-info/files/system.h b/pkgtools/pkg_install-info/files/system.h
---- a/pkgtools/pkg_install-info/files/system.h
-+++ b/pkgtools/pkg_install-info/files/system.h
+diff -r 8fd7df38fd16 pkgtools/pkg_install-info/files/system.h
+--- a/pkgtools/pkg_install-info/files/system.h	Tue Oct 09 17:55:02 2012 -0400
++++ b/pkgtools/pkg_install-info/files/system.h	Tue Oct 09 17:55:07 2012 -0400
 @@ -21,7 +21,9 @@
  #ifndef TEXINFO_SYSTEM_H
  #define TEXINFO_SYSTEM_H
@@ -26,9 +26,9 @@ diff --git a/pkgtools/pkg_install-info/files/system.h b/pkgtools/pkg_install-inf
  
  #include <config.h>
  
-diff --git a/pkgtools/pkg_install-info/files/xexit.c b/pkgtools/pkg_install-info/files/xexit.c
---- a/pkgtools/pkg_install-info/files/xexit.c
-+++ b/pkgtools/pkg_install-info/files/xexit.c
+diff -r 8fd7df38fd16 pkgtools/pkg_install-info/files/xexit.c
+--- a/pkgtools/pkg_install-info/files/xexit.c	Tue Oct 09 17:55:02 2012 -0400
++++ b/pkgtools/pkg_install-info/files/xexit.c	Tue Oct 09 17:55:07 2012 -0400
 @@ -19,6 +19,8 @@
  
  #include "system.h"

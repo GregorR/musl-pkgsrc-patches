@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 27b03986b83abca36ba75f741ce5c17ba1fb558b
+# Parent 48920ade7a0f17edebf71c9c81bd06fa368437e2
 
-diff --git a/devel/ncurses/Makefile b/devel/ncurses/Makefile
---- a/devel/ncurses/Makefile
-+++ b/devel/ncurses/Makefile
+diff -r 48920ade7a0f devel/ncurses/Makefile
+--- a/devel/ncurses/Makefile	Tue Oct 09 17:52:41 2012 -0400
++++ b/devel/ncurses/Makefile	Tue Oct 09 17:52:46 2012 -0400
 @@ -38,6 +38,9 @@
  
  PLIST_SRC=	${PKGDIR}/PLIST ${WRKDIR}/PLIST.terminfo
@@ -14,9 +14,9 @@ diff --git a/devel/ncurses/Makefile b/devel/ncurses/Makefile
  post-configure:
  	cd ${WRKSRC}/man;					\
  	for f in *.1m; do					\
-diff --git a/devel/ncurses/Makefile.common b/devel/ncurses/Makefile.common
---- a/devel/ncurses/Makefile.common
-+++ b/devel/ncurses/Makefile.common
+diff -r 48920ade7a0f devel/ncurses/Makefile.common
+--- a/devel/ncurses/Makefile.common	Tue Oct 09 17:52:41 2012 -0400
++++ b/devel/ncurses/Makefile.common	Tue Oct 09 17:52:46 2012 -0400
 @@ -16,14 +16,15 @@
  PKG_INSTALLATION_TYPES=	overwrite pkgviews
  PKG_DESTDIR_SUPPORT=	user-destdir
@@ -35,9 +35,9 @@ diff --git a/devel/ncurses/Makefile.common b/devel/ncurses/Makefile.common
  CONFIGURE_ARGS+=	--without-ada
  CONFIGURE_ARGS+=	--without-gpm
  CONFIGURE_ARGS+=	--with-manpage-format=normal
-diff --git a/devel/ncurses/PLIST b/devel/ncurses/PLIST
---- a/devel/ncurses/PLIST
-+++ b/devel/ncurses/PLIST
+diff -r 48920ade7a0f devel/ncurses/PLIST
+--- a/devel/ncurses/PLIST	Tue Oct 09 17:52:41 2012 -0400
++++ b/devel/ncurses/PLIST	Tue Oct 09 17:52:46 2012 -0400
 @@ -11,14 +11,7 @@
  bin/tput
  bin/tset

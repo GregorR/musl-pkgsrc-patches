@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent f6bdfaa0ebac6ae07ea1b7a1abee8f975f99a200
+# Parent fd1ce459f6b42d7255638d91c32a99b407205402
 
-diff --git a/graphics/jpeg/buildlink3.mk b/graphics/jpeg/buildlink3.mk
---- a/graphics/jpeg/buildlink3.mk
-+++ b/graphics/jpeg/buildlink3.mk
+diff -r fd1ce459f6b4 graphics/jpeg/buildlink3.mk
+--- a/graphics/jpeg/buildlink3.mk	Tue Oct 09 17:53:45 2012 -0400
++++ b/graphics/jpeg/buildlink3.mk	Tue Oct 09 17:53:50 2012 -0400
 @@ -5,9 +5,10 @@
  .if !defined(JPEG_BUILDLINK3_MK)
  JPEG_BUILDLINK3_MK:=

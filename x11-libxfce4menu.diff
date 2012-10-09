@@ -1,18 +1,17 @@
 # HG changeset patch
-# Parent 06d544bcfe088a993561a658c6ee10d94dbb2835
+# Parent 6fc96f7d9590ee924e4526d69f692eb03293e9d5
 
-diff --git a/x11/libxfce4menu/distinfo b/x11/libxfce4menu/distinfo
---- a/x11/libxfce4menu/distinfo
-+++ b/x11/libxfce4menu/distinfo
+diff -r 6fc96f7d9590 x11/libxfce4menu/distinfo
+--- a/x11/libxfce4menu/distinfo	Tue Oct 09 17:57:15 2012 -0400
++++ b/x11/libxfce4menu/distinfo	Tue Oct 09 17:57:20 2012 -0400
 @@ -3,3 +3,4 @@
  SHA1 (libxfce4menu-4.6.1.tar.bz2) = 17348f661c04e8d8d633b8831638d38987269e9a
  RMD160 (libxfce4menu-4.6.1.tar.bz2) = 978071d28288bd737219e4a9c4185937b2fbf50b
  Size (libxfce4menu-4.6.1.tar.bz2) = 404201 bytes
 +SHA1 (patch-aq) = 819f9876969820c0b8beb98a0cd7580eb59237dc
-diff --git a/x11/libxfce4menu/patches/patch-aq b/x11/libxfce4menu/patches/patch-aq
-new file mode 100644
---- /dev/null
-+++ b/x11/libxfce4menu/patches/patch-aq
+diff -r 6fc96f7d9590 x11/libxfce4menu/patches/patch-aq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/x11/libxfce4menu/patches/patch-aq	Tue Oct 09 17:57:20 2012 -0400
 @@ -0,0 +1,11 @@
 +diff -r 24e4986df43b tdb/tdb.h
 +--- tdb/tdb.h	Sun May 06 11:48:51 2012 +0000

@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent c22528f14962279df6f45aa68eced8ad019aaabb
+# Parent ccaa69cbd85d2bb8a7e4d4ad116fb7195deadc82
 
-diff --git a/x11/libFS/Makefile b/x11/libFS/Makefile
---- a/x11/libFS/Makefile
-+++ b/x11/libFS/Makefile
+diff -r ccaa69cbd85d x11/libFS/Makefile
+--- a/x11/libFS/Makefile	Tue Oct 09 17:56:52 2012 -0400
++++ b/x11/libFS/Makefile	Tue Oct 09 17:56:57 2012 -0400
 @@ -27,6 +27,8 @@
  
  .include "../../meta-pkgs/modular-xorg/hacks.mk"
@@ -13,18 +13,17 @@ diff --git a/x11/libFS/Makefile b/x11/libFS/Makefile
  .include "../../x11/fontsproto/buildlink3.mk"
  .include "../../x11/xproto/buildlink3.mk"
  .include "../../x11/xtrans/buildlink3.mk"
-diff --git a/x11/libFS/distinfo b/x11/libFS/distinfo
---- a/x11/libFS/distinfo
-+++ b/x11/libFS/distinfo
+diff -r ccaa69cbd85d x11/libFS/distinfo
+--- a/x11/libFS/distinfo	Tue Oct 09 17:56:52 2012 -0400
++++ b/x11/libFS/distinfo	Tue Oct 09 17:56:57 2012 -0400
 @@ -3,3 +3,4 @@
  SHA1 (libFS-1.0.4.tar.bz2) = f114f32f60eb84d3e1d0e6f0dfe7679b07e91295
  RMD160 (libFS-1.0.4.tar.bz2) = 6e74cc9b4d8ece4abcabb26e3c5cec7a0e591918
  Size (libFS-1.0.4.tar.bz2) = 291155 bytes
 +SHA1 (patch-aq) = 75f64d23fe0ffdc5dca48fcba982539d34caf42b
-diff --git a/x11/libFS/patches/patch-aq b/x11/libFS/patches/patch-aq
-new file mode 100644
---- /dev/null
-+++ b/x11/libFS/patches/patch-aq
+diff -r ccaa69cbd85d x11/libFS/patches/patch-aq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/x11/libFS/patches/patch-aq	Tue Oct 09 17:56:57 2012 -0400
 @@ -0,0 +1,12 @@
 +diff -r 5f55f742a811 src/FSConnServ.c
 +--- src/FSConnServ.c	Mon May 07 19:40:35 2012 +0000

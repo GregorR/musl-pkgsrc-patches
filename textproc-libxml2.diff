@@ -1,11 +1,12 @@
 # HG changeset patch
-# Parent 232b5a0a643da8cd8fb5c7285b11953992487315
-diff --git a/textproc/libxml2/Makefile b/textproc/libxml2/Makefile
---- a/textproc/libxml2/Makefile
-+++ b/textproc/libxml2/Makefile
-@@ -25,6 +25,9 @@
- CONFIGURE_ARGS+=	--with-html-subdir=libxml2
- CONFIGURE_ARGS+=	--without-python
+# Parent 149912ee73da55ee47a187c6f3f5b2e4a1ffc0f5
+
+diff -r 149912ee73da textproc/libxml2/Makefile
+--- a/textproc/libxml2/Makefile	Tue Oct 09 17:58:28 2012 -0400
++++ b/textproc/libxml2/Makefile	Tue Oct 09 17:58:34 2012 -0400
+@@ -23,6 +23,9 @@
+ 
+ PKGCONFIG_OVERRIDE=	libxml-2.0.pc.in
  
 +# [Gregor] Threading support is broken on musl
 +CONFIGURE_ARGS+=	--without-threads

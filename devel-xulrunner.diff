@@ -1,11 +1,12 @@
 # HG changeset patch
-# Parent f818293ceb5c77380c5291395bf0138e99ed0e9c
-diff --git a/devel/xulrunner/Makefile b/devel/xulrunner/Makefile
---- a/devel/xulrunner/Makefile
-+++ b/devel/xulrunner/Makefile
-@@ -34,6 +34,9 @@
- .include "mozilla-common.mk"
- .include "options.mk"
+# Parent 1f1b615391a24fa679dea63986c32f5ad21eb016
+
+diff -r 1f1b615391a2 devel/xulrunner/Makefile
+--- a/devel/xulrunner/Makefile	Tue Oct 09 17:58:41 2012 -0400
++++ b/devel/xulrunner/Makefile	Tue Oct 09 17:58:46 2012 -0400
+@@ -40,6 +40,9 @@
+ PLIST.sps=	yes
+ .endif
  
 +# [Gregor] To make some patches work
 +CFLAGS+=		-D__musl__

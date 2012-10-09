@@ -1,8 +1,9 @@
 # HG changeset patch
-# Parent 3671db076faabbbc35fd89c37a92c91d9156f07e
-diff --git a/lang/gawk/Makefile b/lang/gawk/Makefile
---- a/lang/gawk/Makefile
-+++ b/lang/gawk/Makefile
+# Parent ab20031e6af8a77b47ac5baad57e07a2d4d47a12
+
+diff -r ab20031e6af8 lang/gawk/Makefile
+--- a/lang/gawk/Makefile	Tue Oct 09 17:59:17 2012 -0400
++++ b/lang/gawk/Makefile	Tue Oct 09 17:59:22 2012 -0400
 @@ -38,6 +38,9 @@
  
  INSTALLATION_DIRS+=	gnu/bin gnu/man/man1

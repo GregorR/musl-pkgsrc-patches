@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent cc3a140f877cac32b7593649fe61546dbef3f5c0
+# Parent 11483e6494c8fbd9cbe29b65cadb062001f08a7f
 
-diff --git a/graphics/MesaLib/Makefile b/graphics/MesaLib/Makefile
---- a/graphics/MesaLib/Makefile
-+++ b/graphics/MesaLib/Makefile
+diff -r 11483e6494c8 graphics/MesaLib/Makefile
+--- a/graphics/MesaLib/Makefile	Tue Oct 09 17:53:16 2012 -0400
++++ b/graphics/MesaLib/Makefile	Tue Oct 09 17:53:21 2012 -0400
 @@ -72,6 +72,7 @@
  
  pre-build:

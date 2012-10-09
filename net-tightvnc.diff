@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent fcbf2eb697f0b4ec375e3cb95e055e058f680011
+# Parent f6ed6eccf352f0331bcba75429a83a42240add48
 
-diff --git a/net/tightvnc/Makefile b/net/tightvnc/Makefile
---- a/net/tightvnc/Makefile
-+++ b/net/tightvnc/Makefile
+diff -r f6ed6eccf352 net/tightvnc/Makefile
+--- a/net/tightvnc/Makefile	Tue Oct 09 17:54:39 2012 -0400
++++ b/net/tightvnc/Makefile	Tue Oct 09 17:54:44 2012 -0400
 @@ -28,6 +28,7 @@
  .if !empty(MACHINE_PLATFORM:MNetBSD-*-x86_64)
  _WRAP_EXTRA_ARGS.CC+=	-DDDXTIME -D_XSERVER64 -DGCCUSESGAS

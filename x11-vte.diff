@@ -1,18 +1,17 @@
 # HG changeset patch
-# Parent b4b6e3f310d01d0546a52c26944b43a13f302c5e
+# Parent c5a66629323b51fe6d4e2fc6b914300cda7a95cb
 
-diff --git a/x11/vte/distinfo b/x11/vte/distinfo
---- a/x11/vte/distinfo
-+++ b/x11/vte/distinfo
+diff -r c5a66629323b x11/vte/distinfo
+--- a/x11/vte/distinfo	Tue Oct 09 17:57:27 2012 -0400
++++ b/x11/vte/distinfo	Tue Oct 09 17:57:32 2012 -0400
 @@ -9,3 +9,4 @@
  SHA1 (patch-af) = 69ea7e022f6c495c3c9af681d05644b9d70e7bdc
  SHA1 (patch-ah) = 28cee2661439d7d6f1959ebf3c7d1b7b3fe0a764
  SHA1 (patch-ai) = 986dd7c2a5778c9c35100901cfaa25acd0cbdc32
 +SHA1 (patch-aq) = 8262b1ccde6869c18a27994dd19e469b5430b05a
-diff --git a/x11/vte/patches/patch-aq b/x11/vte/patches/patch-aq
-new file mode 100644
---- /dev/null
-+++ b/x11/vte/patches/patch-aq
+diff -r c5a66629323b x11/vte/patches/patch-aq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/x11/vte/patches/patch-aq	Tue Oct 09 17:57:32 2012 -0400
 @@ -0,0 +1,19 @@
 +diff -r fecfb00f45d9 src/pty.c
 +--- src/pty.c	Sun May 06 12:32:48 2012 +0000

@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 68d22f03dd990ba6b2b5c82c02341393a4c60f3b
+# Parent 6fb1596498bdcc74af23ba958b6fde3a89c8ab6d
 
-diff --git a/graphics/gdk-pixbuf2/PLIST b/graphics/gdk-pixbuf2/PLIST
---- a/graphics/gdk-pixbuf2/PLIST
-+++ b/graphics/gdk-pixbuf2/PLIST
-@@ -74,105 +74,3 @@
+diff -r 6fb1596498bd graphics/gdk-pixbuf2/PLIST
+--- a/graphics/gdk-pixbuf2/PLIST	Tue Oct 09 17:53:34 2012 -0400
++++ b/graphics/gdk-pixbuf2/PLIST	Tue Oct 09 17:53:39 2012 -0400
+@@ -74,106 +74,3 @@
  share/gtk-doc/html/gdk-pixbuf/rn02.html
  share/gtk-doc/html/gdk-pixbuf/style.css
  share/gtk-doc/html/gdk-pixbuf/up.png
@@ -25,6 +25,7 @@ diff --git a/graphics/gdk-pixbuf2/PLIST b/graphics/gdk-pixbuf2/PLIST
 -share/locale/ca@valencia/LC_MESSAGES/gdk-pixbuf.mo
 -share/locale/crh/LC_MESSAGES/gdk-pixbuf.mo
 -share/locale/cs/LC_MESSAGES/gdk-pixbuf.mo
+-share/locale/csb/LC_MESSAGES/gdk-pixbuf.mo
 -share/locale/cy/LC_MESSAGES/gdk-pixbuf.mo
 -share/locale/da/LC_MESSAGES/gdk-pixbuf.mo
 -share/locale/de/LC_MESSAGES/gdk-pixbuf.mo

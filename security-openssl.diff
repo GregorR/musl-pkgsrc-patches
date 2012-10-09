@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent a06a871203551adbb6bfb6e1d6f00b5ca784d0d4
+# Parent a5f7c34a94beea426d370843f4539a21ef622f2d
 
-diff --git a/security/openssl/Makefile b/security/openssl/Makefile
---- a/security/openssl/Makefile
-+++ b/security/openssl/Makefile
+diff -r a5f7c34a94be security/openssl/Makefile
+--- a/security/openssl/Makefile	Tue Oct 09 17:55:32 2012 -0400
++++ b/security/openssl/Makefile	Tue Oct 09 17:55:38 2012 -0400
 @@ -61,6 +61,7 @@
  # back to ./config's autodetection if not.
  .  if defined(OPENSSL_MACHINE_ARCH) && !empty(OPENSSL_MACHINE_ARCH)

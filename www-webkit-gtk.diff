@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 5305c4bf510f3b7829f6a91d7fef5ce5f6306e96
+# Parent e5a7a09553d916a49d4ee88773c7c334a655c01f
 
-diff --git a/www/webkit-gtk/Makefile b/www/webkit-gtk/Makefile
---- a/www/webkit-gtk/Makefile
-+++ b/www/webkit-gtk/Makefile
+diff -r e5a7a09553d9 www/webkit-gtk/Makefile
+--- a/www/webkit-gtk/Makefile	Tue Oct 09 17:56:46 2012 -0400
++++ b/www/webkit-gtk/Makefile	Tue Oct 09 17:56:51 2012 -0400
 @@ -9,5 +9,8 @@
  
  CONFIGURE_ARGS+=	--with-gtk=2.0

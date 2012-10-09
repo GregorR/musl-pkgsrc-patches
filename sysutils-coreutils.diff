@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 479fec007879a729bb23f8654fea7916eac470d4
+# Parent 424811233d18be75d2a02cdd581c9c1008b565b6
 
-diff --git a/sysutils/coreutils/Makefile b/sysutils/coreutils/Makefile
---- a/sysutils/coreutils/Makefile
-+++ b/sysutils/coreutils/Makefile
+diff -r 424811233d18 sysutils/coreutils/Makefile
+--- a/sysutils/coreutils/Makefile	Tue Oct 09 17:56:02 2012 -0400
++++ b/sysutils/coreutils/Makefile	Tue Oct 09 17:56:07 2012 -0400
 @@ -61,6 +61,8 @@
  #MESSAGE_SUBST+=	OPSYS=${OPSYS:Q}
  #.endif
@@ -13,18 +13,17 @@ diff --git a/sysutils/coreutils/Makefile b/sysutils/coreutils/Makefile
  .include "../../converters/libiconv/buildlink3.mk"
  .include "../../devel/gettext-lib/buildlink3.mk"
  .include "../../mk/bsd.pkg.mk"
-diff --git a/sysutils/coreutils/distinfo b/sysutils/coreutils/distinfo
---- a/sysutils/coreutils/distinfo
-+++ b/sysutils/coreutils/distinfo
+diff -r 424811233d18 sysutils/coreutils/distinfo
+--- a/sysutils/coreutils/distinfo	Tue Oct 09 17:56:02 2012 -0400
++++ b/sysutils/coreutils/distinfo	Tue Oct 09 17:56:07 2012 -0400
 @@ -5,3 +5,4 @@
  Size (coreutils-8.13.tar.gz) = 11660808 bytes
  SHA1 (patch-lib-fflush.c) = e52e0da2127c5debbb14e967b1e206226efdaa4a
  SHA1 (patch-lib-fseeko.c) = ab62b8c7faa9a601191475c040c7466e1bd52fe1
 +SHA1 (patch-aq) = 02186df2372b3317cc2df6a8230cc198ac3eb4e9
-diff --git a/sysutils/coreutils/patches/patch-aq b/sysutils/coreutils/patches/patch-aq
-new file mode 100644
---- /dev/null
-+++ b/sysutils/coreutils/patches/patch-aq
+diff -r 424811233d18 sysutils/coreutils/patches/patch-aq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/sysutils/coreutils/patches/patch-aq	Tue Oct 09 17:56:07 2012 -0400
 @@ -0,0 +1,23 @@
 +diff -r fb0a1c120d18 lib/fseterr.c
 +--- lib/fseterr.c	Sat May 05 16:00:33 2012 +0000

@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent bfdc998dc7f2f03a9c260edc7c8887de6bdadc8d
+# Parent f71fbdd123a4718d3d1047eaf4a20dc76ad24091
 
-diff --git a/devel/imake/Makefile b/devel/imake/Makefile
---- a/devel/imake/Makefile
-+++ b/devel/imake/Makefile
+diff -r f71fbdd123a4 devel/imake/Makefile
+--- a/devel/imake/Makefile	Tue Oct 09 17:52:15 2012 -0400
++++ b/devel/imake/Makefile	Tue Oct 09 17:52:20 2012 -0400
 @@ -43,6 +43,9 @@
  
  .include "../../meta-pkgs/modular-xorg/hacks.mk"

@@ -1,16 +1,15 @@
 # HG changeset patch
-# Parent 8f3ed01a2e2600e112e34d1262e6abdadafdc838
+# Parent b5ded3062f1bc3f898ab9e6782534b7564c36f12
 
-diff --git a/x11/pixman/Makefile b/x11/pixman/Makefile
---- a/x11/pixman/Makefile
-+++ b/x11/pixman/Makefile
-@@ -42,5 +42,8 @@
- post-extract:
- 	${CP} ${FILESDIR}/pixman.sym ${WRKDIR}
- 	${CP} ${FILESDIR}/solaris-hwcap.mapfile ${WRKSRC}/pixman
--
+diff -r b5ded3062f1b x11/pixman/Makefile
+--- a/x11/pixman/Makefile	Tue Oct 09 17:57:21 2012 -0400
++++ b/x11/pixman/Makefile	Tue Oct 09 17:57:26 2012 -0400
+@@ -18,5 +18,8 @@
+ 
+ PKGCONFIG_OVERRIDE+=	pixman-1.pc.in
+ PKGCONFIG_OVERRIDE+=	pixman-1-uninstalled.pc.in
 +	
 +pre-configure:
 +	sed -i 's/support_for__thread=yes/support_for__thread=no/' ${WRKSRC}/configure	
-+	
+ 
  .include "../../mk/bsd.pkg.mk"

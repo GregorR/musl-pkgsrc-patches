@@ -1,18 +1,17 @@
 # HG changeset patch
-# Parent 7d0704a31b67e3496530803c12ca9a61f1a62c4b
+# Parent 005c03a7d1d5af79035964828ab6b1d9eb903ad4
 
-diff --git a/x11/modular-xorg-server/distinfo b/x11/modular-xorg-server/distinfo
---- a/x11/modular-xorg-server/distinfo
-+++ b/x11/modular-xorg-server/distinfo
+diff -r 005c03a7d1d5 x11/modular-xorg-server/distinfo
+--- a/x11/modular-xorg-server/distinfo	Tue Oct 09 17:57:45 2012 -0400
++++ b/x11/modular-xorg-server/distinfo	Tue Oct 09 17:57:51 2012 -0400
 @@ -33,3 +33,4 @@
  SHA1 (patch-se) = 22b20c734b7fcf59d75227aeb1fa703465582568
  SHA1 (patch-sf) = 22d4f575c066691696ec96f1fcd459251b662012
  SHA1 (patch-sg) = 81598e687357a6e8b477055d14ece01372ae4617
 +SHA1 (patch-zz) = e7c951b98794b4d4a32279198cf82f6378aa7d79
-diff --git a/x11/modular-xorg-server/patches/patch-zz b/x11/modular-xorg-server/patches/patch-zz
-new file mode 100644
---- /dev/null
-+++ b/x11/modular-xorg-server/patches/patch-zz
+diff -r 005c03a7d1d5 x11/modular-xorg-server/patches/patch-zz
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/x11/modular-xorg-server/patches/patch-zz	Tue Oct 09 17:57:51 2012 -0400
 @@ -0,0 +1,58 @@
 +diff -r 64d7c5193c40 hw/xfree86/common/xf86AutoConfig.c
 +--- hw/xfree86/common/xf86AutoConfig.c	Thu Jul 19 15:50:42 2012 +0000

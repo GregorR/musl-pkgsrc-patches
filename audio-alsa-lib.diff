@@ -1,18 +1,17 @@
 # HG changeset patch
-# Parent 5c00f38e7133a9f1dbbc25848fde5fce7a27a7dc
+# Parent 5edc45659e42d34cc779c361c9abd45bcbcac61c
 
-diff --git a/audio/alsa-lib/distinfo b/audio/alsa-lib/distinfo
---- a/audio/alsa-lib/distinfo
-+++ b/audio/alsa-lib/distinfo
-@@ -42,3 +42,4 @@
- SHA1 (patch-bk) = 7740eea6a0d4a8ce3db3b93b2af5faacdb9424b1
+diff -r 5edc45659e42 audio/alsa-lib/distinfo
+--- a/audio/alsa-lib/distinfo	Tue Oct 09 17:51:31 2012 -0400
++++ b/audio/alsa-lib/distinfo	Tue Oct 09 17:51:37 2012 -0400
+@@ -43,3 +43,4 @@
+ SHA1 (patch-include_iatomic.h) = 30099667b490c0e960a7e8883da52c39f4396b9d
  SHA1 (patch-include_pcm.h) = 1c458cd7d078356f4a970b0b3592aad139ac0918
  SHA1 (patch-src_control_control__hw.c) = 07cfe3abe586b32f6b989403cd162599da07e865
 +SHA1 (patch-qq) = a41ef5695898cde72f31489de2ed10088b0f476f
-diff --git a/audio/alsa-lib/patches/patch-qq b/audio/alsa-lib/patches/patch-qq
-new file mode 100644
---- /dev/null
-+++ b/audio/alsa-lib/patches/patch-qq
+diff -r 5edc45659e42 audio/alsa-lib/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/audio/alsa-lib/patches/patch-qq	Tue Oct 09 17:51:37 2012 -0400
 @@ -0,0 +1,72 @@
 +diff -r bb67315ed01e include/global.h
 +--- include/global.h	Mon May 07 21:37:17 2012 +0000

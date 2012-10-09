@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 30a9f155e939b3853665484b78e265170f7b9488
+# Parent bd5b5326af12ba5e396c1abf2bd8afd7fefdfde9
 
-diff --git a/lang/perl5/Makefile b/lang/perl5/Makefile
---- a/lang/perl5/Makefile
-+++ b/lang/perl5/Makefile
+diff -r bd5b5326af12 lang/perl5/Makefile
+--- a/lang/perl5/Makefile	Tue Oct 09 17:53:57 2012 -0400
++++ b/lang/perl5/Makefile	Tue Oct 09 17:54:02 2012 -0400
 @@ -50,6 +50,7 @@
  CONFIGURE_ARGS+=	-sde
  CONFIGURE_ARGS+=	-D ccflags=${CFLAGS:Q}

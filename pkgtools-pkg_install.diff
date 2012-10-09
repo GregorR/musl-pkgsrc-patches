@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 1c973706d6a84e189c158112e1d5c1d6b1915131
+# Parent 174cd7a02853076ec83969f4725eb247f1db844f
 
-diff --git a/pkgtools/pkg_install/files/add/Makefile.in b/pkgtools/pkg_install/files/add/Makefile.in
---- a/pkgtools/pkg_install/files/add/Makefile.in
-+++ b/pkgtools/pkg_install/files/add/Makefile.in
+diff -r 174cd7a02853 pkgtools/pkg_install/files/add/Makefile.in
+--- a/pkgtools/pkg_install/files/add/Makefile.in	Tue Oct 09 17:55:08 2012 -0400
++++ b/pkgtools/pkg_install/files/add/Makefile.in	Tue Oct 09 17:55:13 2012 -0400
 @@ -22,7 +22,7 @@
  
  LIBS=		-linstall -lfetch
@@ -13,9 +13,9 @@ diff --git a/pkgtools/pkg_install/files/add/Makefile.in b/pkgtools/pkg_install/f
  .endif
  LIBS+=		@LIBS@
  
-diff --git a/pkgtools/pkg_install/files/admin/Makefile.in b/pkgtools/pkg_install/files/admin/Makefile.in
---- a/pkgtools/pkg_install/files/admin/Makefile.in
-+++ b/pkgtools/pkg_install/files/admin/Makefile.in
+diff -r 174cd7a02853 pkgtools/pkg_install/files/admin/Makefile.in
+--- a/pkgtools/pkg_install/files/admin/Makefile.in	Tue Oct 09 17:55:08 2012 -0400
++++ b/pkgtools/pkg_install/files/admin/Makefile.in	Tue Oct 09 17:55:13 2012 -0400
 @@ -30,7 +30,7 @@
  .if empty(BOOTSTRAP)
  LIBS=		-linstall -lfetch
@@ -25,9 +25,9 @@ diff --git a/pkgtools/pkg_install/files/admin/Makefile.in b/pkgtools/pkg_install
  CFLAGS+=	-DHAVE_SSL
  .endif
  LIBS+=		@LIBS@
-diff --git a/pkgtools/pkg_install/files/info/Makefile.in b/pkgtools/pkg_install/files/info/Makefile.in
---- a/pkgtools/pkg_install/files/info/Makefile.in
-+++ b/pkgtools/pkg_install/files/info/Makefile.in
+diff -r 174cd7a02853 pkgtools/pkg_install/files/info/Makefile.in
+--- a/pkgtools/pkg_install/files/info/Makefile.in	Tue Oct 09 17:55:08 2012 -0400
++++ b/pkgtools/pkg_install/files/info/Makefile.in	Tue Oct 09 17:55:13 2012 -0400
 @@ -19,7 +19,7 @@
  .if empty(BOOTSTRAP)
  LIBS=		-linstall -lfetch @LIBS@
@@ -37,9 +37,9 @@ diff --git a/pkgtools/pkg_install/files/info/Makefile.in b/pkgtools/pkg_install/
  .endif
  CPPFLAGS=	@CPPFLAGS@ -I. -I$(srcdir) -I../lib
  .else
-diff --git a/pkgtools/pkg_install/files/lib/dewey.c b/pkgtools/pkg_install/files/lib/dewey.c
---- a/pkgtools/pkg_install/files/lib/dewey.c
-+++ b/pkgtools/pkg_install/files/lib/dewey.c
+diff -r 174cd7a02853 pkgtools/pkg_install/files/lib/dewey.c
+--- a/pkgtools/pkg_install/files/lib/dewey.c	Tue Oct 09 17:55:08 2012 -0400
++++ b/pkgtools/pkg_install/files/lib/dewey.c	Tue Oct 09 17:55:13 2012 -0400
 @@ -39,6 +39,7 @@
  #if HAVE_STDLIB_H
  #include <stdlib.h>

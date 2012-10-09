@@ -1,18 +1,17 @@
 # HG changeset patch
-# Parent 428060a92787d438dbd01ca00f6192cf35c6a277
+# Parent b0c11c23853b4d0e69db4a5b8b0715b16765d8d7
 
-diff --git a/sysutils/gamin/distinfo b/sysutils/gamin/distinfo
---- a/sysutils/gamin/distinfo
-+++ b/sysutils/gamin/distinfo
+diff -r b0c11c23853b sysutils/gamin/distinfo
+--- a/sysutils/gamin/distinfo	Tue Oct 09 17:57:51 2012 -0400
++++ b/sysutils/gamin/distinfo	Tue Oct 09 17:57:57 2012 -0400
 @@ -16,3 +16,4 @@
  SHA1 (patch-server_gam__node.h) = 49a0d381b4900564c4f0ba7a654eb22e294c0a16
  SHA1 (patch-server_gam__subscription.c) = 58f6c10e4e1e899d097662536ea31bf8a692b114
  SHA1 (patch-server_gam__subscription.h) = 6347865210aa0338bc8b0a81fc671824c786fd26
 +SHA1 (patch-aq) = c3d7a1f7ae26f6b6bfb9b80c1586bf9f9f70685e
-diff --git a/sysutils/gamin/patches/patch-aq b/sysutils/gamin/patches/patch-aq
-new file mode 100644
---- /dev/null
-+++ b/sysutils/gamin/patches/patch-aq
+diff -r b0c11c23853b sysutils/gamin/patches/patch-aq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/sysutils/gamin/patches/patch-aq	Tue Oct 09 17:57:57 2012 -0400
 @@ -0,0 +1,17 @@
 +diff -r c02b16f5e18d server/gam_dnotify.c
 +--- server/gam_dnotify.c	Fri Jul 20 00:43:51 2012 +0000

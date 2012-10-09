@@ -1,11 +1,11 @@
 # HG changeset patch
-# Parent c3338fed0d2d920567a16cc93fcde01aea037865
+# Parent 966a907cecee42f05a6e844f8fae58ae04fcd072
 
-diff --git a/editors/vim-share/Makefile.common b/editors/vim-share/Makefile.common
---- a/editors/vim-share/Makefile.common
-+++ b/editors/vim-share/Makefile.common
-@@ -86,5 +86,8 @@
- CONFIGURE_ARGS+=	--enable-rubyinterp
+diff -r 966a907cecee editors/vim-share/Makefile.common
+--- a/editors/vim-share/Makefile.common	Tue Oct 09 17:53:04 2012 -0400
++++ b/editors/vim-share/Makefile.common	Tue Oct 09 17:53:09 2012 -0400
+@@ -72,5 +72,8 @@
+ ALTERNATIVES_SRC=
  .endif
  
 +# [Gregor] vim doesn't recognize that it needs curses to build ANYTHING, even the share component
