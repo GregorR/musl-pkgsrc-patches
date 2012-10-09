@@ -1,8 +1,8 @@
 # HG changeset patch
-# Parent 0e710545513ae3877af6fe1c9b0ab6132d34a9a0
-diff --git a/devel/glib2/Makefile b/devel/glib2/Makefile
---- a/devel/glib2/Makefile
-+++ b/devel/glib2/Makefile
+# Parent 0729389201a2a57ef39df2acd80679d6451eaf18
+diff -r 0729389201a2 -r 838a0ddb29b5 devel/glib2/Makefile
+--- a/devel/glib2/Makefile	Sun Aug 26 10:16:40 2012 -0400
++++ b/devel/glib2/Makefile	Tue Oct 09 17:40:47 2012 -0400
 @@ -48,6 +48,10 @@
  .include "../../devel/libelf/buildlink3.mk"
  .endif
@@ -14,3 +14,27 @@ diff --git a/devel/glib2/Makefile b/devel/glib2/Makefile
  .include "../../converters/libiconv/buildlink3.mk"
  .include "../../devel/gettext-lib/buildlink3.mk"
  .include "../../devel/pcre/buildlink3.mk"
+diff -r 0729389201a2 -r 838a0ddb29b5 devel/glib2/distinfo
+--- a/devel/glib2/distinfo	Sun Aug 26 10:16:40 2012 -0400
++++ b/devel/glib2/distinfo	Tue Oct 09 17:40:47 2012 -0400
+@@ -40,3 +40,4 @@
+ SHA1 (patch-co) = 146d7102970bd92beff382b7b8f0bb681e0b8520
+ SHA1 (patch-glib_goption.c) = 323297aa328b85493f156792b4baa0cb04fa82ad
+ SHA1 (patch-glib_tests_include.c) = 95f7d34e6e03849316bbfac1541eec4582b92ffc
++SHA1 (patch-qq) = cbf5a5d8de6eb6158b06175f086b3c6fe43c1508
+diff -r 0729389201a2 -r 838a0ddb29b5 devel/glib2/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/devel/glib2/patches/patch-qq	Tue Oct 09 17:40:47 2012 -0400
+@@ -0,0 +1,12 @@
++diff -r 1f4fd6fe5192 gio/gfile.c
++--- gio/gfile.c	Fri Sep 28 18:09:40 2012 +0000
+++++ gio/gfile.c	Fri Sep 28 20:41:32 2012 +0000
++@@ -21,6 +21,8 @@
++  *
++  * Author: Alexander Larsson <alexl@redhat.com>
++  */
+++ 
+++#define _GNU_SOURCE
++ 
++ #include "config.h"
++ #ifdef HAVE_SPLICE
