@@ -83,3 +83,4 @@ x11-fltk13.diff
 devel-boehm-gc.diff
 x11-fltk.diff
 lang-php53.diff
+sysutils-dbus.diff
