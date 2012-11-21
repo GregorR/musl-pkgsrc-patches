@@ -1,0 +1,341 @@
+# HG changeset patch
+# Parent a5f6ad0a6b11ffbe324ace6a693195ad19dacc93
+diff -r a5f6ad0a6b11 -r 39f2a0fa458e security/heimdal/distinfo
+--- a/security/heimdal/distinfo	Tue Nov 13 02:27:30 2012 -0500
++++ b/security/heimdal/distinfo	Wed Nov 21 01:56:57 2012 -0500
+@@ -10,3 +10,4 @@
+ SHA1 (patch-lib_hcrypto_libtommath_tommath_class.h) = 8c7b1e8d30cda79fd59a8ef83094a611b47a43df
+ SHA1 (patch-lib_hcrypto_libtommath_tommath_superclass.h) = 141e75b5b310446694769b16a977fa5b25160fbd
+ SHA1 (patch-lib_otp_Makefile.in) = 0fe1426000824614f0e31d3ab2348948f3f414d3
++SHA1 (patch-qq) = 3a0461411d81dd0a55db54532594febf609e56ac
+diff -r a5f6ad0a6b11 -r 39f2a0fa458e security/heimdal/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/security/heimdal/patches/patch-qq	Wed Nov 21 01:56:57 2012 -0500
+@@ -0,0 +1,327 @@
++diff -r 84268e659976 appl/ftp/ftp/cmds.c
++--- appl/ftp/ftp/cmds.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftp/cmds.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -38,6 +38,19 @@
++ #include "ftp_locl.h"
++ RCSID("$Id$");
++ 
+++#define PRELIM 0
+++#define ERROR 1
+++#define CONTINUE 2
+++#define COMPLETE 3
+++#define FORM_N 4
+++#define STRU_F 5
+++#define MODE_S 6
+++
+++#define TYPE_A 1
+++#define TYPE_E 5
+++#define TYPE_I 9
+++#define TYPE_L 12
+++
++ typedef void (*sighand)(int);
++ 
++ jmp_buf	jabort;
++diff -r 84268e659976 appl/ftp/ftp/ftp.c
++--- appl/ftp/ftp/ftp.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftp/ftp.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -34,6 +34,19 @@
++ #include "ftp_locl.h"
++ RCSID ("$Id$");
++ 
+++#define PRELIM 0
+++#define ERROR 1
+++#define CONTINUE 2
+++#define COMPLETE 3
+++#define FORM_N 4
+++#define STRU_F 5
+++#define MODE_S 6
+++
+++#define TYPE_A 1
+++#define TYPE_E 5
+++#define TYPE_I 9
+++#define TYPE_L 12
+++
++ struct sockaddr_storage hisctladdr_ss;
++ struct sockaddr *hisctladdr = (struct sockaddr *)&hisctladdr_ss;
++ struct sockaddr_storage data_addr_ss;
++diff -r 84268e659976 appl/ftp/ftp/kauth.c
++--- appl/ftp/ftp/kauth.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftp/kauth.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -34,6 +34,19 @@
++ #include "ftp_locl.h"
++ RCSID("$Id$");
++ 
+++#define PRELIM 0
+++#define ERROR 1
+++#define CONTINUE 2
+++#define COMPLETE 3
+++#define FORM_N 4
+++#define STRU_F 5
+++#define MODE_S 6
+++
+++#define TYPE_A 1
+++#define TYPE_E 5
+++#define TYPE_I 9
+++#define TYPE_L 12
+++
++ #if defined(KRB5)
++ 
++ void
++diff -r 84268e659976 appl/ftp/ftp/security.c
++--- appl/ftp/ftp/security.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftp/security.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -39,6 +39,19 @@
++ 
++ RCSID("$Id$");
++ 
+++#define PRELIM 0
+++#define ERROR 1
+++#define CONTINUE 2
+++#define COMPLETE 3
+++#define FORM_N 4
+++#define STRU_F 5
+++#define MODE_S 6
+++
+++#define TYPE_A 1
+++#define TYPE_E 5
+++#define TYPE_I 9
+++#define TYPE_L 12
+++
++ static enum protection_level command_prot;
++ static enum protection_level data_prot;
++ static size_t buffer_size;
++diff -r 84268e659976 appl/ftp/ftpd/ftpcmd.c
++--- appl/ftp/ftpd/ftpcmd.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/ftpcmd.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -43,6 +43,7 @@
++    define necessary library symbols; they are noted "INFRINGES ON
++    USER NAME SPACE" below.  */
++ 
+++#if 0
++ /* Identify Bison output.  */
++ #define YYBISON 1
++ 
++@@ -3530,3 +3531,4 @@
++ 	}
++ }
++ 
+++#endif
++diff -r 84268e659976 appl/ftp/ftpd/ftpcmd.y
++--- appl/ftp/ftpd/ftpcmd.y	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/ftpcmd.y	Wed Nov 21 06:32:07 2012 +0000
++@@ -45,6 +45,7 @@
++ #include "ftpd_locl.h"
++ RCSID("$Id$");
++ 
+++#if 0
++ off_t	restart_point;
++ 
++ static	int hasyyerrored;
++@@ -1476,3 +1477,4 @@
++ 		reply(504, "SIZE not implemented for Type %c.", "?AEIL"[type]);
++ 	}
++ }
+++#endif
++diff -r 84268e659976 appl/ftp/ftpd/ftpd.c
++--- appl/ftp/ftpd/ftpd.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/ftpd.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -31,6 +31,7 @@
++  * SUCH DAMAGE.
++  */
++ 
+++#if 0
++ #define	FTP_NAMES
++ #include "ftpd_locl.h"
++ #ifdef KRB5
++@@ -260,9 +261,13 @@
++     return 0;
++ }
++ 
+++#endif
++ int
++ main(int argc, char **argv)
++ {
+++return 0;
+++}
+++#if 0
++     socklen_t his_addr_len, ctrl_addr_len;
++     int on = 1;
++     int port;
++@@ -2365,3 +2370,4 @@
++     return 0;
++ }
++ 
+++#endif
++diff -r 84268e659976 appl/ftp/ftpd/ftpd_locl.h
++--- appl/ftp/ftpd/ftpd_locl.h	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/ftpd_locl.h	Wed Nov 21 06:32:07 2012 +0000
++@@ -36,6 +36,7 @@
++ #ifndef __ftpd_locl_h__
++ #define __ftpd_locl_h__
++ 
+++#if 0
++ #ifdef HAVE_CONFIG_H
++ #include <config.h>
++ #endif
++@@ -168,4 +169,6 @@
++ #define LOG_FTP LOG_DAEMON
++ #endif
++ 
+++#endif
+++
++ #endif /* __ftpd_locl_h__ */
++diff -r 84268e659976 appl/ftp/ftpd/gss_userok.c
++--- appl/ftp/ftpd/gss_userok.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/gss_userok.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -31,6 +31,7 @@
++  * SUCH DAMAGE.
++  */
++ 
+++#if 0
++ #include "ftpd_locl.h"
++ #include <gssapi/gssapi.h>
++ 
++@@ -73,3 +74,4 @@
++     gss_release_cred(&minor, &data->delegated_cred_handle);
++     return ret;
++ }
+++#endif
++diff -r 84268e659976 appl/ftp/ftpd/gssapi.c
++--- appl/ftp/ftpd/gssapi.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/gssapi.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -31,6 +31,7 @@
++  * SUCH DAMAGE.
++  */
++ 
+++#if 0
++ #ifdef FTP_SERVER
++ #include "ftpd_locl.h"
++ #else
++@@ -509,3 +510,4 @@
++ };
++ 
++ #endif /* FTP_SERVER */
+++#endif
++diff -r 84268e659976 appl/ftp/ftpd/kauth.c
++--- appl/ftp/ftpd/kauth.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/kauth.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -31,6 +31,7 @@
++  * SUCH DAMAGE.
++  */
++ 
+++#if 0
++ #include "ftpd_locl.h"
++ 
++ RCSID("$Id$");
++@@ -138,3 +139,4 @@
++ #else
++ int ftpd_afslog_placeholder;
++ #endif /* KRB5 */
+++#endif
++diff -r 84268e659976 appl/ftp/ftpd/klist.c
++--- appl/ftp/ftpd/klist.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/klist.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -31,6 +31,7 @@
++  * SUCH DAMAGE.
++  */
++ 
+++#if 0
++ #include "ftpd_locl.h"
++ 
++ #ifdef KRB5
++@@ -176,3 +177,4 @@
++ #endif
++ }
++ 
+++#endif
++diff -r 84268e659976 appl/ftp/ftpd/ls.c
++--- appl/ftp/ftpd/ls.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/ls.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -30,6 +30,7 @@
++  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
++  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
++ 
+++#if 0
++ #ifndef TEST
++ #include "ftpd_locl.h"
++ 
++@@ -889,3 +890,4 @@
++     sec_fflush(out);
++     return ret;
++ }
+++#endif
++diff -r 84268e659976 appl/ftp/ftpd/security.c
++--- appl/ftp/ftpd/security.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/ftp/ftpd/security.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -31,6 +31,7 @@
++  * SUCH DAMAGE.
++  */
++ 
+++#if 0
++ #ifdef FTP_SERVER
++ #include "ftpd_locl.h"
++ #else
++@@ -881,3 +882,4 @@
++ 
++ #endif /* FTP_SERVER */
++ 
+++#endif
++diff -r 84268e659976 appl/rsh/rsh.c
++--- appl/rsh/rsh.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/rsh/rsh.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -849,8 +849,10 @@
++     uid_t uid;
++ 
++     priv_port1 = priv_port2 = IPPORT_RESERVED-1;
+++#if 0
++     priv_socket1 = rresvport(&priv_port1);
++     priv_socket2 = rresvport(&priv_port2);
+++#endif
++     uid = getuid ();
++     if (setuid (uid) || (uid != 0 && setuid(0) == 0))
++ 	err (1, "setuid");
++diff -r 84268e659976 appl/rsh/rshd.c
++--- appl/rsh/rshd.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/rsh/rshd.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -147,8 +147,10 @@
++     pwd = getpwnam(*server_username);
++     if (pwd == NULL)
++ 	fatal(s, NULL, "Login incorrect.");
+++#if 0
++     if (iruserok(thataddr->sin_addr.s_addr, pwd->pw_uid == 0,
++ 		 *client_username, *server_username))
+++#endif
++ 	fatal(s, NULL, "Login incorrect.");
++     return 0;
++ }
++@@ -659,9 +661,11 @@
++ 	 * we only do reserved port for IPv4
++ 	 */
++ 
+++#if 0
++ 	if (erraddr->sa_family == AF_INET)
++ 	    errsock = rresvport (&priv_port);
++ 	else
+++#endif	
++ 	    errsock = socket (erraddr->sa_family, SOCK_STREAM, 0);
++ 	if (errsock < 0)
++ 	    syslog_and_die ("socket: %s", strerror(errno));
++diff -r 84268e659976 appl/telnet/telnetd/sys_term.c
++--- appl/telnet/telnetd/sys_term.c	Wed Nov 21 06:05:26 2012 +0000
+++++ appl/telnet/telnetd/sys_term.c	Wed Nov 21 06:32:07 2012 +0000
++@@ -1437,6 +1437,7 @@
++ 	user0 = utxp->ut_user[0];
++ 	utxp->ut_user[0] = '\0';
++ 	utxp->ut_type = DEAD_PROCESS;
+++#if 0
++ #ifdef HAVE_STRUCT_UTMPX_UT_EXIT
++ #ifdef _STRUCT___EXIT_STATUS
++ 	utxp->ut_exit.__e_termination = 0;
++@@ -1449,6 +1450,7 @@
++ 	utxp->ut_exit.e_exit = 0;
++ #endif
++ #endif
+++#endif
++ 	gettimeofday (&tv, NULL);
++ 	utxp->ut_tv.tv_sec = tv.tv_sec;
++ 	utxp->ut_tv.tv_usec = tv.tv_usec;

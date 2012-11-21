@@ -84,3 +84,4 @@ devel-boehm-gc.diff
 x11-fltk.diff
 lang-php53.diff
 sysutils-dbus.diff
+security-heimdal.diff
