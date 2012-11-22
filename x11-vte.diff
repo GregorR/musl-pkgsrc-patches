@@ -1,22 +1,30 @@
 # HG changeset patch
 # Parent c5a66629323b51fe6d4e2fc6b914300cda7a95cb
-
-diff -r c5a66629323b x11/vte/distinfo
+diff -r c5a66629323b -r 9211faa89f5d x11/vte/distinfo
 --- a/x11/vte/distinfo	Tue Oct 09 17:57:27 2012 -0400
-+++ b/x11/vte/distinfo	Tue Oct 09 17:57:32 2012 -0400
++++ b/x11/vte/distinfo	Wed Nov 21 23:56:53 2012 -0500
 @@ -9,3 +9,4 @@
  SHA1 (patch-af) = 69ea7e022f6c495c3c9af681d05644b9d70e7bdc
  SHA1 (patch-ah) = 28cee2661439d7d6f1959ebf3c7d1b7b3fe0a764
  SHA1 (patch-ai) = 986dd7c2a5778c9c35100901cfaa25acd0cbdc32
-+SHA1 (patch-aq) = 8262b1ccde6869c18a27994dd19e469b5430b05a
-diff -r c5a66629323b x11/vte/patches/patch-aq
++SHA1 (patch-qq) = 92b66111090b44bea1e6ee933be879cd62aafcfd
+diff -r c5a66629323b -r 9211faa89f5d x11/vte/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/vte/patches/patch-aq	Tue Oct 09 17:57:32 2012 -0400
-@@ -0,0 +1,19 @@
-+diff -r fecfb00f45d9 src/pty.c
-+--- src/pty.c	Sun May 06 12:32:48 2012 +0000
-++++ src/pty.c	Sun May 06 12:34:08 2012 +0000
-+@@ -290,6 +290,7 @@
++++ b/x11/vte/patches/patch-qq	Wed Nov 21 23:56:53 2012 -0500
+@@ -0,0 +1,28 @@
++diff -r af9a009fcb7c src/pty.c
++--- src/pty.c	Thu Nov 22 04:46:24 2012 +0000
+++++ src/pty.c	Thu Nov 22 04:50:45 2012 +0000
++@@ -28,6 +28,8 @@
++  * Since: 0.26
++  */
++ 
+++#define _GNU_SOURCE /* for ptsname_r */
+++
++ #include <config.h>
++ 
++ #include "vtepty.h"
++@@ -290,6 +292,7 @@
 + #endif
 + 
 + #ifdef HAVE_STROPTS_H
@@ -24,7 +32,7 @@ diff -r c5a66629323b x11/vte/patches/patch-aq
 + 	if (isastream (fd) == 1) {
 + 		if ((ioctl(fd, I_FIND, "ptem") == 0) &&
 + 				(ioctl(fd, I_PUSH, "ptem") == -1)) {
-+@@ -306,6 +307,7 @@
++@@ -306,6 +309,7 @@
 + 		}
 + 	}
 + #endif
