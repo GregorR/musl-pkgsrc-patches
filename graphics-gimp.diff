@@ -1,9 +1,8 @@
 # HG changeset patch
 # Parent f0afd2a0bcf3c7f7ac44d35f53aae671fea605c4
-
-diff -r f0afd2a0bcf3 graphics/gimp/PLIST
+diff -r f0afd2a0bcf3 -r e2a5071c758c graphics/gimp/PLIST
 --- a/graphics/gimp/PLIST	Tue Oct 09 17:53:40 2012 -0400
-+++ b/graphics/gimp/PLIST	Tue Oct 09 17:53:45 2012 -0400
++++ b/graphics/gimp/PLIST	Thu Nov 22 02:01:36 2012 -0500
 @@ -316,7 +316,6 @@
  lib/gimp/2.0/plug-ins/file-tiff-load
  lib/gimp/2.0/plug-ins/file-tiff-save
@@ -12,3 +11,37 @@ diff -r f0afd2a0bcf3 graphics/gimp/PLIST
  lib/gimp/2.0/plug-ins/file-xbm
  lib/gimp/2.0/plug-ins/file-xjt
  ${PLIST.remote}lib/gimp/2.0/plug-ins/file-xmc
+diff -r f0afd2a0bcf3 -r e2a5071c758c graphics/gimp/distinfo
+--- a/graphics/gimp/distinfo	Tue Oct 09 17:53:40 2012 -0400
++++ b/graphics/gimp/distinfo	Thu Nov 22 02:01:36 2012 -0500
+@@ -11,3 +11,4 @@
+ SHA1 (patch-app_config_Makefile.in) = a2fcebd994831fbe0f911efb84c1fecdf2e59198
+ SHA1 (patch-devel-docs_app_Makefile.in) = 1eb97f779d5151b9e89b4ae47afb44d1bb3b6a48
+ SHA1 (patch-plug-ins_script-fu_script-fu-server.c) = 4932d82711c8010cf7b1ff5bfb12031946273c2b
++SHA1 (patch-qq) = 89fd0ce763a2668861a90a2e7c129e4c94b644cf
+diff -r f0afd2a0bcf3 -r e2a5071c758c graphics/gimp/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/graphics/gimp/patches/patch-qq	Thu Nov 22 02:01:36 2012 -0500
+@@ -0,0 +1,22 @@
++diff -r f497c2200f57 app/base/base-utils.c
++--- app/base/base-utils.c	Thu Nov 22 06:07:46 2012 +0000
+++++ app/base/base-utils.c	Thu Nov 22 06:31:37 2012 +0000
++@@ -33,7 +33,8 @@
++ /* For get_backtrace() */
++ #include <stdlib.h>
++ #include <string.h>
++-#ifdef __linux__
+++#if defined(__linux__) && defined(__GLIBC__)
+++#define HAVE_EXECINFO_H 1
++ #include <execinfo.h>
++ #endif
++ #endif
++@@ -114,7 +115,7 @@
++ char *
++ get_backtrace (void)
++ {
++-#ifdef __linux__
+++#ifdef HAVE_EXECINFO_H
++   void     *functions[MAX_FUNC];
++   char    **function_names;
++   int       n_functions;
