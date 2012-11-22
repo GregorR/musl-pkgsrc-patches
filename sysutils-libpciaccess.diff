@@ -1,27 +1,40 @@
 # HG changeset patch
-# Parent d7443b81bb8876a5dc7b3c1c150f4372a9fce7c2
-
-diff -r d7443b81bb88 sysutils/libpciaccess/distinfo
---- a/sysutils/libpciaccess/distinfo	Tue Oct 09 17:57:39 2012 -0400
-+++ b/sysutils/libpciaccess/distinfo	Tue Oct 09 17:57:45 2012 -0400
+# Parent 26396824eb259ace765f32e51c5a40b86e633f63
+diff -r 26396824eb25 -r 029152fe47ed sysutils/libpciaccess/distinfo
+--- a/sysutils/libpciaccess/distinfo	Wed Nov 21 23:56:58 2012 -0500
++++ b/sysutils/libpciaccess/distinfo	Thu Nov 22 00:52:17 2012 -0500
 @@ -5,3 +5,4 @@
  Size (libpciaccess-0.13.1.tar.bz2) = 352351 bytes
  SHA1 (patch-aa) = 090e2dd9d811fc56354d5387cc51fb2b1b4a2820
  SHA1 (patch-ac) = 060ce740ffb5d8a9ba71142075d49a6c0ff2c840
-+SHA1 (patch-aq) = 0f0850644192c53cab4e5a8105e6920ff46e8171
-diff -r d7443b81bb88 sysutils/libpciaccess/patches/patch-aq
++SHA1 (patch-qq) = 964dffa286864efc6bce64afe2ba21aedddf0e51
+diff -r 26396824eb25 -r 029152fe47ed sysutils/libpciaccess/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/libpciaccess/patches/patch-aq	Tue Oct 09 17:57:45 2012 -0400
-@@ -0,0 +1,12 @@
-+diff -r 6157f7aaf390 src/linux_sysfs.c
-+--- src/linux_sysfs.c	Thu Jul 19 02:37:38 2012 +0000
-++++ src/linux_sysfs.c	Thu Jul 19 02:38:32 2012 +0000
-+@@ -44,6 +44,8 @@
++++ b/sysutils/libpciaccess/patches/patch-qq	Thu Nov 22 00:52:17 2012 -0500
+@@ -0,0 +1,26 @@
++diff -r 060a764d912e src/linux_sysfs.c
++--- src/linux_sysfs.c	Thu Nov 22 05:40:15 2012 +0000
+++++ src/linux_sysfs.c	Thu Nov 22 05:48:01 2012 +0000
++@@ -45,7 +45,9 @@
 + #include <dirent.h>
 + #include <errno.h>
 + 
++-#if defined(__i386__) || defined(__x86_64__) || defined(__arm__)
 ++#include <limits.h>
 ++
-+ #include "config.h"
+++#if 0 /*defined(__i386__) || defined(__x86_64__) || defined(__arm__)*/
++ #include <sys/io.h>
++ #else
++ #define inb(x) -1
++diff -r 060a764d912e src/pciaccess_private.h
++--- src/pciaccess_private.h	Thu Nov 22 05:40:15 2012 +0000
+++++ src/pciaccess_private.h	Thu Nov 22 05:48:01 2012 +0000
++@@ -42,7 +42,7 @@
++  * know of any OS we support where this isn't available in a sufficiently
++  * new version, so warn unconditionally.
++  */
++-#include <sys/fcntl.h>
+++#include <fcntl.h>
 + 
-+ #ifdef HAVE_MTRR
++ #ifndef O_CLOEXEC
++ #warning O_CLOEXEC not available, please upgrade.
