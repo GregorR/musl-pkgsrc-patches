@@ -1,0 +1,26 @@
+# HG changeset patch
+# Parent 920b6d9da5ee3d96c309faf4bf4a73baf2d55555
+diff -r 920b6d9da5ee -r 11f42cf43294 misc/screen/distinfo
+--- a/misc/screen/distinfo	Fri Nov 23 22:35:17 2012 -0500
++++ b/misc/screen/distinfo	Mon Nov 26 02:46:01 2012 -0500
+@@ -19,3 +19,4 @@
+ SHA1 (patch-aq) = 997a0ce76086f1dd966868b1fc9ca3bb96b4b4fb
+ SHA1 (patch-ar) = cbbcb6e098e966d73c4f0bbbb26e655d88152224
+ SHA1 (patch-as) = a6105d64d46df079d3f80965140c1d83b3e72268
++SHA1 (patch-qq) = 4d48916311ad135765415ea4a07fc6773726c3b5
+diff -r 920b6d9da5ee -r 11f42cf43294 misc/screen/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/misc/screen/patches/patch-qq	Mon Nov 26 02:46:01 2012 -0500
+@@ -0,0 +1,12 @@
++diff -r 8c20049ee2a3 utmp.c
++--- utmp.c	Mon Nov 26 07:37:02 2012 +0000
+++++ utmp.c	Mon Nov 26 07:41:11 2012 +0000
++@@ -601,7 +601,7 @@
++ struct utmp *u;
++ {
++   u->ut_type = DEAD_PROCESS;
++-#if !defined(linux) || defined(EMPTY)
+++#if 0
++   u->ut_exit.e_termination = 0;
++   u->ut_exit.e_exit = 0;
++ #endif
