@@ -1,8 +1,9 @@
 # HG changeset patch
-# Parent f0afd2a0bcf3c7f7ac44d35f53aae671fea605c4
-diff -r f0afd2a0bcf3 -r e2a5071c758c graphics/gimp/PLIST
---- a/graphics/gimp/PLIST	Tue Oct 09 17:53:40 2012 -0400
-+++ b/graphics/gimp/PLIST	Thu Nov 22 02:01:36 2012 -0500
+# Parent b4d850b30a1841799458e3454b39f22abdca1fe3
+
+diff -r b4d850b30a18 graphics/gimp/PLIST
+--- a/graphics/gimp/PLIST	Mon Feb 18 12:25:00 2013 -0500
++++ b/graphics/gimp/PLIST	Mon Feb 18 12:25:05 2013 -0500
 @@ -316,7 +316,6 @@
  lib/gimp/2.0/plug-ins/file-tiff-load
  lib/gimp/2.0/plug-ins/file-tiff-save
@@ -11,17 +12,17 @@ diff -r f0afd2a0bcf3 -r e2a5071c758c graphics/gimp/PLIST
  lib/gimp/2.0/plug-ins/file-xbm
  lib/gimp/2.0/plug-ins/file-xjt
  ${PLIST.remote}lib/gimp/2.0/plug-ins/file-xmc
-diff -r f0afd2a0bcf3 -r e2a5071c758c graphics/gimp/distinfo
---- a/graphics/gimp/distinfo	Tue Oct 09 17:53:40 2012 -0400
-+++ b/graphics/gimp/distinfo	Thu Nov 22 02:01:36 2012 -0500
-@@ -11,3 +11,4 @@
- SHA1 (patch-app_config_Makefile.in) = a2fcebd994831fbe0f911efb84c1fecdf2e59198
+diff -r b4d850b30a18 graphics/gimp/distinfo
+--- a/graphics/gimp/distinfo	Mon Feb 18 12:25:00 2013 -0500
++++ b/graphics/gimp/distinfo	Mon Feb 18 12:25:05 2013 -0500
+@@ -12,3 +12,4 @@
+ SHA1 (patch-bug687392) = 5cc488323c8761521cb3880f2a0d7376d6acd136
  SHA1 (patch-devel-docs_app_Makefile.in) = 1eb97f779d5151b9e89b4ae47afb44d1bb3b6a48
  SHA1 (patch-plug-ins_script-fu_script-fu-server.c) = 4932d82711c8010cf7b1ff5bfb12031946273c2b
 +SHA1 (patch-qq) = 89fd0ce763a2668861a90a2e7c129e4c94b644cf
-diff -r f0afd2a0bcf3 -r e2a5071c758c graphics/gimp/patches/patch-qq
+diff -r b4d850b30a18 graphics/gimp/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/graphics/gimp/patches/patch-qq	Thu Nov 22 02:01:36 2012 -0500
++++ b/graphics/gimp/patches/patch-qq	Mon Feb 18 12:25:05 2013 -0500
 @@ -0,0 +1,22 @@
 +diff -r f497c2200f57 app/base/base-utils.c
 +--- app/base/base-utils.c	Thu Nov 22 06:07:46 2012 +0000

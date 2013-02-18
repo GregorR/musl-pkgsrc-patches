@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent d8c3bcb03d21d86e10f84466c19916ed47d31450
+# Parent 3eaf5ae1534e228f62f9bb2e234f2b8f4942029b
 
-diff -r d8c3bcb03d21 meta-pkgs/xfce4/Makefile
---- a/meta-pkgs/xfce4/Makefile	Tue Oct 09 17:54:22 2012 -0400
-+++ b/meta-pkgs/xfce4/Makefile	Tue Oct 09 17:54:27 2012 -0400
+diff -r 3eaf5ae1534e meta-pkgs/xfce4/Makefile
+--- a/meta-pkgs/xfce4/Makefile	Mon Feb 18 12:25:36 2013 -0500
++++ b/meta-pkgs/xfce4/Makefile	Mon Feb 18 12:25:41 2013 -0500
 @@ -16,7 +16,8 @@
  .include "../../print/xfce4-print/buildlink3.mk"
  .include "../../sysutils/xfce4-appfinder/buildlink3.mk"

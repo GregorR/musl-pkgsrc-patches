@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent ef983d4074603976dcd1c2a84eb473705b3d3e49
+# Parent 817b0293b2487af72d5b6953711acc27f200b202
 
-diff -r ef983d407460 math/nickle/distinfo
---- a/math/nickle/distinfo	Tue Oct 09 17:59:10 2012 -0400
-+++ b/math/nickle/distinfo	Tue Oct 09 17:59:16 2012 -0400
+diff -r 817b0293b248 math/nickle/distinfo
+--- a/math/nickle/distinfo	Mon Feb 18 12:29:45 2013 -0500
++++ b/math/nickle/distinfo	Mon Feb 18 12:29:50 2013 -0500
 @@ -4,3 +4,4 @@
  RMD160 (nickle-2.70.tar.gz) = 567028075e57c17a015253d4544a12f140aebb79
  Size (nickle-2.70.tar.gz) = 488081 bytes
  SHA1 (patch-aa) = 0b1e03f3e42ea088c5a81109e9534c77efe30659
 +SHA1 (patch-aq) = 6612db40b26cf897cac913b721d2940bdcb7e5ba
-diff -r ef983d407460 math/nickle/patches/patch-aq
+diff -r 817b0293b248 math/nickle/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/math/nickle/patches/patch-aq	Tue Oct 09 17:59:16 2012 -0400
++++ b/math/nickle/patches/patch-aq	Mon Feb 18 12:29:50 2013 -0500
 @@ -0,0 +1,12 @@
 +diff -r 32bd16c8749a float.c
 +--- float.c	Sat Aug 11 06:46:53 2012 +0000

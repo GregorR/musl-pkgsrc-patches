@@ -1,18 +1,18 @@
 # HG changeset patch
-# Parent bd5b5326af12ba5e396c1abf2bd8afd7fefdfde9
+# Parent 0fe2b31d22d1368cfd64be73161e00aa3a102d36
 
-diff -r bd5b5326af12 lang/perl5/Makefile
---- a/lang/perl5/Makefile	Tue Oct 09 17:53:57 2012 -0400
-+++ b/lang/perl5/Makefile	Tue Oct 09 17:54:02 2012 -0400
-@@ -50,6 +50,7 @@
+diff -r 0fe2b31d22d1 lang/perl5/Makefile
+--- a/lang/perl5/Makefile	Mon Feb 18 12:25:16 2013 -0500
++++ b/lang/perl5/Makefile	Mon Feb 18 12:25:20 2013 -0500
+@@ -46,6 +46,7 @@
+ HAS_CONFIGURE=		yes
+ CONFIGURE_SCRIPT=	./Configure
  CONFIGURE_ARGS+=	-sde
- CONFIGURE_ARGS+=	-D ccflags=${CFLAGS:Q}
- CONFIGURE_ARGS+=	-D ldflags=${LDFLAGS:Q}
 +CONFIGURE_ARGS+=        -D inc_version_list=none
  MAKE_ENV+=		LC_ALL="C"
  
  TEST_TARGET=		test
-@@ -320,6 +321,10 @@
+@@ -203,6 +204,10 @@
  
  pre-configure:
  	cd ${WRKSRC} && find `pwd` -name "*.orig" -type f -exec ${RM} -f {} \;

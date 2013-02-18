@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 8fd7df38fd16c3aeb7d60885cd3397e9850241b0
+# Parent 343f5b41e6d7affb4dc9987334e6527d36192c8b
 
-diff -r 8fd7df38fd16 pkgtools/pkg_install-info/files/install-info.c
---- a/pkgtools/pkg_install-info/files/install-info.c	Tue Oct 09 17:55:02 2012 -0400
-+++ b/pkgtools/pkg_install-info/files/install-info.c	Tue Oct 09 17:55:07 2012 -0400
+diff -r 343f5b41e6d7 pkgtools/pkg_install-info/files/install-info.c
+--- a/pkgtools/pkg_install-info/files/install-info.c	Mon Feb 18 12:26:13 2013 -0500
++++ b/pkgtools/pkg_install-info/files/install-info.c	Mon Feb 18 12:26:17 2013 -0500
 @@ -21,6 +21,8 @@
  #include "system.h"
  #include <getopt.h>
@@ -13,9 +13,9 @@ diff -r 8fd7df38fd16 pkgtools/pkg_install-info/files/install-info.c
  static char *progname = "install-info";
  
  int menu_line_equal (), menu_line_lessp ();
-diff -r 8fd7df38fd16 pkgtools/pkg_install-info/files/system.h
---- a/pkgtools/pkg_install-info/files/system.h	Tue Oct 09 17:55:02 2012 -0400
-+++ b/pkgtools/pkg_install-info/files/system.h	Tue Oct 09 17:55:07 2012 -0400
+diff -r 343f5b41e6d7 pkgtools/pkg_install-info/files/system.h
+--- a/pkgtools/pkg_install-info/files/system.h	Mon Feb 18 12:26:13 2013 -0500
++++ b/pkgtools/pkg_install-info/files/system.h	Mon Feb 18 12:26:17 2013 -0500
 @@ -21,7 +21,9 @@
  #ifndef TEXINFO_SYSTEM_H
  #define TEXINFO_SYSTEM_H
@@ -26,9 +26,9 @@ diff -r 8fd7df38fd16 pkgtools/pkg_install-info/files/system.h
  
  #include <config.h>
  
-diff -r 8fd7df38fd16 pkgtools/pkg_install-info/files/xexit.c
---- a/pkgtools/pkg_install-info/files/xexit.c	Tue Oct 09 17:55:02 2012 -0400
-+++ b/pkgtools/pkg_install-info/files/xexit.c	Tue Oct 09 17:55:07 2012 -0400
+diff -r 343f5b41e6d7 pkgtools/pkg_install-info/files/xexit.c
+--- a/pkgtools/pkg_install-info/files/xexit.c	Mon Feb 18 12:26:13 2013 -0500
++++ b/pkgtools/pkg_install-info/files/xexit.c	Mon Feb 18 12:26:17 2013 -0500
 @@ -19,6 +19,8 @@
  
  #include "system.h"

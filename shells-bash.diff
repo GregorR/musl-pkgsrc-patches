@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 58069d3483c9ee185593e826225cc7b5e9ffa615
+# Parent e5612b01add061207b1929f5877a6fe1009017a9
 
-diff -r 58069d3483c9 shells/bash/Makefile
---- a/shells/bash/Makefile	Tue Oct 09 17:55:51 2012 -0400
-+++ b/shells/bash/Makefile	Tue Oct 09 17:55:56 2012 -0400
+diff -r e5612b01add0 shells/bash/Makefile
+--- a/shells/bash/Makefile	Mon Feb 18 12:26:55 2013 -0500
++++ b/shells/bash/Makefile	Mon Feb 18 12:26:59 2013 -0500
 @@ -77,6 +77,9 @@
  .include "../../devel/readline/buildlink3.mk"
  .endif

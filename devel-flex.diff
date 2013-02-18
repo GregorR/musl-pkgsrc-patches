@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 291412bd7af79c87c3a32cacbf7562c5fcc5ed38
+# Parent 87ce564ad9867b08aa6136f41bdf32d354339613
 
-diff -r 291412bd7af7 devel/flex/PLIST
---- a/devel/flex/PLIST	Tue Oct 09 17:52:02 2012 -0400
-+++ b/devel/flex/PLIST	Tue Oct 09 17:52:09 2012 -0400
+diff -r 87ce564ad986 devel/flex/PLIST
+--- a/devel/flex/PLIST	Mon Feb 18 12:23:38 2013 -0500
++++ b/devel/flex/PLIST	Mon Feb 18 12:23:43 2013 -0500
 @@ -13,20 +13,3 @@
  share/doc/flex/README
  share/doc/flex/README.cvs

@@ -1,17 +1,20 @@
 # HG changeset patch
-# Parent 1339649520f8e718d64dcc2093f0c682cc68c703
+# Parent 93e6f48989d86f2b8e98d0449f9502b171e355ba
 
-diff -r 1339649520f8 devel/libusb1/distinfo
---- a/devel/libusb1/distinfo	Tue Oct 09 17:58:22 2012 -0400
-+++ b/devel/libusb1/distinfo	Tue Oct 09 17:58:28 2012 -0400
-@@ -3,3 +3,4 @@
+diff -r 93e6f48989d8 devel/libusb1/distinfo
+--- a/devel/libusb1/distinfo	Mon Feb 18 12:29:08 2013 -0500
++++ b/devel/libusb1/distinfo	Mon Feb 18 12:29:13 2013 -0500
+@@ -3,6 +3,7 @@
  SHA1 (libusb-1.0.9.tar.bz2) = 025582ff2f6216e2dbc2610ae16b2e073e1b3346
  RMD160 (libusb-1.0.9.tar.bz2) = 5410570f8ce31783044eb04aebaae7ade3b21a61
  Size (libusb-1.0.9.tar.bz2) = 421971 bytes
 +SHA1 (patch-timespec) = 87f7c7eb866b7b2e5a80997e2b472b527432a350
-diff -r 1339649520f8 devel/libusb1/patches/patch-timespec
+ SHA1 (patch-configure) = 16945e970e356009d1022d9832ef3ee532435422
+ SHA1 (patch-configure.ac) = 3d8234d368409a23da0f346822bea276c6081e8b
+ SHA1 (patch-libusb_os_openbsd__usb.c) = be31799029f8e2acf7abb6be566a51c78026479d
+diff -r 93e6f48989d8 devel/libusb1/patches/patch-timespec
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/libusb1/patches/patch-timespec	Tue Oct 09 17:58:28 2012 -0400
++++ b/devel/libusb1/patches/patch-timespec	Mon Feb 18 12:29:13 2013 -0500
 @@ -0,0 +1,20 @@
 +--- libusb/io.c
 ++++ libusb/io.c

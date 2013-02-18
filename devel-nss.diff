@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 0151d8f0d1f4b8b95310dff76dffd603f67086ee
+# Parent bff449eaa6b0059dbd6c6ac1231e5ab85537efb6
 
-diff -r 0151d8f0d1f4 devel/nss/Makefile
---- a/devel/nss/Makefile	Tue Oct 09 17:52:52 2012 -0400
-+++ b/devel/nss/Makefile	Tue Oct 09 17:52:57 2012 -0400
-@@ -55,6 +55,17 @@
+diff -r bff449eaa6b0 devel/nss/Makefile
+--- a/devel/nss/Makefile	Mon Feb 18 12:24:19 2013 -0500
++++ b/devel/nss/Makefile	Mon Feb 18 12:24:23 2013 -0500
+@@ -66,6 +66,17 @@
  	find ${WRKSRC} -type f | xargs ${CHMOD} 644
  	find ${WRKSRC} -type d | xargs ${CHMOD} 755
  

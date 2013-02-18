@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent f8a49f949fd1a6af0025e107661a0ab0d3255c9c
+# Parent d14e6a091b47f6e176c32eb33d9fcdb7325f734d
 
-diff -r f8a49f949fd1 multimedia/x264-devel/distinfo
---- a/multimedia/x264-devel/distinfo	Tue Oct 09 17:59:22 2012 -0400
-+++ b/multimedia/x264-devel/distinfo	Tue Oct 09 17:59:28 2012 -0400
+diff -r d14e6a091b47 multimedia/x264-devel/distinfo
+--- a/multimedia/x264-devel/distinfo	Mon Feb 18 12:29:56 2013 -0500
++++ b/multimedia/x264-devel/distinfo	Mon Feb 18 12:30:00 2013 -0500
 @@ -8,3 +8,4 @@
- SHA1 (patch-ac) = a1bd65058559ec1704e2b64dade9f5a84066e67a
- SHA1 (patch-ak) = 3c8d6650147ad6a0043d705464267a5d947da488
- SHA1 (patch-ba) = 074eaf75ac7b3e8019950360283e1c65dc8a8109
+ SHA1 (patch-ac) = 42aaa1f91cd87923442d23ff222e1b37ed43948b
+ SHA1 (patch-ak) = bb73c847d6f7be5cee2eee1d77060b5633e5dfc2
+ SHA1 (patch-ba) = a8f12131e23953704361fb499b568f8f233c6be6
 +SHA1 (patch-aq) = 4bd298937c9662c35212e405192f841629340638
-diff -r f8a49f949fd1 multimedia/x264-devel/patches/patch-aq
+diff -r d14e6a091b47 multimedia/x264-devel/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/multimedia/x264-devel/patches/patch-aq	Tue Oct 09 17:59:28 2012 -0400
++++ b/multimedia/x264-devel/patches/patch-aq	Mon Feb 18 12:30:00 2013 -0500
 @@ -0,0 +1,21 @@
 +diff -r 95a6fda9df62 common/cpu.c
 +--- common/cpu.c	Wed Aug 15 18:41:02 2012 +0000

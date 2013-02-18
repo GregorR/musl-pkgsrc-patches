@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 71a9bfdde697808b8aca6b8e6b6b514c03b1ec59
+# Parent 2615faeec72413ecee77341c07c2b073f263ad4d
 
-diff -r 71a9bfdde697 x11/libxcb/Makefile
---- a/x11/libxcb/Makefile	Tue Oct 09 17:57:09 2012 -0400
-+++ b/x11/libxcb/Makefile	Tue Oct 09 17:57:14 2012 -0400
-@@ -72,6 +72,8 @@
+diff -r 2615faeec724 x11/libxcb/Makefile
+--- a/x11/libxcb/Makefile	Mon Feb 18 12:28:03 2013 -0500
++++ b/x11/libxcb/Makefile	Mon Feb 18 12:28:08 2013 -0500
+@@ -70,6 +70,8 @@
  SUBST_STAGE.pc=		pre-configure
  SUBST_VARS.pc=		XTHREADLIB XTHREAD_CPPFLAGS
  

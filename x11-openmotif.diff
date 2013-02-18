@@ -1,9 +1,10 @@
 # HG changeset patch
-# Parent 7d46cec7f7ad633e51365a8d2c7c7954b333d14d
-diff -r 7d46cec7f7ad -r 0e0bb4bda941 x11/openmotif/Makefile
---- a/x11/openmotif/Makefile	Thu Nov 22 02:01:46 2012 -0500
-+++ b/x11/openmotif/Makefile	Thu Nov 22 02:16:59 2012 -0500
-@@ -38,6 +38,9 @@
+# Parent f8e0d97ac52bb9cc341d0284e3b192904247377c
+
+diff -r f8e0d97ac52b x11/openmotif/Makefile
+--- a/x11/openmotif/Makefile	Mon Feb 18 12:30:44 2013 -0500
++++ b/x11/openmotif/Makefile	Mon Feb 18 12:30:49 2013 -0500
+@@ -37,6 +37,9 @@
  
  CONFLICTS+=		lesstif-[0-9]*
  

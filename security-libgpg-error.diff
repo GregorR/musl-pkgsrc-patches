@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 3ed3ba0ba8dff88675d1dd3bca3d4f1d2c3061b1
+# Parent d49f0b7d180b68c771d7fc4e6caa01f91b1be022
 
-diff -r 3ed3ba0ba8df security/libgpg-error/PLIST
---- a/security/libgpg-error/PLIST	Tue Oct 09 17:55:20 2012 -0400
-+++ b/security/libgpg-error/PLIST	Tue Oct 09 17:55:25 2012 -0400
+diff -r d49f0b7d180b security/libgpg-error/PLIST
+--- a/security/libgpg-error/PLIST	Mon Feb 18 12:26:28 2013 -0500
++++ b/security/libgpg-error/PLIST	Mon Feb 18 12:26:33 2013 -0500
 @@ -8,13 +8,3 @@
  share/common-lisp/source/gpg-error/gpg-error-package.lisp
  share/common-lisp/source/gpg-error/gpg-error.asd

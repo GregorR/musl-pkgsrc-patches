@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent f6ed6eccf352f0331bcba75429a83a42240add48
+# Parent 8a283590c7d2c301260a8e475450b9bc0ed4bd9b
 
-diff -r f6ed6eccf352 net/tightvnc/Makefile
---- a/net/tightvnc/Makefile	Tue Oct 09 17:54:39 2012 -0400
-+++ b/net/tightvnc/Makefile	Tue Oct 09 17:54:44 2012 -0400
-@@ -28,6 +28,7 @@
+diff -r 8a283590c7d2 net/tightvnc/Makefile
+--- a/net/tightvnc/Makefile	Mon Feb 18 12:25:53 2013 -0500
++++ b/net/tightvnc/Makefile	Mon Feb 18 12:25:57 2013 -0500
+@@ -27,6 +27,7 @@
  .if !empty(MACHINE_PLATFORM:MNetBSD-*-x86_64)
  _WRAP_EXTRA_ARGS.CC+=	-DDDXTIME -D_XSERVER64 -DGCCUSESGAS
  .endif
@@ -12,7 +12,7 @@ diff -r f6ed6eccf352 net/tightvnc/Makefile
  
  .if ${X11_TYPE} == "modular"
  DEPENDS+=		rgb>=1.0.1:../../x11/rgb
-@@ -56,6 +57,11 @@
+@@ -55,6 +56,11 @@
  
  INSTALLATION_DIRS=	bin ${PKGMANDIR}/man1 share/examples/tightvnc
  

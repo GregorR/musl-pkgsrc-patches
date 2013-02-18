@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent ca9bd86fc847c49a12c15a1287e8364ff1cbad01
+# Parent b1eecfd6079c02f0aed1b4b8d0f78d153d90174c
 
-diff -r ca9bd86fc847 chat/irssi/Makefile
---- a/chat/irssi/Makefile	Tue Oct 09 17:51:38 2012 -0400
-+++ b/chat/irssi/Makefile	Tue Oct 09 17:51:43 2012 -0400
-@@ -20,9 +20,9 @@
+diff -r b1eecfd6079c chat/irssi/Makefile
+--- a/chat/irssi/Makefile	Mon Feb 18 12:23:17 2013 -0500
++++ b/chat/irssi/Makefile	Mon Feb 18 12:23:22 2013 -0500
+@@ -18,9 +18,9 @@
  USE_LIBTOOL=		yes
  USE_TOOLS+=		pkg-config
  

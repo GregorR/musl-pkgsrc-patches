@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 1f1b615391a24fa679dea63986c32f5ad21eb016
+# Parent 78ad6a1d3ec80f7428a3fed2e074b1057f57b6eb
 
-diff -r 1f1b615391a2 devel/xulrunner/Makefile
---- a/devel/xulrunner/Makefile	Tue Oct 09 17:58:41 2012 -0400
-+++ b/devel/xulrunner/Makefile	Tue Oct 09 17:58:46 2012 -0400
-@@ -40,6 +40,9 @@
+diff -r 78ad6a1d3ec8 devel/xulrunner/Makefile
+--- a/devel/xulrunner/Makefile	Mon Feb 18 12:29:24 2013 -0500
++++ b/devel/xulrunner/Makefile	Mon Feb 18 12:29:28 2013 -0500
+@@ -39,6 +39,9 @@
  PLIST.sps=	yes
  .endif
  

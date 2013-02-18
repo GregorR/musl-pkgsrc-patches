@@ -1,18 +1,18 @@
 # HG changeset patch
-# Parent a4f6c733c3ca1f09eddc8393eddb50da7bd8d109
+# Parent 81bbac1df63af2dee0c35c22e49c9a8bdc530e32
 
-diff -r a4f6c733c3ca devel/m4/distinfo
---- a/devel/m4/distinfo	Tue Oct 09 17:52:33 2012 -0400
-+++ b/devel/m4/distinfo	Tue Oct 09 17:52:39 2012 -0400
+diff -r 81bbac1df63a devel/m4/distinfo
+--- a/devel/m4/distinfo	Mon Feb 18 12:24:04 2013 -0500
++++ b/devel/m4/distinfo	Mon Feb 18 12:24:08 2013 -0500
 @@ -6,4 +6,5 @@
  SHA1 (patch-aa) = ef316620b49f78f46e9dea47032b0141814c1f43
  SHA1 (patch-ab) = b29840365e983623bce64e84ceab3504b8270b32
  SHA1 (patch-ac) = 7bd9164c659727a906ef54a2f1027e9fd19315ba
 +SHA1 (patch-aq) = 361e3294fe76fd67087d4fb212fd16c79462a953
  SHA1 (patch-lib_verror.h) = 4c50ab0bc90a6324845e145bbe140836179ca8c9
-diff -r a4f6c733c3ca devel/m4/patches/patch-aq
+diff -r 81bbac1df63a devel/m4/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/m4/patches/patch-aq	Tue Oct 09 17:52:39 2012 -0400
++++ b/devel/m4/patches/patch-aq	Mon Feb 18 12:24:08 2013 -0500
 @@ -0,0 +1,10 @@
 +--- lib/freadahead.c
 ++++ lib/freadahead.c

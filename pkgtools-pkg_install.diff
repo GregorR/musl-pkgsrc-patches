@@ -1,45 +1,45 @@
 # HG changeset patch
-# Parent 174cd7a02853076ec83969f4725eb247f1db844f
+# Parent 11a1bb03d3598b09676154bd4b2202df8b868c8f
 
-diff -r 174cd7a02853 pkgtools/pkg_install/files/add/Makefile.in
---- a/pkgtools/pkg_install/files/add/Makefile.in	Tue Oct 09 17:55:08 2012 -0400
-+++ b/pkgtools/pkg_install/files/add/Makefile.in	Tue Oct 09 17:55:13 2012 -0400
+diff -r 11a1bb03d359 pkgtools/pkg_install/files/add/Makefile.in
+--- a/pkgtools/pkg_install/files/add/Makefile.in	Mon Feb 18 12:26:18 2013 -0500
++++ b/pkgtools/pkg_install/files/add/Makefile.in	Mon Feb 18 12:26:22 2013 -0500
 @@ -22,7 +22,7 @@
  
  LIBS=		-linstall -lfetch
  .if !empty(SSL_SUPPORT)
--LIBS+=		-lcrypto
-+LIBS+=		-lcrypto -lz
+-LIBS+=		-lssl -lcrypto
++LIBS+=		-lssl -lcrypto -lz
  .endif
  LIBS+=		@LIBS@
  
-diff -r 174cd7a02853 pkgtools/pkg_install/files/admin/Makefile.in
---- a/pkgtools/pkg_install/files/admin/Makefile.in	Tue Oct 09 17:55:08 2012 -0400
-+++ b/pkgtools/pkg_install/files/admin/Makefile.in	Tue Oct 09 17:55:13 2012 -0400
+diff -r 11a1bb03d359 pkgtools/pkg_install/files/admin/Makefile.in
+--- a/pkgtools/pkg_install/files/admin/Makefile.in	Mon Feb 18 12:26:18 2013 -0500
++++ b/pkgtools/pkg_install/files/admin/Makefile.in	Mon Feb 18 12:26:22 2013 -0500
 @@ -30,7 +30,7 @@
  .if empty(BOOTSTRAP)
  LIBS=		-linstall -lfetch
  .if !empty(SSL_SUPPORT)
--LIBS+=		-lcrypto
-+LIBS+=		-lcrypto -lz
+-LIBS+=		-lssl -lcrypto
++LIBS+=		-lssl -lcrypto -lz
  CFLAGS+=	-DHAVE_SSL
  .endif
  LIBS+=		@LIBS@
-diff -r 174cd7a02853 pkgtools/pkg_install/files/info/Makefile.in
---- a/pkgtools/pkg_install/files/info/Makefile.in	Tue Oct 09 17:55:08 2012 -0400
-+++ b/pkgtools/pkg_install/files/info/Makefile.in	Tue Oct 09 17:55:13 2012 -0400
+diff -r 11a1bb03d359 pkgtools/pkg_install/files/info/Makefile.in
+--- a/pkgtools/pkg_install/files/info/Makefile.in	Mon Feb 18 12:26:18 2013 -0500
++++ b/pkgtools/pkg_install/files/info/Makefile.in	Mon Feb 18 12:26:22 2013 -0500
 @@ -19,7 +19,7 @@
  .if empty(BOOTSTRAP)
  LIBS=		-linstall -lfetch @LIBS@
  .if !empty(SSL_SUPPORT)
--LIBS+=		-lcrypto
-+LIBS+=		-lcrypto -lz
+-LIBS+=		-lssl -lcrypto
++LIBS+=		-lssl -lcrypto -lz
  .endif
  CPPFLAGS=	@CPPFLAGS@ -I. -I$(srcdir) -I../lib
  .else
-diff -r 174cd7a02853 pkgtools/pkg_install/files/lib/dewey.c
---- a/pkgtools/pkg_install/files/lib/dewey.c	Tue Oct 09 17:55:08 2012 -0400
-+++ b/pkgtools/pkg_install/files/lib/dewey.c	Tue Oct 09 17:55:13 2012 -0400
+diff -r 11a1bb03d359 pkgtools/pkg_install/files/lib/dewey.c
+--- a/pkgtools/pkg_install/files/lib/dewey.c	Mon Feb 18 12:26:18 2013 -0500
++++ b/pkgtools/pkg_install/files/lib/dewey.c	Mon Feb 18 12:26:22 2013 -0500
 @@ -39,6 +39,7 @@
  #if HAVE_STDLIB_H
  #include <stdlib.h>

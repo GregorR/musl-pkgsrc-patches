@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent d6cf5ae8fac0ce9c95dac771503480aea48c1044
+# Parent 1f35adb2e51e4b156c5871276ea54a3df919978f
 
-diff -r d6cf5ae8fac0 net/libfetch/files/ftp.c
---- a/net/libfetch/files/ftp.c	Tue Oct 09 17:54:33 2012 -0400
-+++ b/net/libfetch/files/ftp.c	Tue Oct 09 17:54:39 2012 -0400
+diff -r 1f35adb2e51e net/libfetch/files/ftp.c
+--- a/net/libfetch/files/ftp.c	Mon Feb 18 12:25:47 2013 -0500
++++ b/net/libfetch/files/ftp.c	Mon Feb 18 12:25:52 2013 -0500
 @@ -59,8 +59,10 @@
  
  #ifdef __linux__
@@ -15,9 +15,9 @@ diff -r d6cf5ae8fac0 net/libfetch/files/ftp.c
  
  #if HAVE_CONFIG_H
  #include "config.h"
-diff -r d6cf5ae8fac0 net/libfetch/files/http.c
---- a/net/libfetch/files/http.c	Tue Oct 09 17:54:33 2012 -0400
-+++ b/net/libfetch/files/http.c	Tue Oct 09 17:54:39 2012 -0400
+diff -r 1f35adb2e51e net/libfetch/files/http.c
+--- a/net/libfetch/files/http.c	Mon Feb 18 12:25:47 2013 -0500
++++ b/net/libfetch/files/http.c	Mon Feb 18 12:25:52 2013 -0500
 @@ -65,8 +65,10 @@
  
  #if defined(__linux__) || defined(__MINT__)

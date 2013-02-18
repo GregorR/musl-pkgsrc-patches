@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent ef0ec8246eaa5f86f7f45afda67c0e478bbd1f40
+# Parent 421d4fcb2ee0d0e0f7bfc30ff79e2cc59e27ab66
 
-diff -r ef0ec8246eaa textproc/xmlrpc-c/Makefile
---- a/textproc/xmlrpc-c/Makefile	Tue Oct 09 17:56:27 2012 -0400
-+++ b/textproc/xmlrpc-c/Makefile	Tue Oct 09 17:56:33 2012 -0400
-@@ -40,5 +40,7 @@
+diff -r 421d4fcb2ee0 textproc/xmlrpc-c/Makefile
+--- a/textproc/xmlrpc-c/Makefile	Mon Feb 18 12:27:26 2013 -0500
++++ b/textproc/xmlrpc-c/Makefile	Mon Feb 18 12:27:31 2013 -0500
+@@ -39,5 +39,7 @@
  
  .include "../../www/curl/buildlink3.mk"
  .include "../../www/libwww/buildlink3.mk"
@@ -12,17 +12,17 @@ diff -r ef0ec8246eaa textproc/xmlrpc-c/Makefile
 +.include "../../devel/gettext-lib/buildlink3.mk"
  .include "../../mk/pthread.buildlink3.mk"
  .include "../../mk/bsd.pkg.mk"
-diff -r ef0ec8246eaa textproc/xmlrpc-c/distinfo
---- a/textproc/xmlrpc-c/distinfo	Tue Oct 09 17:56:27 2012 -0400
-+++ b/textproc/xmlrpc-c/distinfo	Tue Oct 09 17:56:33 2012 -0400
+diff -r 421d4fcb2ee0 textproc/xmlrpc-c/distinfo
+--- a/textproc/xmlrpc-c/distinfo	Mon Feb 18 12:27:26 2013 -0500
++++ b/textproc/xmlrpc-c/distinfo	Mon Feb 18 12:27:31 2013 -0500
 @@ -15,3 +15,4 @@
  SHA1 (patch-lib_curl__transport_curlmulti.c) = 1cea4c43b1ed3dcf73827afc14d7bb9267371121
  SHA1 (patch-lib_curl__transport_curltransaction.c) = 1dcf46c0dd1dd8e7fdfbb6c81e00b326f6d0b1f9
  SHA1 (patch-lib_curl__transport_xmlrpc__curl__transport.c) = ea132ebb46ff0ce9893d64e9c9205d5a155220ef
 +SHA1 (patch-aq) = 434c86fea4f13a8d0ba92e82b11bf3476a3017da
-diff -r ef0ec8246eaa textproc/xmlrpc-c/patches/patch-aq
+diff -r 421d4fcb2ee0 textproc/xmlrpc-c/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/textproc/xmlrpc-c/patches/patch-aq	Tue Oct 09 17:56:33 2012 -0400
++++ b/textproc/xmlrpc-c/patches/patch-aq	Mon Feb 18 12:27:31 2013 -0500
 @@ -0,0 +1,48 @@
 +diff -r 89442310b346 examples/interrupted_client.c
 +--- examples/interrupted_client.c	Mon Jul 02 16:31:43 2012 +0000

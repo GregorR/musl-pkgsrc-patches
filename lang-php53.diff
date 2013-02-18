@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent eea730e00c6755e65e54a83d30cb412aa2df68e6
+# Parent d8f49598f472d1e45825769c5a540caa2bfec97f
 
-diff -r eea730e00c67 lang/php53/Makefile
---- a/lang/php53/Makefile	Tue Oct 09 17:59:47 2012 -0400
-+++ b/lang/php53/Makefile	Tue Oct 09 17:59:52 2012 -0400
-@@ -55,5 +55,8 @@
+diff -r d8f49598f472 lang/php53/Makefile
+--- a/lang/php53/Makefile	Mon Feb 18 12:30:18 2013 -0500
++++ b/lang/php53/Makefile	Mon Feb 18 12:30:22 2013 -0500
+@@ -54,5 +54,8 @@
  	cd ${WRKSRC}; ${INSTALL_DATA} php.ini-development php.ini-production \
  		${DESTDIR}${EGDIR}
  	${INSTALL_DATA} ${WRKSRC}/php.gif ${DESTDIR}${PREFIX}/share/php

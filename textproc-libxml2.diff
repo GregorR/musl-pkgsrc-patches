@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 149912ee73da55ee47a187c6f3f5b2e4a1ffc0f5
+# Parent 6dc177ad16457f13205721044208b945c0856d2d
 
-diff -r 149912ee73da textproc/libxml2/Makefile
---- a/textproc/libxml2/Makefile	Tue Oct 09 17:58:28 2012 -0400
-+++ b/textproc/libxml2/Makefile	Tue Oct 09 17:58:34 2012 -0400
+diff -r 6dc177ad1645 textproc/libxml2/Makefile
+--- a/textproc/libxml2/Makefile	Mon Feb 18 12:29:13 2013 -0500
++++ b/textproc/libxml2/Makefile	Mon Feb 18 12:29:18 2013 -0500
 @@ -23,6 +23,9 @@
  
  PKGCONFIG_OVERRIDE=	libxml-2.0.pc.in

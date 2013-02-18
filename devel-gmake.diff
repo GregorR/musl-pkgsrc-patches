@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 0e69533ff3b7f37d98a124e69fc743e77aa1369c
+# Parent 5a5fa1f2958b178ec26f84e8aca5cbe1afbc3352
 
-diff -r 0e69533ff3b7 devel/gmake/Makefile
---- a/devel/gmake/Makefile	Tue Oct 09 17:52:09 2012 -0400
-+++ b/devel/gmake/Makefile	Tue Oct 09 17:52:14 2012 -0400
-@@ -39,6 +39,8 @@
+diff -r 5a5fa1f2958b devel/gmake/Makefile
+--- a/devel/gmake/Makefile	Mon Feb 18 12:23:43 2013 -0500
++++ b/devel/gmake/Makefile	Mon Feb 18 12:23:48 2013 -0500
+@@ -38,6 +38,8 @@
  CONFIGURE_ARGS+=	ac_cv_func_strndup=no
  .endif
  

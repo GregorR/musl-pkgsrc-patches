@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent ce7d7ec7f7f382f8e524ebf68d872aed2448abe6
+# Parent 3d365a76a0a351c1434212a5fb1f4a71b9834f3d
 
-diff -r ce7d7ec7f7f3 pkgtools/libnbcompat/files/lchflags.c
---- a/pkgtools/libnbcompat/files/lchflags.c	Tue Oct 09 17:54:56 2012 -0400
-+++ b/pkgtools/libnbcompat/files/lchflags.c	Tue Oct 09 17:55:02 2012 -0400
+diff -r 3d365a76a0a3 pkgtools/libnbcompat/files/lchflags.c
+--- a/pkgtools/libnbcompat/files/lchflags.c	Mon Feb 18 12:26:08 2013 -0500
++++ b/pkgtools/libnbcompat/files/lchflags.c	Mon Feb 18 12:26:12 2013 -0500
 @@ -39,6 +39,7 @@
  int
  lchflags(const char *path, unsigned long flags)
@@ -19,9 +19,9 @@ diff -r ce7d7ec7f7f3 pkgtools/libnbcompat/files/lchflags.c
 +#endif
 +	return -1;
  }
-diff -r ce7d7ec7f7f3 pkgtools/libnbcompat/files/unvis.c
---- a/pkgtools/libnbcompat/files/unvis.c	Tue Oct 09 17:54:56 2012 -0400
-+++ b/pkgtools/libnbcompat/files/unvis.c	Tue Oct 09 17:55:02 2012 -0400
+diff -r 3d365a76a0a3 pkgtools/libnbcompat/files/unvis.c
+--- a/pkgtools/libnbcompat/files/unvis.c	Mon Feb 18 12:26:08 2013 -0500
++++ b/pkgtools/libnbcompat/files/unvis.c	Mon Feb 18 12:26:12 2013 -0500
 @@ -83,6 +83,8 @@
  #define	isoctal(c)	(((unsigned char)(c)) >= '0' && ((unsigned char)(c)) <= '7')
  #define xtod(c)		(isdigit(c) ? (c - '0') : ((tolower(c) - 'a') + 10))

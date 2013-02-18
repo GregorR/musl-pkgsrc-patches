@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent e585f3533fca60d1a8e5473b8a99615b6a051640
+# Parent 3d22f8b201de168dd208fff09f349b1998590f50
 
-diff -r e585f3533fca x11/libXfont/Makefile
---- a/x11/libXfont/Makefile	Tue Oct 09 17:56:57 2012 -0400
-+++ b/x11/libXfont/Makefile	Tue Oct 09 17:57:02 2012 -0400
-@@ -20,6 +20,7 @@
+diff -r 3d22f8b201de x11/libXfont/Makefile
+--- a/x11/libXfont/Makefile	Mon Feb 18 12:27:52 2013 -0500
++++ b/x11/libXfont/Makefile	Mon Feb 18 12:27:57 2013 -0500
+@@ -18,6 +18,7 @@
  PKGCONFIG_OVERRIDE+=	xfont.pc.in
  
  CONFIGURE_ARGS+=	--disable-devel-docs

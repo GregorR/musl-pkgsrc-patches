@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 19b2080346b438de57fe464527ddbac4d356c1ed
+# Parent df4349dbbdf333af68bef7c3d4115f8f5e2d7577
 
-diff -r 19b2080346b4 devel/glib2/Makefile
---- a/devel/glib2/Makefile	Tue Oct 09 17:58:34 2012 -0400
-+++ b/devel/glib2/Makefile	Tue Oct 09 17:58:40 2012 -0400
-@@ -56,6 +56,10 @@
+diff -r df4349dbbdf3 devel/glib2/Makefile
+--- a/devel/glib2/Makefile	Mon Feb 18 12:29:18 2013 -0500
++++ b/devel/glib2/Makefile	Mon Feb 18 12:29:23 2013 -0500
+@@ -55,6 +55,10 @@
  . endif
  .endif
  
@@ -15,17 +15,17 @@ diff -r 19b2080346b4 devel/glib2/Makefile
  .include "../../converters/libiconv/buildlink3.mk"
  .include "../../devel/gettext-lib/buildlink3.mk"
  .include "../../devel/pcre/buildlink3.mk"
-diff -r 19b2080346b4 devel/glib2/distinfo
---- a/devel/glib2/distinfo	Tue Oct 09 17:58:34 2012 -0400
-+++ b/devel/glib2/distinfo	Tue Oct 09 17:58:40 2012 -0400
-@@ -41,3 +41,4 @@
+diff -r df4349dbbdf3 devel/glib2/distinfo
+--- a/devel/glib2/distinfo	Mon Feb 18 12:29:18 2013 -0500
++++ b/devel/glib2/distinfo	Mon Feb 18 12:29:23 2013 -0500
+@@ -38,3 +38,4 @@
  SHA1 (patch-gio_gresource-tool.c) = 4eb7c9df25e9ac3e977edf3be8fb977a6fb39182
  SHA1 (patch-glib_goption.c) = 323297aa328b85493f156792b4baa0cb04fa82ad
  SHA1 (patch-glib_tests_include.c) = 95f7d34e6e03849316bbfac1541eec4582b92ffc
 +SHA1 (patch-qq) = cbf5a5d8de6eb6158b06175f086b3c6fe43c1508
-diff -r 19b2080346b4 devel/glib2/patches/patch-qq
+diff -r df4349dbbdf3 devel/glib2/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/glib2/patches/patch-qq	Tue Oct 09 17:58:40 2012 -0400
++++ b/devel/glib2/patches/patch-qq	Mon Feb 18 12:29:23 2013 -0500
 @@ -0,0 +1,12 @@
 +diff -r 1f4fd6fe5192 gio/gfile.c
 +--- gio/gfile.c	Fri Sep 28 18:09:40 2012 +0000

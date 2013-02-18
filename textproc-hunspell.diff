@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent ed3d572d75c94f9b3cc0f5649c9720ab15574a25
+# Parent e7e54b6156727d6b546f943427cde8271f5aba17
 
-diff -r ed3d572d75c9 textproc/hunspell/distinfo
---- a/textproc/hunspell/distinfo	Tue Oct 09 17:56:21 2012 -0400
-+++ b/textproc/hunspell/distinfo	Tue Oct 09 17:56:26 2012 -0400
+diff -r e7e54b615672 textproc/hunspell/distinfo
+--- a/textproc/hunspell/distinfo	Mon Feb 18 12:27:21 2013 -0500
++++ b/textproc/hunspell/distinfo	Mon Feb 18 12:27:26 2013 -0500
 @@ -6,3 +6,4 @@
  SHA1 (patch-aa) = b03a51d88bd57786f4a0ac01a3b760b4d8ba385a
  SHA1 (patch-ab) = 01ff90fc2ebf1049d791a0669ddcc3f5495729c0
  SHA1 (patch-ac) = 27cad6078b55bce7144f462ddebac9887392c93b
 +SHA1 (patch-aq) = ac8d1f4468d017c841d33ab7cb073944921f03bf
-diff -r ed3d572d75c9 textproc/hunspell/patches/patch-aq
+diff -r e7e54b615672 textproc/hunspell/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/textproc/hunspell/patches/patch-aq	Tue Oct 09 17:56:26 2012 -0400
++++ b/textproc/hunspell/patches/patch-aq	Mon Feb 18 12:27:26 2013 -0500
 @@ -0,0 +1,24 @@
 +diff -r 006c3f933ef3 src/tools/munch.c
 +--- src/tools/munch.c	Mon May 07 23:49:28 2012 +0000

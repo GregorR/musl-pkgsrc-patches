@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 09a0b42ccfa7f84be18dff842778ce049532fb93
+# Parent 2390f39a108fe116ea98ab129770ec218c692ded
 
-diff -r 09a0b42ccfa7 sysutils/xfce4-thunar/distinfo
---- a/sysutils/xfce4-thunar/distinfo	Tue Oct 09 17:56:08 2012 -0400
-+++ b/sysutils/xfce4-thunar/distinfo	Tue Oct 09 17:56:14 2012 -0400
+diff -r 2390f39a108f sysutils/xfce4-thunar/distinfo
+--- a/sysutils/xfce4-thunar/distinfo	Mon Feb 18 12:27:10 2013 -0500
++++ b/sysutils/xfce4-thunar/distinfo	Mon Feb 18 12:27:15 2013 -0500
 @@ -7,3 +7,4 @@
  SHA1 (patch-ab) = e5c3f1e853bf59f69047c7160a3e29df54298879
  SHA1 (patch-ac) = 745f240ff44b0b21eb727b0a9887c9d8f1ee8a47
  SHA1 (patch-thunar-vfs_thunar-vfs-io-jobs.c) = 8529460dea3353b7b8bb034c65c95e4561f61aab
 +SHA1 (patch-aq) = dd802620cec6c8d76a4ae09e5a155f2b01fd3558
-diff -r 09a0b42ccfa7 sysutils/xfce4-thunar/patches/patch-aq
+diff -r 2390f39a108f sysutils/xfce4-thunar/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/xfce4-thunar/patches/patch-aq	Tue Oct 09 17:56:14 2012 -0400
++++ b/sysutils/xfce4-thunar/patches/patch-aq	Mon Feb 18 12:27:15 2013 -0500
 @@ -0,0 +1,11 @@
 +diff -r f88137634fb9 tdb/tdb.h
 +--- tdb/tdb.h	Sun May 06 09:10:30 2012 +0000

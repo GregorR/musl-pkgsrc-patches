@@ -1,16 +1,17 @@
 # HG changeset patch
-# Parent b5f6c50ff47afc68ec80110bd4f94f59141fca90
-diff -r b5f6c50ff47a -r 1f42353550e9 time/xfce4-orage/distinfo
---- a/time/xfce4-orage/distinfo	Wed Nov 21 02:57:55 2012 -0500
-+++ b/time/xfce4-orage/distinfo	Wed Nov 21 23:34:03 2012 -0500
+# Parent 290386938a71007a639ac7c36e63f8d1ddd6faa9
+
+diff -r 290386938a71 time/xfce4-orage/distinfo
+--- a/time/xfce4-orage/distinfo	Mon Feb 18 12:30:39 2013 -0500
++++ b/time/xfce4-orage/distinfo	Mon Feb 18 12:30:44 2013 -0500
 @@ -4,3 +4,4 @@
  RMD160 (orage-4.6.1.tar.bz2) = 7724992e2e177487c71597a15d7faf7f865bb56b
  Size (orage-4.6.1.tar.bz2) = 1937593 bytes
  SHA1 (patch-aa) = 443913928b351028d34bdd07cb6cf60006f60e25
 +SHA1 (patch-qq) = 8aa43d052f8bf25d6209411c05cf916ec88b3aca
-diff -r b5f6c50ff47a -r 1f42353550e9 time/xfce4-orage/patches/patch-qq
+diff -r 290386938a71 time/xfce4-orage/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/time/xfce4-orage/patches/patch-qq	Wed Nov 21 23:34:03 2012 -0500
++++ b/time/xfce4-orage/patches/patch-qq	Mon Feb 18 12:30:44 2013 -0500
 @@ -0,0 +1,24 @@
 +diff -r aabc0504a90f src/appointment.c
 +--- src/appointment.c	Thu Nov 22 04:13:32 2012 +0000

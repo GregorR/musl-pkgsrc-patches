@@ -1,9 +1,10 @@
 # HG changeset patch
-# Parent 39f2a0fa458e469d68c18f6a48c0ab0d7deca96e
-diff -r 39f2a0fa458e -r b5f6c50ff47a print/cups/Makefile
---- a/print/cups/Makefile	Wed Nov 21 01:56:57 2012 -0500
-+++ b/print/cups/Makefile	Wed Nov 21 02:57:55 2012 -0500
-@@ -72,8 +72,12 @@
+# Parent 1971655a81e224140d7632098aa4f3c916632572
+
+diff -r 1971655a81e2 print/cups/Makefile
+--- a/print/cups/Makefile	Mon Feb 18 12:30:34 2013 -0500
++++ b/print/cups/Makefile	Mon Feb 18 12:30:38 2013 -0500
+@@ -71,8 +71,12 @@
  
  .if ${OPSYS} == "SunOS"
  CONFIGURE_ENV+=		LIBS_SSP=-lssp_nonshared

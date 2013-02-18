@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent fcb8343188a5f750f0a133db38d9b4ed686fe78f
+# Parent b62c4cc8326084e47a125a7af1ddb93b1b40d683
 
-diff -r fcb8343188a5 Makefile
---- a/Makefile	Tue Oct 09 17:46:50 2012 -0400
-+++ b/Makefile	Tue Oct 09 17:51:24 2012 -0400
+diff -r b62c4cc83260 Makefile
+--- a/Makefile	Mon Feb 18 12:18:56 2013 -0500
++++ b/Makefile	Mon Feb 18 12:23:06 2013 -0500
 @@ -91,6 +91,7 @@
  SUBDIR+=	wm
  SUBDIR+=	www

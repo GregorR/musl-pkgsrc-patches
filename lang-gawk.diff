@@ -1,16 +1,16 @@
 # HG changeset patch
-# Parent ab20031e6af8a77b47ac5baad57e07a2d4d47a12
+# Parent 06f31780c699452c1ba8daad74fb2e243bd0d253
 
-diff -r ab20031e6af8 lang/gawk/Makefile
---- a/lang/gawk/Makefile	Tue Oct 09 17:59:17 2012 -0400
-+++ b/lang/gawk/Makefile	Tue Oct 09 17:59:22 2012 -0400
-@@ -38,6 +38,9 @@
+diff -r 06f31780c699 lang/gawk/Makefile
+--- a/lang/gawk/Makefile	Mon Feb 18 12:29:50 2013 -0500
++++ b/lang/gawk/Makefile	Mon Feb 18 12:29:55 2013 -0500
+@@ -37,6 +37,9 @@
  
- INSTALLATION_DIRS+=	gnu/bin gnu/man/man1
+ INSTALLATION_DIRS+=	${PKGGNUDIR}bin ${PKGGNUDIR}${PKGMANDIR}/man1
  
 +# [Gregor] Poisoning this build since it breaks things
 +CONFIGURE_ARGS+=	--help
 +
  post-install:
- 	${LN} -s ../../bin/gawk ${DESTDIR}${PREFIX}/gnu/bin/awk
- 	${LN} -s ../../../man/man1/gawk.1 ${DESTDIR}${PREFIX}/gnu/man/man1/awk.1
+ 	${LN} -s ${PREFIX}/bin/gawk ${DESTDIR}${PREFIX}/${PKGGNUDIR}bin/awk
+ 	${LN} -s ${PREFIX}/${PKGMANDIR}/man1/gawk.1 ${DESTDIR}${PREFIX}/${PKGGNUDIR}${PKGMANDIR}/man1/awk.1

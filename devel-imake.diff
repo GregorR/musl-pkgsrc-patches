@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent f71fbdd123a4718d3d1047eaf4a20dc76ad24091
+# Parent 7556b0dd00180684436eb843e2521a6a8f3e0424
 
-diff -r f71fbdd123a4 devel/imake/Makefile
---- a/devel/imake/Makefile	Tue Oct 09 17:52:15 2012 -0400
-+++ b/devel/imake/Makefile	Tue Oct 09 17:52:20 2012 -0400
-@@ -43,6 +43,9 @@
+diff -r 7556b0dd0018 devel/imake/Makefile
+--- a/devel/imake/Makefile	Mon Feb 18 12:23:48 2013 -0500
++++ b/devel/imake/Makefile	Mon Feb 18 12:23:52 2013 -0500
+@@ -41,6 +41,9 @@
  
  .include "../../meta-pkgs/modular-xorg/hacks.mk"
  

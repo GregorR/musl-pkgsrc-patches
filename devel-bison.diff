@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent f13c9a0df242885807fe605270afbe3327f22340
+# Parent f49ad3be0f45bdc998d76b1e49eb800835105f51
 
-diff -r f13c9a0df242 devel/bison/Makefile
---- a/devel/bison/Makefile	Tue Oct 09 17:51:50 2012 -0400
-+++ b/devel/bison/Makefile	Tue Oct 09 17:51:55 2012 -0400
-@@ -26,6 +26,7 @@
+diff -r f49ad3be0f45 devel/bison/Makefile
+--- a/devel/bison/Makefile	Mon Feb 18 12:23:28 2013 -0500
++++ b/devel/bison/Makefile	Mon Feb 18 12:23:32 2013 -0500
+@@ -25,6 +25,7 @@
  # Avoid rebuilding manpage
  pre-build:
  	${TOUCH} ${WRKSRC}/doc/bison.1

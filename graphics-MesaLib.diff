@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 11483e6494c8fbd9cbe29b65cadb062001f08a7f
+# Parent 946d3847f2ce037ce4c18af9cf87dfca5bd2303e
 
-diff -r 11483e6494c8 graphics/MesaLib/Makefile
---- a/graphics/MesaLib/Makefile	Tue Oct 09 17:53:16 2012 -0400
-+++ b/graphics/MesaLib/Makefile	Tue Oct 09 17:53:21 2012 -0400
-@@ -72,6 +72,7 @@
+diff -r 946d3847f2ce graphics/MesaLib/Makefile
+--- a/graphics/MesaLib/Makefile	Mon Feb 18 12:24:40 2013 -0500
++++ b/graphics/MesaLib/Makefile	Mon Feb 18 12:24:44 2013 -0500
+@@ -70,6 +70,7 @@
  
  pre-build:
  	cd ${WRKSRC} && ${RM} -fr src/glu src/glut progs

@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 5d8f3490a566c51f8d823ee31deaa738171f850a
+# Parent b9dff25c6dad1d93f649662930a6af0b9e4cce96
 
-diff -r 5d8f3490a566 graphics/cairo/Makefile
---- a/graphics/cairo/Makefile	Tue Oct 09 17:53:28 2012 -0400
-+++ b/graphics/cairo/Makefile	Tue Oct 09 17:53:33 2012 -0400
-@@ -38,6 +38,8 @@
+diff -r b9dff25c6dad graphics/cairo/Makefile
+--- a/graphics/cairo/Makefile	Mon Feb 18 12:24:50 2013 -0500
++++ b/graphics/cairo/Makefile	Mon Feb 18 12:24:55 2013 -0500
+@@ -35,6 +35,8 @@
  # For snprintf() and ctime_r()
  CPPFLAGS.SunOS+=		-D__EXTENSIONS__ -D_POSIX_PTHREAD_SEMANTICS
  
