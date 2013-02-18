@@ -1,15 +1,17 @@
 # HG changeset patch
-# Parent 1ec0b7cad87f854b5dfd70088c3b2e8b6c1dc7a6
+# Parent 83840e80ba80707200990148b50abb1e3d616080
 
-diff -r 1ec0b7cad87f x11/pixman/Makefile
---- a/x11/pixman/Makefile	Mon Feb 18 12:28:13 2013 -0500
-+++ b/x11/pixman/Makefile	Mon Feb 18 12:28:18 2013 -0500
-@@ -17,5 +17,8 @@
+diff -r 83840e80ba80 x11/pixman/Makefile
+--- a/x11/pixman/Makefile	Mon Feb 18 13:26:49 2013 -0500
++++ b/x11/pixman/Makefile	Mon Feb 18 13:27:44 2013 -0500
+@@ -17,5 +17,10 @@
  
  PKGCONFIG_OVERRIDE+=	pixman-1.pc.in
  PKGCONFIG_OVERRIDE+=	pixman-1-uninstalled.pc.in
 +	
 +pre-configure:
-+	sed -i 's/support_for__thread=yes/support_for__thread=no/' ${WRKSRC}/configure	
++	sed 's/support_for__thread=yes/support_for__thread=no/' ${WRKSRC}/configure > ${WRKSRC}/configure.mod
++	mv ${WRKSRC}/configure.mod ${WRKSRC}/configure
++	chmod a+x ${WRKSRC}/configure
  
  .include "../../mk/bsd.pkg.mk"
