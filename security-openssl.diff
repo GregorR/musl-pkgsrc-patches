@@ -1,9 +1,8 @@
 # HG changeset patch
-# Parent f5fa49e7a10ede7e6c53fbd2484b34ebe681b01d
-
-diff -r f5fa49e7a10e security/openssl/Makefile
---- a/security/openssl/Makefile	Mon Feb 18 13:24:34 2013 -0500
-+++ b/security/openssl/Makefile	Mon Feb 18 13:26:39 2013 -0500
+# Parent 81f6148117371c6bd0dc3f4341e620ae81088f10
+diff -r 81f614811737 -r 1c70df40216b security/openssl/Makefile
+--- a/security/openssl/Makefile	Tue Feb 19 00:24:05 2013 -0500
++++ b/security/openssl/Makefile	Tue Feb 19 00:25:38 2013 -0500
 @@ -64,6 +64,7 @@
  # back to ./config's autodetection if not.
  .  if defined(OPENSSL_MACHINE_ARCH) && !empty(OPENSSL_MACHINE_ARCH)
@@ -24,7 +23,7 @@ diff -r f5fa49e7a10e security/openssl/Makefile
  pre-configure:
  	cd ${WRKSRC} && ${PERL5} util/perlpath.pl ${PERL5}
 -
-+	sed '/^"linux-x86_64/s/-DTERMIO/-DTERMIOS/i ; /^"linux-elf/s/-DTERMIO/-DTERMIOS/' ${WRKSRC}/Configure > ${WRKSRC}/Configure.mod
++	sed 's/-DTERMIO/-DTERMIOS/g' ${WRKSRC}/Configure > ${WRKSRC}/Configure.mod
 +	mv ${WRKSRC}/Configure.mod ${WRKSRC}/Configure
 +	chmod a+x ${WRKSRC}/Configure
 +	sed 's/defined(linux)/0/' ${WRKSRC}/crypto/ui/ui_openssl.c > ${WRKSRC}/crypto/ui/ui_openssl.c.mod

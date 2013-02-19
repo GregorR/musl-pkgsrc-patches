@@ -1,0 +1,65 @@
+# HG changeset patch
+# Parent d0058dc89a33dec8f83f1b8878b831e52d2baa8f
+diff -r d0058dc89a33 -r 26e644b54932 net/mDNSResponder/distinfo
+--- a/net/mDNSResponder/distinfo	Tue Feb 19 00:24:09 2013 -0500
++++ b/net/mDNSResponder/distinfo	Tue Feb 19 00:24:34 2013 -0500
+@@ -10,3 +10,4 @@
+ SHA1 (patch-ad) = 612390897ad2f395ceb7394b644f977c4858d6cc
+ SHA1 (patch-ae) = 551ddcaa508a2e77361a3b683f9de841ca4957b4
+ SHA1 (patch-af) = bce933daa008f081b72c5d509e84704be13360dc
++SHA1 (patch-qq) = 8afa47acb539c5ace46182156c61812ea8ab216e
+diff -r d0058dc89a33 -r 26e644b54932 net/mDNSResponder/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/net/mDNSResponder/patches/patch-qq	Tue Feb 19 00:24:34 2013 -0500
+@@ -0,0 +1,51 @@
++diff -r 807537ed80b4 mDNSPosix/nss_mdns.c
++--- mDNSPosix/nss_mdns.c	Tue Feb 19 05:06:36 2013 +0000
+++++ mDNSPosix/nss_mdns.c	Tue Feb 19 05:14:07 2013 +0000
++@@ -379,14 +379,22 @@
++ #define ENTNAME  hostent
++ #define DATABASE "hosts"
++ 
++-#include <nss.h>
+++//#include <nss.h>
++ 	// For nss_status
++ #include <netdb.h>
++ 	// For hostent
++ #include <sys/types.h>
++ 	// For size_t
++ 
++-typedef enum nss_status nss_status;
+++#define NSS_STATUS_SUCCESS 0
+++#define NSS_STATUS_NOTFOUND 1
+++#define NSS_STATUS_UNAVAIL 2
+++#define NSS_STATUS_TRYAGAIN 3
+++#define NSS_STATUS_RETURN 4
+++#define NETDB_INTERNAL NULL
+++
+++//typedef enum nss_status nss_status;
+++typedef int nss_status;
++ typedef struct hostent hostent;
++ 
++ /*
++diff -r 807537ed80b4 mDNSShared/CommonServices.h
++--- mDNSShared/CommonServices.h	Tue Feb 19 05:06:36 2013 +0000
+++++ mDNSShared/CommonServices.h	Tue Feb 19 05:14:07 2013 +0000
++@@ -211,6 +211,7 @@
++ 	
++ 	#include	<stdint.h>
++ 	#include	<arpa/inet.h>
+++	#include	<sys/socket.h>
++ 	
++ #elif ( TARGET_OS_NETBSD )
++ 
++diff -r 807537ed80b4 mDNSShared/dnssd_clientstub.c
++--- mDNSShared/dnssd_clientstub.c	Tue Feb 19 05:06:36 2013 +0000
+++++ mDNSShared/dnssd_clientstub.c	Tue Feb 19 05:14:07 2013 +0000
++@@ -71,7 +71,7 @@
++ 		}
++ #else
++ 
++-	#include <sys/fcntl.h>		// For O_RDWR etc.
+++	#include <fcntl.h>		// For O_RDWR etc.
++ 	#include <sys/time.h>
++ 	#include <sys/socket.h>
++ 	#include <syslog.h>
