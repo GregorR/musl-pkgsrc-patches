@@ -1,24 +1,18 @@
 # HG changeset patch
 # Parent 22f1e9fcaeb77f4702c2fb2f33ef3585d10b1197
-diff -r 22f1e9fcaeb7 -r 9a8b5c0f9a2d devel/m4/Makefile
+diff -r 22f1e9fcaeb7 -r c75d74cf3ed9 devel/m4/Makefile
 --- a/devel/m4/Makefile	Tue Feb 19 00:23:20 2013 -0500
-+++ b/devel/m4/Makefile	Sun Mar 10 18:12:18 2013 -0400
-@@ -27,9 +27,11 @@
- 
- AUTO_MKDIRS=		yes
- 
-+# [Gregor] Damn it gnulib
-+CFLAGS+=	-DSLOW_BUT_NO_HACKS
-+
++++ b/devel/m4/Makefile	Tue Feb 19 00:24:00 2013 -0500
+@@ -30,6 +30,5 @@
  post-install:
  	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${DESTDIR}${PREFIX}/share/examples/m4
  	${LN} -sf ${PREFIX}/bin/gm4 ${DESTDIR}${PREFIX}/${PKGGNUDIR}bin/m4
 -	${LN} -sf ${PREFIX}/${PKGMANDIR}/man1/gm4.1 ${DESTDIR}${PREFIX}/${PKGGNUDIR}${PKGMANDIR}/man1/m4.1
  
  .include "../../mk/bsd.pkg.mk"
-diff -r 22f1e9fcaeb7 -r 9a8b5c0f9a2d devel/m4/PLIST
+diff -r 22f1e9fcaeb7 -r c75d74cf3ed9 devel/m4/PLIST
 --- a/devel/m4/PLIST	Tue Feb 19 00:23:20 2013 -0500
-+++ b/devel/m4/PLIST	Sun Mar 10 18:12:18 2013 -0400
++++ b/devel/m4/PLIST	Tue Feb 19 00:24:00 2013 -0500
 @@ -1,7 +1,6 @@
  @comment $NetBSD: PLIST,v 1.16 2012/06/02 07:51:04 cheusov Exp $
  bin/gm4
@@ -27,9 +21,9 @@ diff -r 22f1e9fcaeb7 -r 9a8b5c0f9a2d devel/m4/PLIST
  info/m4.info
  man/man1/gm4.1
  share/examples/m4/capitalize.m4
-diff -r 22f1e9fcaeb7 -r 9a8b5c0f9a2d devel/m4/distinfo
+diff -r 22f1e9fcaeb7 -r c75d74cf3ed9 devel/m4/distinfo
 --- a/devel/m4/distinfo	Tue Feb 19 00:23:20 2013 -0500
-+++ b/devel/m4/distinfo	Sun Mar 10 18:12:18 2013 -0400
++++ b/devel/m4/distinfo	Tue Feb 19 00:24:00 2013 -0500
 @@ -6,4 +6,5 @@
  SHA1 (patch-aa) = ef316620b49f78f46e9dea47032b0141814c1f43
  SHA1 (patch-ab) = b29840365e983623bce64e84ceab3504b8270b32
