@@ -92,3 +92,4 @@ misc-screen.diff
 net-mDNSResponder.diff
 security-gnutls.diff
 x11-qt4-libs.diff
+mk-gnu-config.diff
