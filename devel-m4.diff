@@ -1,18 +1,24 @@
 # HG changeset patch
-# Parent 22f1e9fcaeb77f4702c2fb2f33ef3585d10b1197
-diff -r 22f1e9fcaeb7 -r c75d74cf3ed9 devel/m4/Makefile
---- a/devel/m4/Makefile	Tue Feb 19 00:23:20 2013 -0500
-+++ b/devel/m4/Makefile	Tue Feb 19 00:24:00 2013 -0500
-@@ -30,6 +30,5 @@
+# Parent e264606aaed066f7059f32e0d559d418c4447c79
+diff -r e264606aaed0 -r 8108396a4e47 devel/m4/Makefile
+--- a/devel/m4/Makefile	Sun Mar 10 22:19:23 2013 -0400
++++ b/devel/m4/Makefile	Sun Mar 10 22:20:01 2013 -0400
+@@ -27,9 +27,11 @@
+ 
+ AUTO_MKDIRS=		yes
+ 
++# [Gregor] Damned gnulib
++CFLAGS+=		-DHAVE___FREADAHEAD
++
  post-install:
  	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${DESTDIR}${PREFIX}/share/examples/m4
  	${LN} -sf ${PREFIX}/bin/gm4 ${DESTDIR}${PREFIX}/${PKGGNUDIR}bin/m4
 -	${LN} -sf ${PREFIX}/${PKGMANDIR}/man1/gm4.1 ${DESTDIR}${PREFIX}/${PKGGNUDIR}${PKGMANDIR}/man1/m4.1
  
  .include "../../mk/bsd.pkg.mk"
-diff -r 22f1e9fcaeb7 -r c75d74cf3ed9 devel/m4/PLIST
---- a/devel/m4/PLIST	Tue Feb 19 00:23:20 2013 -0500
-+++ b/devel/m4/PLIST	Tue Feb 19 00:24:00 2013 -0500
+diff -r e264606aaed0 -r 8108396a4e47 devel/m4/PLIST
+--- a/devel/m4/PLIST	Sun Mar 10 22:19:23 2013 -0400
++++ b/devel/m4/PLIST	Sun Mar 10 22:20:01 2013 -0400
 @@ -1,7 +1,6 @@
  @comment $NetBSD: PLIST,v 1.16 2012/06/02 07:51:04 cheusov Exp $
  bin/gm4
@@ -21,12 +27,116 @@ diff -r 22f1e9fcaeb7 -r c75d74cf3ed9 devel/m4/PLIST
  info/m4.info
  man/man1/gm4.1
  share/examples/m4/capitalize.m4
-diff -r 22f1e9fcaeb7 -r c75d74cf3ed9 devel/m4/distinfo
---- a/devel/m4/distinfo	Tue Feb 19 00:23:20 2013 -0500
-+++ b/devel/m4/distinfo	Tue Feb 19 00:24:00 2013 -0500
-@@ -6,4 +6,5 @@
+diff -r e264606aaed0 -r 8108396a4e47 devel/m4/distinfo
+--- a/devel/m4/distinfo	Sun Mar 10 22:19:23 2013 -0400
++++ b/devel/m4/distinfo	Sun Mar 10 22:20:01 2013 -0400
+@@ -6,4 +6,6 @@
  SHA1 (patch-aa) = ef316620b49f78f46e9dea47032b0141814c1f43
  SHA1 (patch-ab) = b29840365e983623bce64e84ceab3504b8270b32
  SHA1 (patch-ac) = 7bd9164c659727a906ef54a2f1027e9fd19315ba
 +SHA1 (patch-aq) = 361e3294fe76fd67087d4fb212fd16c79462a953
  SHA1 (patch-lib_verror.h) = 4c50ab0bc90a6324845e145bbe140836179ca8c9
++SHA1 (patch-qq) = a8cf67c97189b723a63be6bf7adc3320d2b62895
+diff -r e264606aaed0 -r 8108396a4e47 devel/m4/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/devel/m4/patches/patch-qq	Sun Mar 10 22:20:01 2013 -0400
+@@ -0,0 +1,99 @@
++diff -r be3355cff941 lib/freadahead.c
++--- lib/freadahead.c	Mon Mar 11 02:06:12 2013 +0000
+++++ lib/freadahead.c	Mon Mar 11 02:07:27 2013 +0000
++@@ -1,5 +1,5 @@
++ /* Retrieve information about a FILE stream.
++-   Copyright (C) 2007-2011 Free Software Foundation, Inc.
+++   Copyright (C) 2007-2013 Free Software Foundation, Inc.
++ 
++    This program is free software: you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++@@ -22,6 +22,7 @@
++ #include <stdlib.h>
++ #include "stdio-impl.h"
++ 
+++#ifndef HAVE___FREADAHEAD
++ size_t
++ freadahead (FILE *fp)
++ {
++@@ -31,7 +32,7 @@
++   return (fp->_IO_read_end - fp->_IO_read_ptr)
++          + (fp->_flags & _IO_IN_BACKUP ? fp->_IO_save_end - fp->_IO_save_base :
++             0);
++-#elif defined __sferror || defined __DragonFly__ /* FreeBSD, NetBSD, OpenBSD, DragonFly, MacOS X, Cygwin */
+++#elif defined __sferror || defined __DragonFly__ /* FreeBSD, NetBSD, OpenBSD, DragonFly, Mac OS X, Cygwin */
++   if ((fp_->_flags & __SWR) != 0 || fp_->_r < 0)
++     return 0;
++ # if defined __DragonFly__
++@@ -48,6 +49,10 @@
++   /* equivalent to
++      (fp->_ungetc_count == 0 ? fp->_rcount : fp->_ungetc_count - fp->_rcount) */
++   return (fp->_rcount > 0 ? fp->_rcount : fp->_ungetc_count - fp->_rcount);
+++#elif defined __minix               /* Minix */
+++  if ((fp_->_flags & _IOWRITING) != 0)
+++    return 0;
+++  return fp_->_count;
++ #elif defined _IOERR                /* AIX, HP-UX, IRIX, OSF/1, Solaris, OpenServer, mingw, NonStop Kernel */
++   if ((fp_->_flag & _IOWRT) != 0)
++     return 0;
++@@ -76,6 +81,10 @@
++   return (fp->__pushed_back
++           ? fp->__get_limit - fp->__pushback_bufp + 1
++           : fp->__get_limit - fp->__bufp);
+++#elif defined EPLAN9                /* Plan9 */
+++  if (fp->state == 4 /* WR */ || fp->rp >= fp->wp)
+++    return 0;
+++  return fp->wp - fp->rp;
++ #elif defined SLOW_BUT_NO_HACKS     /* users can define this */
++   abort ();
++   return 0;
++@@ -83,3 +92,4 @@
++  #error "Please port gnulib freadahead.c to your platform! Look at the definition of fflush, fread, ungetc on your system, then report this to bug-gnulib."
++ #endif
++ }
+++#endif
++diff -r be3355cff941 lib/freadahead.h
++--- lib/freadahead.h	Mon Mar 11 02:06:12 2013 +0000
+++++ lib/freadahead.h	Mon Mar 11 02:07:27 2013 +0000
++@@ -1,5 +1,5 @@
++ /* Retrieve information about a FILE stream.
++-   Copyright (C) 2007-2011 Free Software Foundation, Inc.
+++   Copyright (C) 2007-2013 Free Software Foundation, Inc.
++ 
++    This program is free software: you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++@@ -17,10 +17,6 @@
++ #include <stddef.h>
++ #include <stdio.h>
++ 
++-#ifdef __cplusplus
++-extern "C" {
++-#endif
++-
++ /* Assuming the stream STREAM is open for reading:
++    Return the number of bytes waiting in the input buffer of STREAM.
++    This includes both the bytes that have been read from the underlying input
++@@ -31,8 +27,21 @@
++ 
++    STREAM must not be wide-character oriented.  */
++ 
++-extern size_t freadahead (FILE *stream);
+++#if HAVE___FREADAHEAD /* musl libc */
++ 
++-#ifdef __cplusplus
+++# include <stdio_ext.h>
+++# define freadahead(stream) __freadahead (stream)
+++
+++#else
+++
+++# ifdef __cplusplus
+++extern "C" {
+++# endif
+++
+++extern size_t freadahead (FILE *stream) _GL_ATTRIBUTE_PURE;
+++
+++# ifdef __cplusplus
++ }
+++# endif
+++
++ #endif
