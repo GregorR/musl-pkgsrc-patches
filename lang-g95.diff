@@ -1,0 +1,133 @@
+# HG changeset patch
+# Parent 6b9437d950b24b233b18f10f31e8e6218b605f13
+diff -r 6b9437d950b2 -r 9ee6a9f0e8c6 lang/g95/distinfo
+--- a/lang/g95/distinfo	Mon Mar 11 16:55:37 2013 -0400
++++ b/lang/g95/distinfo	Mon Mar 11 19:06:07 2013 -0400
+@@ -18,3 +18,4 @@
+ SHA1 (patch-ac) = cc6811bb7ef29d9388a40851c403f8768b6f9e48
+ SHA1 (patch-libf95.a-0.92_configure) = d17fc9fa66228489cfa5e49c23d4cfd32a91bfae
+ SHA1 (patch-libf95.a-0.92_io_atof.c) = cd45d03e68573fdadb8c9a217e7dc1eab0db8314
++SHA1 (patch-musl) = c4ad3faffac94ade7964e359babe4b02a22a51d5
+diff -r 6b9437d950b2 -r 9ee6a9f0e8c6 lang/g95/patches/patch-musl
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/lang/g95/patches/patch-musl	Mon Mar 11 19:06:07 2013 -0400
+@@ -0,0 +1,119 @@
++musl-cross 74d6e78976bd tip
++diff -r d6f84a2db6ba config.sub
++--- ../gcc-4.0.3/config.sub	Mon Mar 11 17:14:07 2013 -0400
+++++ ../gcc-4.0.3/config.sub	Mon Mar 11 18:34:53 2013 -0400
++@@ -119,7 +119,7 @@
++ # Here we must recognize all the valid KERNEL-OS combinations.
++ maybe_os=`echo $1 | sed 's/^\(.*\)-\([^-]*-[^-]*\)$/\2/'`
++ case $maybe_os in
++-  nto-qnx* | linux-gnu* | linux-dietlibc | linux-uclibc* | uclinux-uclibc* | uclinux-gnu* | \
+++  nto-qnx* | linux-gnu* | linux-dietlibc | linux-uclibc* | linux-musl* | uclinux-uclibc* | uclinux-gnu* | \
++   kfreebsd*-gnu* | knetbsd*-gnu* | netbsd*-gnu* | storm-chaos* | os2-emx* | rtmk-nova*)
++     os=-$maybe_os
++     basic_machine=`echo $1 | sed 's/^\(.*\)-\([^-]*-[^-]*\)$/\1/'`
++@@ -1189,7 +1189,7 @@
++ 	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
++ 	      | -chorusos* | -chorusrdb* \
++ 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
++-	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -uxpv* | -beos* | -mpeix* | -udk* \
+++	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -linux-musl* | -uxpv* | -beos* | -mpeix* | -udk* \
++ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
++ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
++ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \
++diff -r d6f84a2db6ba gcc/config.gcc
++--- ../gcc-4.0.3/gcc/config.gcc	Mon Mar 11 17:14:07 2013 -0400
+++++ ../gcc-4.0.3/gcc/config.gcc	Mon Mar 11 18:34:53 2013 -0400
++@@ -452,6 +452,14 @@
++     "" | yes | posix) thread_file='posix' ;;
++   esac
++   tmake_file="t-slibgcc-elf-ver t-linux"
+++  case ${target} in
+++    *-*-*musl*)
+++      tm_defines="${tm_defines} MUSL_LIBC=1"
+++      ;;
+++    *)
+++      tm_defines="${tm_defines} MUSL_LIBC=0"
+++      ;;
+++  esac
++   ;;
++ *-*-gnu*)
++   # On the Hurd, the setup is just about the same on
++diff -r d6f84a2db6ba gcc/config/i386/linux.h
++--- ../gcc-4.0.3/gcc/config/i386/linux.h	Mon Mar 11 17:14:07 2013 -0400
+++++ ../gcc-4.0.3/gcc/config/i386/linux.h	Mon Mar 11 18:34:53 2013 -0400
++@@ -105,7 +105,11 @@
++ /* If ELF is the default format, we should not use /lib/elf.  */
++ 
++ #define LINK_EMULATION "elf_i386"
+++#if !MUSL_LIBC
++ #define DYNAMIC_LINKER "/lib/ld-linux.so.2"
+++#else
+++#define DYNAMIC_LINKER "/lib/ld-musl-i386.so.1"
+++#endif
++ 
++ #undef  SUBTARGET_EXTRA_SPECS
++ #define SUBTARGET_EXTRA_SPECS \
++diff -r d6f84a2db6ba gcc/config/i386/linux64.h
++--- ../gcc-4.0.3/gcc/config/i386/linux64.h	Mon Mar 11 17:14:07 2013 -0400
+++++ ../gcc-4.0.3/gcc/config/i386/linux64.h	Mon Mar 11 18:34:53 2013 -0400
++@@ -55,6 +55,7 @@
++    done.  */
++ 
++ #undef	LINK_SPEC
+++#if !MUSL_LIBC
++ #define LINK_SPEC "%{!m32:-m elf_x86_64} %{m32:-m elf_i386} \
++   %{shared:-shared} \
++   %{!shared: \
++@@ -63,6 +64,16 @@
++       %{m32:%{!dynamic-linker:-dynamic-linker /lib/ld-linux.so.2}} \
++       %{!m32:%{!dynamic-linker:-dynamic-linker /lib64/ld-linux-x86-64.so.2}}} \
++     %{static:-static}}"
+++#else
+++#define LINK_SPEC "%{!m32:-m elf_x86_64} %{m32:-m elf_i386} \
+++  %{shared:-shared} \
+++  %{!shared: \
+++    %{!static: \
+++      %{rdynamic:-export-dynamic} \
+++      %{m32:%{!dynamic-linker:-dynamic-linker /lib/ld-musl-i386.so.1}} \
+++      %{!m32:%{!dynamic-linker:-dynamic-linker /lib64/ld-musl-x86_64.so.1}}} \
+++    %{static:-static}}"
+++#endif
++ 
++ #define MULTILIB_DEFAULTS { "m64" }
++ 
++diff -r d6f84a2db6ba gcc/config/mips/linux.h
++--- ../gcc-4.0.3/gcc/config/mips/linux.h	Mon Mar 11 17:14:07 2013 -0400
+++++ ../gcc-4.0.3/gcc/config/mips/linux.h	Mon Mar 11 18:34:53 2013 -0400
++@@ -106,6 +106,8 @@
++ #undef MIPS_DEFAULT_GVALUE
++ #define MIPS_DEFAULT_GVALUE 0
++ 
+++#define MUSL_DYNAMIC_LINKER "/lib/ld-musl-mips.so.1"
+++
++ /* Borrowed from sparc/linux.h */
++ #undef LINK_SPEC
++ #define LINK_SPEC \
++diff -r d6f84a2db6ba gcc/ginclude/stddef.h
++--- ../gcc-4.0.3/gcc/ginclude/stddef.h	Mon Mar 11 17:14:07 2013 -0400
+++++ ../gcc-4.0.3/gcc/ginclude/stddef.h	Mon Mar 11 18:34:53 2013 -0400
++@@ -186,6 +186,7 @@
++ #ifndef _GCC_SIZE_T
++ #ifndef _SIZET_
++ #ifndef __size_t
+++#ifndef __DEFINED_size_t /* musl */
++ #define __size_t__	/* BeOS */
++ #define __SIZE_T__	/* Cray Unicos/Mk */
++ #define _SIZE_T
++@@ -202,3 +203,4 @@
++ #define ___int_size_t_h
++ #define _GCC_SIZE_T
++ #define _SIZET_
+++#define __DEFINED_size_t /* musl */
++@@ -216,6 +218,7 @@
++ typedef long ssize_t;
++ #endif /* __BEOS__ */
++ #endif /* !(defined (__GNUG__) && defined (size_t)) */
+++#endif /* __DEFINED_size_t */
++ #endif /* __size_t */
++ #endif /* _SIZET_ */
++ #endif /* _GCC_SIZE_T */

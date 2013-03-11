@@ -96,3 +96,4 @@ mk-gnu-config.diff
 devel-libf2c.diff
 sysutils-gnome-vfs.diff
 x11-motif.diff
+lang-g95.diff
