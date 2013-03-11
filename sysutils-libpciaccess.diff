@@ -1,35 +1,31 @@
 # HG changeset patch
-# Parent 81de7f70995ad01e5e3802164dc6a1d3b40e74c0
-
-diff -r 81de7f70995a sysutils/libpciaccess/distinfo
---- a/sysutils/libpciaccess/distinfo	Mon Feb 18 12:28:30 2013 -0500
-+++ b/sysutils/libpciaccess/distinfo	Mon Feb 18 12:28:34 2013 -0500
+# Parent 09ed91b99326a49d7fde035adcf07848fade1729
+diff -r 09ed91b99326 -r 57a19139eced sysutils/libpciaccess/distinfo
+--- a/sysutils/libpciaccess/distinfo	Sun Mar 10 22:20:09 2013 -0400
++++ b/sysutils/libpciaccess/distinfo	Mon Mar 11 00:46:06 2013 -0400
 @@ -5,3 +5,4 @@
  Size (libpciaccess-0.13.1.tar.bz2) = 352351 bytes
  SHA1 (patch-aa) = 090e2dd9d811fc56354d5387cc51fb2b1b4a2820
  SHA1 (patch-ac) = f860e9f7d99f381613f8f830281d157f2eb90905
-+SHA1 (patch-qq) = 964dffa286864efc6bce64afe2ba21aedddf0e51
-diff -r 81de7f70995a sysutils/libpciaccess/patches/patch-qq
++SHA1 (patch-qq) = f91b1ee7151c127f3f087c2dbe3a7c6e4cbdc0e4
+diff -r 09ed91b99326 -r 57a19139eced sysutils/libpciaccess/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/libpciaccess/patches/patch-qq	Mon Feb 18 12:28:34 2013 -0500
-@@ -0,0 +1,26 @@
-+diff -r 060a764d912e src/linux_sysfs.c
-+--- src/linux_sysfs.c	Thu Nov 22 05:40:15 2012 +0000
-++++ src/linux_sysfs.c	Thu Nov 22 05:48:01 2012 +0000
-+@@ -45,7 +45,9 @@
++++ b/sysutils/libpciaccess/patches/patch-qq	Mon Mar 11 00:46:06 2013 -0400
+@@ -0,0 +1,23 @@
++diff -r 4ecbc201fcdd src/linux_sysfs.c
++--- src/linux_sysfs.c	Mon Mar 11 04:36:42 2013 +0000
+++++ src/linux_sysfs.c	Mon Mar 11 04:40:52 2013 +0000
++@@ -44,6 +44,7 @@
++ #include <sys/mman.h>
 + #include <dirent.h>
 + #include <errno.h>
-+ 
-+-#if defined(__i386__) || defined(__x86_64__) || defined(__arm__)
 ++#include <limits.h>
-++
-++#if 0 /*defined(__i386__) || defined(__x86_64__) || defined(__arm__)*/
++ 
++ #if defined(__i386__) || defined(__x86_64__) || defined(__arm__)
 + #include <sys/io.h>
-+ #else
-+ #define inb(x) -1
-+diff -r 060a764d912e src/pciaccess_private.h
-+--- src/pciaccess_private.h	Thu Nov 22 05:40:15 2012 +0000
-++++ src/pciaccess_private.h	Thu Nov 22 05:48:01 2012 +0000
++diff -r 4ecbc201fcdd src/pciaccess_private.h
++--- src/pciaccess_private.h	Mon Mar 11 04:36:42 2013 +0000
+++++ src/pciaccess_private.h	Mon Mar 11 04:40:52 2013 +0000
 +@@ -42,7 +42,7 @@
 +  * know of any OS we support where this isn't available in a sufficiently
 +  * new version, so warn unconditionally.
