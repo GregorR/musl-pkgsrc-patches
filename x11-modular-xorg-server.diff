@@ -1,72 +1,34 @@
 # HG changeset patch
-# Parent bac768fad6da0d0f4cade4780273abee0a943d00
-
-diff -r bac768fad6da x11/modular-xorg-server/Makefile
---- a/x11/modular-xorg-server/Makefile	Mon Feb 18 12:28:35 2013 -0500
-+++ b/x11/modular-xorg-server/Makefile	Mon Feb 18 12:28:40 2013 -0500
+# Parent 57a19139ecedfbc763f04440fa83415d99b0097e
+diff -r 57a19139eced -r 36ba28271089 x11/modular-xorg-server/Makefile
+--- a/x11/modular-xorg-server/Makefile	Mon Mar 11 00:46:06 2013 -0400
++++ b/x11/modular-xorg-server/Makefile	Mon Mar 11 12:50:08 2013 -0400
 @@ -127,6 +127,9 @@
  CONFIGURE_ENV+=		ac_cv_path_RAWCPP="cc -E -Uunix -"
  .endif
  
-+# [Gregor] For (at least) PATH_MAX
-+CFLAGS+=		-D_XOPEN_SOURCE=600
++# [Gregor] X-ACE doesn't work for unknown reasons
++CONFIGURE_ARGS+=	--disable-xace
 +
  .include "options.mk"
  
  .include "../../devel/ncurses/buildlink3.mk"
-diff -r bac768fad6da x11/modular-xorg-server/distinfo
---- a/x11/modular-xorg-server/distinfo	Mon Feb 18 12:28:35 2013 -0500
-+++ b/x11/modular-xorg-server/distinfo	Mon Feb 18 12:28:40 2013 -0500
+diff -r 57a19139eced -r 36ba28271089 x11/modular-xorg-server/distinfo
+--- a/x11/modular-xorg-server/distinfo	Mon Mar 11 00:46:06 2013 -0400
++++ b/x11/modular-xorg-server/distinfo	Mon Mar 11 12:50:08 2013 -0400
 @@ -34,3 +34,4 @@
  SHA1 (patch-se) = 22b20c734b7fcf59d75227aeb1fa703465582568
  SHA1 (patch-sf) = 22d4f575c066691696ec96f1fcd459251b662012
  SHA1 (patch-sg) = 81598e687357a6e8b477055d14ece01372ae4617
-+SHA1 (patch-zz) = e7c951b98794b4d4a32279198cf82f6378aa7d79
-diff -r bac768fad6da x11/modular-xorg-server/patches/patch-zz
++SHA1 (patch-qq) = 671f0f246a4570a73c5ec0aa7008d9dea3410108
+diff -r 57a19139eced -r 36ba28271089 x11/modular-xorg-server/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/modular-xorg-server/patches/patch-zz	Mon Feb 18 12:28:40 2013 -0500
-@@ -0,0 +1,58 @@
-+diff -r 64d7c5193c40 hw/xfree86/common/xf86AutoConfig.c
-+--- hw/xfree86/common/xf86AutoConfig.c	Thu Jul 19 15:50:42 2012 +0000
-++++ hw/xfree86/common/xf86AutoConfig.c	Thu Jul 19 15:51:21 2012 +0000
-+@@ -368,7 +368,7 @@
-+                 goto end;
-+             }
-+             /* Read the file */
-+-#ifdef __GLIBC__
-++#if defined(__GLIBC__) || 1
-+             while ((read = getline(&line, &len, fp)) != -1) {
-+ #else
-+             while ((line = fgetln(fp, &len)) != (char *)NULL) {
-+diff -r 64d7c5193c40 hw/xfree86/os-support/linux/lnx_video.c
-+--- hw/xfree86/os-support/linux/lnx_video.c	Thu Jul 19 15:50:42 2012 +0000
-++++ hw/xfree86/os-support/linux/lnx_video.c	Thu Jul 19 15:51:21 2012 +0000
-+@@ -53,6 +53,7 @@
-+ 
-+ static Bool ExtendedEnabled = FALSE;
-+ 
-++#if 0
-+ #ifdef __ia64__
-+ 
-+ #include "compiler.h"
-+@@ -73,6 +74,13 @@
-+ 
-+ #endif
-+ 
-++#else
-++#include <sys/syscall.h>
-++#define ioperm(x, y, z) syscall(__NR_ioperm, x, y, z)
-++#define iopl(x) syscall(__NR_iopl, x)
-++
-++#endif
-++
-+ #ifdef __alpha__
-+ 
-+ extern void sethae(unsigned long hae);
-+diff -r 64d7c5193c40 hw/xfree86/os-support/xf86_OSlib.h
-+--- hw/xfree86/os-support/xf86_OSlib.h	Thu Jul 19 15:50:42 2012 +0000
-++++ hw/xfree86/os-support/xf86_OSlib.h	Thu Jul 19 15:51:21 2012 +0000
-+@@ -215,6 +215,7 @@
++++ b/x11/modular-xorg-server/patches/patch-qq	Mon Mar 11 12:50:08 2013 -0400
+@@ -0,0 +1,18 @@
++diff -r a2b9db9818a9 hw/xfree86/os-support/xf86_OSlib.h
++--- hw/xfree86/os-support/xf86_OSlib.h	Mon Mar 11 15:21:01 2013 +0000
+++++ hw/xfree86/os-support/xf86_OSlib.h	Mon Mar 11 16:36:31 2013 +0000
++@@ -215,11 +215,14 @@
 + # include <sys/types.h>
 + # include <assert.h>
 + 
@@ -74,13 +36,10 @@ diff -r bac768fad6da x11/modular-xorg-server/patches/patch-zz
 + # ifdef __linux__
 + #  include <termio.h>
 + # else /* __GLIBC__ */
-+@@ -223,6 +224,9 @@
++ #  include <termios.h>
++ # endif
+++#endif
+++#include <termios.h>
 + # ifdef __sparc__
 + #  include <sys/param.h>
 + # endif
-++#else
-++#include <termios.h>
-++#endif
-+ 
-+ # include <errno.h>
-+ 
