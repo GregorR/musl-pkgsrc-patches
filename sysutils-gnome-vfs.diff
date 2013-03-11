@@ -1,0 +1,27 @@
+# HG changeset patch
+# Parent 51f070e48d8764b8e4b1693de75ea056ef7202ff
+diff -r 51f070e48d87 -r 5a3bc71705bd sysutils/gnome-vfs/distinfo
+--- a/sysutils/gnome-vfs/distinfo	Mon Mar 11 16:51:39 2013 -0400
++++ b/sysutils/gnome-vfs/distinfo	Mon Mar 11 16:54:52 2013 -0400
+@@ -23,3 +23,4 @@
+ SHA1 (patch-cc) = 010674b9e7674cc4b84a57ac680a5769c5cffd29
+ SHA1 (patch-cd) = 64ce812ca541dc34705586b4b01446b29bab8613
+ SHA1 (patch-ce) = 718d7de318e85e58b7412345496263ca559e9a73
++SHA1 (patch-qq) = ebf72df826151172ee4071a44075a8298cba2763
+diff -r 51f070e48d87 -r 5a3bc71705bd sysutils/gnome-vfs/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/sysutils/gnome-vfs/patches/patch-qq	Mon Mar 11 16:54:52 2013 -0400
+@@ -0,0 +1,13 @@
++diff -r d1cf86f18da9 libgnomevfs/gnome-vfs-result.c
++--- libgnomevfs/gnome-vfs-result.c	Mon Mar 11 18:50:48 2013 +0000
+++++ libgnomevfs/gnome-vfs-result.c	Mon Mar 11 19:06:41 2013 +0000
++@@ -199,7 +199,9 @@
++ {
++ 	switch (h_errno_code) {
++ 	case HOST_NOT_FOUND:	return GNOME_VFS_ERROR_HOST_NOT_FOUND;
+++#ifdef NO_ADDRESS	
++ 	case NO_ADDRESS:	return GNOME_VFS_ERROR_HOST_HAS_NO_ADDRESS;
+++#endif
++ 	case TRY_AGAIN:		return GNOME_VFS_ERROR_NAMESERVER;
++ 	case NO_RECOVERY:	return GNOME_VFS_ERROR_NAMESERVER;
++ 	default:

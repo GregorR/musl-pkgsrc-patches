@@ -93,3 +93,6 @@ net-mDNSResponder.diff
 security-gnutls.diff
 x11-qt4-libs.diff
 mk-gnu-config.diff
+devel-libf2c.diff
+sysutils-gnome-vfs.diff
+x11-motif.diff

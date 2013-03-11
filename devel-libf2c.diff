@@ -1,0 +1,29 @@
+# HG changeset patch
+# Parent 4b99852db98b77846cc0e9a399b77bcc3d3032c2
+diff -r 4b99852db98b -r 51f070e48d87 devel/libf2c/distinfo
+--- a/devel/libf2c/distinfo	Mon Mar 11 13:47:18 2013 -0400
++++ b/devel/libf2c/distinfo	Mon Mar 11 16:51:39 2013 -0400
+@@ -6,3 +6,4 @@
+ SHA1 (patch-ai) = 3213ead493c570eb70bbd43e47f6bbc4bb762796
+ SHA1 (patch-aj) = 78ff4ad86970e1a32eb65ca4364dda0004959cf3
+ SHA1 (patch-ak) = 0369faf3d5a09a308915452afd58850c6e6a1731
++SHA1 (patch-qq) = 3876c4ed8d2a581572b480843b538fe9507e7161
+diff -r 4b99852db98b -r 51f070e48d87 devel/libf2c/patches/patch-qq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/devel/libf2c/patches/patch-qq	Mon Mar 11 16:51:39 2013 -0400
+@@ -0,0 +1,15 @@
++diff -r 168721ec2b30 sysdep1.h0
++--- sysdep1.h0	Mon Mar 11 19:39:44 2013 +0000
+++++ sysdep1.h0	Mon Mar 11 19:42:49 2013 +0000
++@@ -10,7 +10,11 @@
++ 
++ #ifdef __linux__
++ #define USE_LARGEFILE
+++#ifdef __GLIBC__
++ #define OFF_T __off64_t
+++#else
+++#define OFF_T off_t
+++#endif
++ #endif
++ 
++ #ifdef _AIX43
