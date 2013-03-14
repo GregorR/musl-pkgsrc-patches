@@ -1,0 +1,10 @@
+# HG changeset patch
+# Parent 8b976d31a67e423928b5a2c5084ca594d9ab1bb5
+diff -r 8b976d31a67e -r 5b1f4cec3705 mk/pkgformat/pkg/package.mk
+--- a/mk/pkgformat/pkg/package.mk	Wed Mar 13 22:06:00 2013 +0000
++++ b/mk/pkgformat/pkg/package.mk	Wed Mar 13 22:06:21 2013 +0000
+@@ -157,3 +157,4 @@
+ 	*)		${PKG_ADD} ${PKGFILE} ;;			\
+ 	esac
+ .endif
++	snps-pkgsrc-install

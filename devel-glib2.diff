@@ -1,41 +1,29 @@
 # HG changeset patch
-# Parent df4349dbbdf333af68bef7c3d4115f8f5e2d7577
-
-diff -r df4349dbbdf3 devel/glib2/Makefile
---- a/devel/glib2/Makefile	Mon Feb 18 12:29:18 2013 -0500
-+++ b/devel/glib2/Makefile	Mon Feb 18 12:29:23 2013 -0500
-@@ -55,6 +55,10 @@
- . endif
- .endif
- 
-+
-+# [Gregor] Nonstandard but common type
-+CFLAGS+=	-Dloff_t=off_t
-+
- .include "../../converters/libiconv/buildlink3.mk"
- .include "../../devel/gettext-lib/buildlink3.mk"
- .include "../../devel/pcre/buildlink3.mk"
-diff -r df4349dbbdf3 devel/glib2/distinfo
---- a/devel/glib2/distinfo	Mon Feb 18 12:29:18 2013 -0500
-+++ b/devel/glib2/distinfo	Mon Feb 18 12:29:23 2013 -0500
+# Parent 27c187c62363311c42d4ba597c44e26cbae75371
+diff -r 27c187c62363 -r 6d17febb054d devel/glib2/distinfo
+--- a/devel/glib2/distinfo	Wed Mar 13 20:09:23 2013 +0000
++++ b/devel/glib2/distinfo	Wed Mar 13 20:30:03 2013 +0000
 @@ -38,3 +38,4 @@
  SHA1 (patch-gio_gresource-tool.c) = 4eb7c9df25e9ac3e977edf3be8fb977a6fb39182
  SHA1 (patch-glib_goption.c) = 323297aa328b85493f156792b4baa0cb04fa82ad
  SHA1 (patch-glib_tests_include.c) = 95f7d34e6e03849316bbfac1541eec4582b92ffc
-+SHA1 (patch-qq) = cbf5a5d8de6eb6158b06175f086b3c6fe43c1508
-diff -r df4349dbbdf3 devel/glib2/patches/patch-qq
++SHA1 (patch-loff_t) = e31cda6cd4550cc953912af6aacff2bf44a7c054
+diff -r 27c187c62363 -r 6d17febb054d devel/glib2/patches/patch-loff_t
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/glib2/patches/patch-qq	Mon Feb 18 12:29:23 2013 -0500
-@@ -0,0 +1,12 @@
-+diff -r 1f4fd6fe5192 gio/gfile.c
-+--- gio/gfile.c	Fri Sep 28 18:09:40 2012 +0000
-++++ gio/gfile.c	Fri Sep 28 20:41:32 2012 +0000
-+@@ -21,6 +21,8 @@
++++ b/devel/glib2/patches/patch-loff_t	Wed Mar 13 20:30:03 2013 +0000
+@@ -0,0 +1,15 @@
++diff -r 652d6e913708 gio/gfile.c
++--- gio/gfile.c	Wed Mar 13 20:24:04 2013 +0000
+++++ gio/gfile.c	Wed Mar 13 20:24:34 2013 +0000
++@@ -21,6 +21,11 @@
 +  *
 +  * Author: Alexander Larsson <alexl@redhat.com>
 +  */
 ++ 
+++/* for loff_t, a nonstandard type name */
+++#ifndef _GNU_SOURCE
 ++#define _GNU_SOURCE
+++#endif
 + 
 + #include "config.h"
 + #ifdef HAVE_SPLICE

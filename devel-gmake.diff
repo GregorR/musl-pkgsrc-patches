@@ -1,28 +1,14 @@
 # HG changeset patch
-# Parent e1c5a157871addfd4bf4f384840563041a8850d1
-diff -r e1c5a157871a -r 5f0d27c791c1 devel/gmake/Makefile
---- a/devel/gmake/Makefile	Mon Feb 18 13:17:44 2013 -0500
-+++ b/devel/gmake/Makefile	Tue Feb 19 00:23:10 2013 -0500
-@@ -38,10 +38,11 @@
- CONFIGURE_ARGS+=	ac_cv_func_strndup=no
- .endif
- 
-+CONFIGURE_ARGS+=	CFLAGS="-O2 -g -D__BEOS__"
-+
- post-install:
+# Parent 2bf7a01a41488b61d2ce6bbcc189fe90a05942e2
+diff -r 2bf7a01a4148 -r bf0ec68bd79a devel/gmake/Makefile
+--- a/devel/gmake/Makefile	Wed Mar 13 20:09:14 2013 +0000
++++ b/devel/gmake/Makefile	Wed Mar 13 20:37:32 2013 +0000
+@@ -42,6 +42,7 @@
  	${CHMOD} g-s ${DESTDIR}${PREFIX}/bin/gmake
  	${CHGRP} ${BINGRP} ${DESTDIR}${PREFIX}/bin/gmake
  	${LN} -sf ${PREFIX}/bin/gmake ${DESTDIR}${PREFIX}/${PKGGNUDIR}/bin/make
 -	${LN} -sf ${PREFIX}/${PKGMANDIR}/man1/gmake.1 ${DESTDIR}${PREFIX}/${PKGGNUDIR}${PKGMANDIR}/man1/make.1
++	mkdir -p ${DESTDIR}${PREFIX}/${PKGGNUDIR}man/man1
++	${LN} -sf ${PREFIX}/${PKGMANDIR}/man1/gmake.1 ${DESTDIR}${PREFIX}/${PKGGNUDIR}man/man1/make.1
  
  .include "../../mk/bsd.pkg.mk"
-diff -r e1c5a157871a -r 5f0d27c791c1 devel/gmake/PLIST
---- a/devel/gmake/PLIST	Mon Feb 18 13:17:44 2013 -0500
-+++ b/devel/gmake/PLIST	Tue Feb 19 00:23:10 2013 -0500
-@@ -1,6 +1,5 @@
- @comment $NetBSD: PLIST,v 1.11 2012/06/02 07:57:21 cheusov Exp $
- bin/gmake
- gnu/bin/make
--gnu/man/man1/make.1
- info/make.info
- man/man1/gmake.1

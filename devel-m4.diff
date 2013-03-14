@@ -1,49 +1,21 @@
 # HG changeset patch
-# Parent e264606aaed066f7059f32e0d559d418c4447c79
-diff -r e264606aaed0 -r 8108396a4e47 devel/m4/Makefile
---- a/devel/m4/Makefile	Sun Mar 10 22:19:23 2013 -0400
-+++ b/devel/m4/Makefile	Sun Mar 10 22:20:01 2013 -0400
-@@ -27,9 +27,11 @@
- 
- AUTO_MKDIRS=		yes
- 
-+# [Gregor] Damned gnulib
-+CFLAGS+=		-DHAVE___FREADAHEAD
-+
- post-install:
- 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${DESTDIR}${PREFIX}/share/examples/m4
- 	${LN} -sf ${PREFIX}/bin/gm4 ${DESTDIR}${PREFIX}/${PKGGNUDIR}bin/m4
--	${LN} -sf ${PREFIX}/${PKGMANDIR}/man1/gm4.1 ${DESTDIR}${PREFIX}/${PKGGNUDIR}${PKGMANDIR}/man1/m4.1
- 
- .include "../../mk/bsd.pkg.mk"
-diff -r e264606aaed0 -r 8108396a4e47 devel/m4/PLIST
---- a/devel/m4/PLIST	Sun Mar 10 22:19:23 2013 -0400
-+++ b/devel/m4/PLIST	Sun Mar 10 22:20:01 2013 -0400
-@@ -1,7 +1,6 @@
- @comment $NetBSD: PLIST,v 1.16 2012/06/02 07:51:04 cheusov Exp $
- bin/gm4
- gnu/bin/m4
--gnu/man/man1/m4.1
- info/m4.info
- man/man1/gm4.1
- share/examples/m4/capitalize.m4
-diff -r e264606aaed0 -r 8108396a4e47 devel/m4/distinfo
---- a/devel/m4/distinfo	Sun Mar 10 22:19:23 2013 -0400
-+++ b/devel/m4/distinfo	Sun Mar 10 22:20:01 2013 -0400
-@@ -6,4 +6,6 @@
- SHA1 (patch-aa) = ef316620b49f78f46e9dea47032b0141814c1f43
+# Parent bf0ec68bd79a6f320582e9c928c211574ee690fa
+
+diff -r bf0ec68bd79a devel/m4/distinfo
+--- a/devel/m4/distinfo	Wed Mar 13 20:37:32 2013 +0000
++++ b/devel/m4/distinfo	Wed Mar 13 22:05:46 2013 +0000
+@@ -7,3 +7,4 @@
  SHA1 (patch-ab) = b29840365e983623bce64e84ceab3504b8270b32
  SHA1 (patch-ac) = 7bd9164c659727a906ef54a2f1027e9fd19315ba
-+SHA1 (patch-aq) = 361e3294fe76fd67087d4fb212fd16c79462a953
  SHA1 (patch-lib_verror.h) = 4c50ab0bc90a6324845e145bbe140836179ca8c9
-+SHA1 (patch-qq) = a8cf67c97189b723a63be6bf7adc3320d2b62895
-diff -r e264606aaed0 -r 8108396a4e47 devel/m4/patches/patch-qq
++SHA1 (patch-update_freadahead) = 0aa02b7f4fa537b92de06777289b41ea086aa0bd
+diff -r bf0ec68bd79a devel/m4/patches/patch-update_freadahead
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/m4/patches/patch-qq	Sun Mar 10 22:20:01 2013 -0400
-@@ -0,0 +1,99 @@
-+diff -r be3355cff941 lib/freadahead.c
-+--- lib/freadahead.c	Mon Mar 11 02:06:12 2013 +0000
-++++ lib/freadahead.c	Mon Mar 11 02:07:27 2013 +0000
++++ b/devel/m4/patches/patch-update_freadahead	Wed Mar 13 22:05:46 2013 +0000
+@@ -0,0 +1,102 @@
++diff -r d1c9a158c955 lib/freadahead.c
++--- lib/freadahead.c	Wed Mar 13 20:55:32 2013 +0000
+++++ lib/freadahead.c	Wed Mar 13 20:56:08 2013 +0000
 +@@ -1,5 +1,5 @@
 + /* Retrieve information about a FILE stream.
 +-   Copyright (C) 2007-2011 Free Software Foundation, Inc.
@@ -95,9 +67,9 @@ diff -r e264606aaed0 -r 8108396a4e47 devel/m4/patches/patch-qq
 + #endif
 + }
 ++#endif
-+diff -r be3355cff941 lib/freadahead.h
-+--- lib/freadahead.h	Mon Mar 11 02:06:12 2013 +0000
-++++ lib/freadahead.h	Mon Mar 11 02:07:27 2013 +0000
++diff -r d1c9a158c955 lib/freadahead.h
++--- lib/freadahead.h	Wed Mar 13 20:55:32 2013 +0000
+++++ lib/freadahead.h	Wed Mar 13 20:56:08 2013 +0000
 +@@ -1,5 +1,5 @@
 + /* Retrieve information about a FILE stream.
 +-   Copyright (C) 2007-2011 Free Software Foundation, Inc.
@@ -116,12 +88,15 @@ diff -r e264606aaed0 -r 8108396a4e47 devel/m4/patches/patch-qq
 + /* Assuming the stream STREAM is open for reading:
 +    Return the number of bytes waiting in the input buffer of STREAM.
 +    This includes both the bytes that have been read from the underlying input
-+@@ -31,8 +27,21 @@
++@@ -31,8 +27,24 @@
 + 
 +    STREAM must not be wide-character oriented.  */
 + 
 +-extern size_t freadahead (FILE *stream);
-++#if HAVE___FREADAHEAD /* musl libc */
+++#if HAVE___FREADAHEAD || (defined(__linux__) && !defined(__GLIBC__) && !defined(__UCLIBC__)) /* musl libc */
+++#ifndef HAVE___FREADAHEAD
+++#define HAVE___FREADAHEAD 1
+++#endif
 + 
 +-#ifdef __cplusplus
 ++# include <stdio_ext.h>
