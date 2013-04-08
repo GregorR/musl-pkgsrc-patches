@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent f30f7204bf50445e4abc023baee1a45b589f1151
+# Parent 94f0ed317b6d1a37eb225f0eb452f0d4064cf25b
 
-diff -r f30f7204bf50 security/policykit/distinfo
---- a/security/policykit/distinfo	Mon Feb 18 12:26:49 2013 -0500
-+++ b/security/policykit/distinfo	Mon Feb 18 12:26:54 2013 -0500
+diff -r 94f0ed317b6d security/policykit/distinfo
+--- a/security/policykit/distinfo	Mon Apr 08 12:54:44 2013 -0400
++++ b/security/policykit/distinfo	Mon Apr 08 12:54:49 2013 -0400
 @@ -19,3 +19,4 @@
  SHA1 (patch-an) = a0a54235fc72a52ace72a0d04df6c1383f7c583c
  SHA1 (patch-ao) = 0f9a87653f4902285c7420f6269e302eca896a1b
  SHA1 (patch-authdb) = 449b8ac50f81cc0234e17e64bc9892ade7119028
 +SHA1 (patch-aq) = 07d7453aba399fd3b61e05a46ec20f6080be7fde
-diff -r f30f7204bf50 security/policykit/patches/patch-aq
+diff -r 94f0ed317b6d security/policykit/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/security/policykit/patches/patch-aq	Mon Feb 18 12:26:54 2013 -0500
++++ b/security/policykit/patches/patch-aq	Mon Apr 08 12:54:49 2013 -0400
 @@ -0,0 +1,11 @@
 +diff -r 1ceaf4291bd1 src/polkit-dbus/polkit-resolve-exe-helper.c
 +--- src/polkit-dbus/polkit-resolve-exe-helper.c	Sun May 06 03:39:34 2012 +0000

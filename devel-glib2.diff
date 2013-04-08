@@ -1,16 +1,17 @@
 # HG changeset patch
-# Parent 27c187c62363311c42d4ba597c44e26cbae75371
-diff -r 27c187c62363 -r 6d17febb054d devel/glib2/distinfo
---- a/devel/glib2/distinfo	Wed Mar 13 20:09:23 2013 +0000
-+++ b/devel/glib2/distinfo	Wed Mar 13 20:30:03 2013 +0000
+# Parent cdd88a7c7886cc27d71dc01a9f9287a95478c23a
+
+diff -r cdd88a7c7886 devel/glib2/distinfo
+--- a/devel/glib2/distinfo	Mon Apr 08 12:57:04 2013 -0400
++++ b/devel/glib2/distinfo	Mon Apr 08 12:57:09 2013 -0400
 @@ -38,3 +38,4 @@
  SHA1 (patch-gio_gresource-tool.c) = 4eb7c9df25e9ac3e977edf3be8fb977a6fb39182
  SHA1 (patch-glib_goption.c) = 323297aa328b85493f156792b4baa0cb04fa82ad
  SHA1 (patch-glib_tests_include.c) = 95f7d34e6e03849316bbfac1541eec4582b92ffc
 +SHA1 (patch-loff_t) = e31cda6cd4550cc953912af6aacff2bf44a7c054
-diff -r 27c187c62363 -r 6d17febb054d devel/glib2/patches/patch-loff_t
+diff -r cdd88a7c7886 devel/glib2/patches/patch-loff_t
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/glib2/patches/patch-loff_t	Wed Mar 13 20:30:03 2013 +0000
++++ b/devel/glib2/patches/patch-loff_t	Mon Apr 08 12:57:09 2013 -0400
 @@ -0,0 +1,15 @@
 +diff -r 652d6e913708 gio/gfile.c
 +--- gio/gfile.c	Wed Mar 13 20:24:04 2013 +0000

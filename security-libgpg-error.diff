@@ -1,20 +1,24 @@
 # HG changeset patch
-# Parent d49f0b7d180b68c771d7fc4e6caa01f91b1be022
+# Parent da0add87f7eec2c5fe52bbdedbaa9b453b57c452
 
-diff -r d49f0b7d180b security/libgpg-error/PLIST
---- a/security/libgpg-error/PLIST	Mon Feb 18 12:26:28 2013 -0500
-+++ b/security/libgpg-error/PLIST	Mon Feb 18 12:26:33 2013 -0500
-@@ -8,13 +8,3 @@
+diff -r da0add87f7ee security/libgpg-error/PLIST
+--- a/security/libgpg-error/PLIST	Mon Apr 08 12:54:24 2013 -0400
++++ b/security/libgpg-error/PLIST	Mon Apr 08 12:54:28 2013 -0400
+@@ -8,17 +8,3 @@
  share/common-lisp/source/gpg-error/gpg-error-package.lisp
  share/common-lisp/source/gpg-error/gpg-error.asd
  share/common-lisp/source/gpg-error/gpg-error.lisp
 -${PLIST.nls}share/locale/cs/LC_MESSAGES/libgpg-error.mo
+-${PLIST.nls}share/locale/da/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/de/LC_MESSAGES/libgpg-error.mo
+-${PLIST.nls}share/locale/eo/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/fr/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/it/LC_MESSAGES/libgpg-error.mo
+-${PLIST.nls}share/locale/ja/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/nl/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/pl/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/ro/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/sv/LC_MESSAGES/libgpg-error.mo
+-${PLIST.nls}share/locale/uk/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/vi/LC_MESSAGES/libgpg-error.mo
 -${PLIST.nls}share/locale/zh_CN/LC_MESSAGES/libgpg-error.mo

@@ -1,8 +1,9 @@
 # HG changeset patch
-# Parent 57a19139ecedfbc763f04440fa83415d99b0097e
-diff -r 57a19139eced -r 36ba28271089 x11/modular-xorg-server/Makefile
---- a/x11/modular-xorg-server/Makefile	Mon Mar 11 00:46:06 2013 -0400
-+++ b/x11/modular-xorg-server/Makefile	Mon Mar 11 12:50:08 2013 -0400
+# Parent 05cccf9d875d66d36327ecf140459459d400ed40
+
+diff -r 05cccf9d875d x11/modular-xorg-server/Makefile
+--- a/x11/modular-xorg-server/Makefile	Mon Apr 08 12:56:27 2013 -0400
++++ b/x11/modular-xorg-server/Makefile	Mon Apr 08 12:56:32 2013 -0400
 @@ -127,6 +127,9 @@
  CONFIGURE_ENV+=		ac_cv_path_RAWCPP="cc -E -Uunix -"
  .endif
@@ -13,17 +14,17 @@ diff -r 57a19139eced -r 36ba28271089 x11/modular-xorg-server/Makefile
  .include "options.mk"
  
  .include "../../devel/ncurses/buildlink3.mk"
-diff -r 57a19139eced -r 36ba28271089 x11/modular-xorg-server/distinfo
---- a/x11/modular-xorg-server/distinfo	Mon Mar 11 00:46:06 2013 -0400
-+++ b/x11/modular-xorg-server/distinfo	Mon Mar 11 12:50:08 2013 -0400
+diff -r 05cccf9d875d x11/modular-xorg-server/distinfo
+--- a/x11/modular-xorg-server/distinfo	Mon Apr 08 12:56:27 2013 -0400
++++ b/x11/modular-xorg-server/distinfo	Mon Apr 08 12:56:32 2013 -0400
 @@ -34,3 +34,4 @@
  SHA1 (patch-se) = 22b20c734b7fcf59d75227aeb1fa703465582568
  SHA1 (patch-sf) = 22d4f575c066691696ec96f1fcd459251b662012
  SHA1 (patch-sg) = 81598e687357a6e8b477055d14ece01372ae4617
 +SHA1 (patch-qq) = 671f0f246a4570a73c5ec0aa7008d9dea3410108
-diff -r 57a19139eced -r 36ba28271089 x11/modular-xorg-server/patches/patch-qq
+diff -r 05cccf9d875d x11/modular-xorg-server/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/modular-xorg-server/patches/patch-qq	Mon Mar 11 12:50:08 2013 -0400
++++ b/x11/modular-xorg-server/patches/patch-qq	Mon Apr 08 12:56:32 2013 -0400
 @@ -0,0 +1,18 @@
 +diff -r a2b9db9818a9 hw/xfree86/os-support/xf86_OSlib.h
 +--- hw/xfree86/os-support/xf86_OSlib.h	Mon Mar 11 15:21:01 2013 +0000

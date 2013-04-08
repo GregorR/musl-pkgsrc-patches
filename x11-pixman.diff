@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 83840e80ba80707200990148b50abb1e3d616080
+# Parent 122f0f179b2a9183f9ca6a30e498d82a457919b4
 
-diff -r 83840e80ba80 x11/pixman/Makefile
---- a/x11/pixman/Makefile	Mon Feb 18 13:26:49 2013 -0500
-+++ b/x11/pixman/Makefile	Mon Feb 18 13:27:44 2013 -0500
-@@ -17,5 +17,10 @@
+diff -r 122f0f179b2a x11/pixman/Makefile
+--- a/x11/pixman/Makefile	Mon Apr 08 12:56:06 2013 -0400
++++ b/x11/pixman/Makefile	Mon Apr 08 12:56:11 2013 -0400
+@@ -16,5 +16,10 @@
  
  PKGCONFIG_OVERRIDE+=	pixman-1.pc.in
  PKGCONFIG_OVERRIDE+=	pixman-1-uninstalled.pc.in

@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent f24d8f618d5ee7cbcad8dea29bde6baa7b73fcfa
+# Parent 5080a389cbbdd31c35eded47510dc7532aa575d9
 
-diff -r f24d8f618d5e security/openpam/distinfo
---- a/security/openpam/distinfo	Mon Feb 18 12:26:33 2013 -0500
-+++ b/security/openpam/distinfo	Mon Feb 18 12:26:38 2013 -0500
+diff -r 5080a389cbbd security/openpam/distinfo
+--- a/security/openpam/distinfo	Mon Apr 08 12:54:29 2013 -0400
++++ b/security/openpam/distinfo	Mon Apr 08 12:54:33 2013 -0400
 @@ -12,3 +12,4 @@
  SHA1 (patch-ah) = 5cef165a6986e0146f75cc4aa4fe5c0adc2d5042
  SHA1 (patch-ai) = ebd22192a6b34161feac281ade41340493142e2b
  SHA1 (patch-aj) = f106a68e24fabae7353ea4480c75ba84097ec606
 +SHA1 (patch-aq) = b8310fd7a88d4a6703ac5b724e5ca1406337b5d1
-diff -r f24d8f618d5e security/openpam/patches/patch-aq
+diff -r 5080a389cbbd security/openpam/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/security/openpam/patches/patch-aq	Mon Feb 18 12:26:38 2013 -0500
++++ b/security/openpam/patches/patch-aq	Mon Apr 08 12:54:33 2013 -0400
 @@ -0,0 +1,12 @@
 +diff -r f26e7457d1df lib/openpam_impl.h
 +--- lib/openpam_impl.h	Sun May 06 03:31:16 2012 +0000

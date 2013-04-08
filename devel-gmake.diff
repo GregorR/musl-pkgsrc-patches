@@ -1,8 +1,9 @@
 # HG changeset patch
-# Parent 2bf7a01a41488b61d2ce6bbcc189fe90a05942e2
-diff -r 2bf7a01a4148 -r bf0ec68bd79a devel/gmake/Makefile
---- a/devel/gmake/Makefile	Wed Mar 13 20:09:14 2013 +0000
-+++ b/devel/gmake/Makefile	Wed Mar 13 20:37:32 2013 +0000
+# Parent 18498942af6cb35d438c2dde54d6e7eb1d820660
+
+diff -r 18498942af6c devel/gmake/Makefile
+--- a/devel/gmake/Makefile	Mon Apr 08 12:52:37 2013 -0400
++++ b/devel/gmake/Makefile	Mon Apr 08 12:52:41 2013 -0400
 @@ -42,6 +42,7 @@
  	${CHMOD} g-s ${DESTDIR}${PREFIX}/bin/gmake
  	${CHGRP} ${BINGRP} ${DESTDIR}${PREFIX}/bin/gmake

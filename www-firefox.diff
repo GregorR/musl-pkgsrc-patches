@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent ed7df63f9df1fe440c30e659932d852782da0b2f
+# Parent 1ee1ca49dcca15415434785a9228e944579ce0a8
 
-diff -r ed7df63f9df1 www/firefox/Makefile
---- a/www/firefox/Makefile	Mon Feb 18 12:27:37 2013 -0500
-+++ b/www/firefox/Makefile	Mon Feb 18 12:27:42 2013 -0500
+diff -r 1ee1ca49dcca www/firefox/Makefile
+--- a/www/firefox/Makefile	Mon Apr 08 12:55:30 2013 -0400
++++ b/www/firefox/Makefile	Mon Apr 08 12:55:35 2013 -0400
 @@ -20,7 +20,7 @@
  
  LDFLAGS.DragonFly=	-lplc4 -lnspr4

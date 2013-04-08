@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 4484072e00db00641c4207ac2c49f56bdfeb75bf
+# Parent f1d9fc61f54bd69f9e74f9c8f0fe83b2d8acdb4b
 
-diff -r 4484072e00db x11/libdrm/distinfo
---- a/x11/libdrm/distinfo	Mon Feb 18 12:27:57 2013 -0500
-+++ b/x11/libdrm/distinfo	Mon Feb 18 12:28:02 2013 -0500
-@@ -9,3 +9,4 @@
+diff -r f1d9fc61f54b x11/libdrm/distinfo
+--- a/x11/libdrm/distinfo	Mon Apr 08 12:55:51 2013 -0400
++++ b/x11/libdrm/distinfo	Mon Apr 08 12:55:55 2013 -0400
+@@ -8,3 +8,4 @@
+ SHA1 (patch-ad) = ea3ef8de8db782ddab23f182f1e6bd9d8f612a78
  SHA1 (patch-include_drm_drm.h) = d370e83da5c39f0e49094787c5f4580758c911b0
- SHA1 (patch-intel_intel__bufmgr__gem.c) = 418d00f24344b7abaa86d3b3d10817314ce70175
  SHA1 (patch-libkms_linux.c) = 737d0a8e7b742ee9d24fec94c72de6b4915dd675
 +SHA1 (patch-aq) = 87e114775f5761986528f8c0c87ebaefe52d593b
-diff -r 4484072e00db x11/libdrm/patches/patch-aq
+diff -r f1d9fc61f54b x11/libdrm/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/libdrm/patches/patch-aq	Mon Feb 18 12:28:02 2013 -0500
++++ b/x11/libdrm/patches/patch-aq	Mon Apr 08 12:55:55 2013 -0400
 @@ -0,0 +1,12 @@
 +diff -r 3f68fbb9449a intel/intel_bufmgr_fake.c
 +--- intel/intel_bufmgr_fake.c	Mon May 07 20:01:11 2012 +0000

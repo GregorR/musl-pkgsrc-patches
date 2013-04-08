@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 91996cb3bdb7a7490987aff2eab61a93ba919d9e
+# Parent 0ffa0f4a6f2b0602ca2bafe9bcd79ad7cee5ff75
 
-diff -r 91996cb3bdb7 security/openssh/Makefile
---- a/security/openssh/Makefile	Mon Feb 18 12:28:24 2013 -0500
-+++ b/security/openssh/Makefile	Mon Feb 18 12:28:29 2013 -0500
+diff -r 0ffa0f4a6f2b security/openssh/Makefile
+--- a/security/openssh/Makefile	Mon Apr 08 12:56:16 2013 -0400
++++ b/security/openssh/Makefile	Mon Apr 08 12:56:21 2013 -0400
 @@ -213,4 +213,7 @@
  	done
  .endif
@@ -12,17 +12,17 @@ diff -r 91996cb3bdb7 security/openssh/Makefile
 +CONFIGURE_ARGS+=--without-stackprotect
 +
  .include "../../mk/bsd.pkg.mk"
-diff -r 91996cb3bdb7 security/openssh/distinfo
---- a/security/openssh/distinfo	Mon Feb 18 12:28:24 2013 -0500
-+++ b/security/openssh/distinfo	Mon Feb 18 12:28:29 2013 -0500
+diff -r 0ffa0f4a6f2b security/openssh/distinfo
+--- a/security/openssh/distinfo	Mon Apr 08 12:56:16 2013 -0400
++++ b/security/openssh/distinfo	Mon Apr 08 12:56:21 2013 -0400
 @@ -32,3 +32,4 @@
  SHA1 (patch-av) = dd34ac767d08b989775add25c5c015a2f19fce5c
  SHA1 (patch-aw) = 22d873bfe56464ce8a978082ebce73d441f81e5d
  SHA1 (patch-platform.c) = fcbea87b04d07ef45af5380f9baa024fada9974f
 +SHA1 (patch-qq) = ae5da142fcea297d237d5bf32abbed332b3550aa
-diff -r 91996cb3bdb7 security/openssh/patches/patch-qq
+diff -r 0ffa0f4a6f2b security/openssh/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/security/openssh/patches/patch-qq	Mon Feb 18 12:28:29 2013 -0500
++++ b/security/openssh/patches/patch-qq	Mon Apr 08 12:56:21 2013 -0400
 @@ -0,0 +1,86 @@
 +diff -r 989278cadbd7 loginrec.c
 +--- loginrec.c	Sat Jul 14 01:30:04 2012 +0000

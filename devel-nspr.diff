@@ -1,16 +1,17 @@
 # HG changeset patch
-# Parent f3365dd8ab98fe25af747b77f0b3edeffa8ff9b6
-diff -r f3365dd8ab98 -r 51a2c11c4f01 devel/nspr/distinfo
---- a/devel/nspr/distinfo	Fri Apr 05 19:15:26 2013 -0400
-+++ b/devel/nspr/distinfo	Fri Apr 05 19:15:46 2013 -0400
+# Parent a4b76fe15c85bd7ae82ded8ab3abbb6209c07c16
+
+diff -r a4b76fe15c85 devel/nspr/distinfo
+--- a/devel/nspr/distinfo	Mon Apr 08 12:59:06 2013 -0400
++++ b/devel/nspr/distinfo	Mon Apr 08 12:59:11 2013 -0400
 @@ -15,3 +15,4 @@
  SHA1 (patch-nsprpub_pr_src_md_unix_uxrng.c) = bd84dfd23b2884106a20fbfaede1d3ae94bc0284
  SHA1 (patch-nsprpub_pr_src_pthreads_ptio.c) = 1cf8a6e20b35e2969f0e65fba26e853c65d1d9c7
  SHA1 (patch-nsprpub_pr_src_pthreads_ptsynch.c) = c628df7628099d3c93a8b01089971637ec81d471
 +SHA1 (patch-qq) = 376609106ecf27242ff46d47c4d78c6ca131fdea
-diff -r f3365dd8ab98 -r 51a2c11c4f01 devel/nspr/patches/patch-qq
+diff -r a4b76fe15c85 devel/nspr/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/nspr/patches/patch-qq	Fri Apr 05 19:15:46 2013 -0400
++++ b/devel/nspr/patches/patch-qq	Mon Apr 08 12:59:11 2013 -0400
 @@ -0,0 +1,15 @@
 +diff -r c688b6f135e4 nsprpub/pr/src/misc/prnetdb.c
 +--- nsprpub/pr/src/misc/prnetdb.c	Tue Apr 02 14:49:10 2013 +0000

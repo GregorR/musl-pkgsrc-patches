@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 3f73631dee2660f5ada634a93990009cc014d735
+# Parent 8ba299bf7ea4119bb3cdeef32bee755c380d3356
 
-diff -r 3f73631dee26 sysutils/dbus/distinfo
---- a/sysutils/dbus/distinfo	Mon Feb 18 12:30:23 2013 -0500
-+++ b/sysutils/dbus/distinfo	Mon Feb 18 12:30:28 2013 -0500
+diff -r 8ba299bf7ea4 sysutils/dbus/distinfo
+--- a/sysutils/dbus/distinfo	Mon Apr 08 12:57:52 2013 -0400
++++ b/sysutils/dbus/distinfo	Mon Apr 08 12:57:57 2013 -0400
 @@ -9,3 +9,4 @@
  SHA1 (patch-al) = 3f9f793b0c1455bf2bf079cc27b841c22f42c276
  SHA1 (patch-am) = 8c794ff8b0981e90243ee20c26ae1ecc72e68de8
  SHA1 (patch-ba) = ceb8e0c424c57410f8c3775087e4cae1b44da4c5
 +SHA1 (patch-qq) = 11a2511a66a12d886e444b7ca1745d66c97b1caa
-diff -r 3f73631dee26 sysutils/dbus/patches/patch-qq
+diff -r 8ba299bf7ea4 sysutils/dbus/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/dbus/patches/patch-qq	Mon Feb 18 12:30:28 2013 -0500
++++ b/sysutils/dbus/patches/patch-qq	Mon Apr 08 12:57:57 2013 -0400
 @@ -0,0 +1,12 @@
 +diff -r 9389e1d2860b dbus/sd-daemon.c
 +--- dbus/sd-daemon.c	Tue Nov 13 07:10:30 2012 +0000

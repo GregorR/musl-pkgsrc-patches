@@ -1,9 +1,10 @@
 # HG changeset patch
-# Parent 65b6cd34e0ab09c0f5151e8e98d222c368ab9c26
-diff -r 65b6cd34e0ab -r f0970c471d00 x11/qt4-libs/Makefile
---- a/x11/qt4-libs/Makefile	Fri Apr 05 19:15:25 2013 -0400
-+++ b/x11/qt4-libs/Makefile	Fri Apr 05 19:18:58 2013 -0400
-@@ -93,11 +93,12 @@
+# Parent 2220d9b145f2e9ed857aad05e7665d02a5ff165c
+
+diff -r 2220d9b145f2 x11/qt4-libs/Makefile
+--- a/x11/qt4-libs/Makefile	Mon Apr 08 12:58:40 2013 -0400
++++ b/x11/qt4-libs/Makefile	Mon Apr 08 12:58:45 2013 -0400
+@@ -94,11 +94,12 @@
  	${LIBTOOL} --mode=install ${INSTALL_LIB} \
  		${WRKSRC}/plugins/bearer/libqgenericbearer.la \
  		${DESTDIR}${QTPREFIX}/plugins/bearer/
@@ -21,9 +22,9 @@ diff -r 65b6cd34e0ab -r f0970c471d00 x11/qt4-libs/Makefile
  .for plug in qglgraphicssystem qtracegraphicssystem
  	${LIBTOOL} --mode=install ${INSTALL_LIB} \
  		${WRKSRC}/plugins/graphicssystems/lib${plug}.la \
-diff -r 65b6cd34e0ab -r f0970c471d00 x11/qt4-libs/PLIST
---- a/x11/qt4-libs/PLIST	Fri Apr 05 19:15:25 2013 -0400
-+++ b/x11/qt4-libs/PLIST	Fri Apr 05 19:18:58 2013 -0400
+diff -r 2220d9b145f2 x11/qt4-libs/PLIST
+--- a/x11/qt4-libs/PLIST	Mon Apr 08 12:58:40 2013 -0400
++++ b/x11/qt4-libs/PLIST	Mon Apr 08 12:58:45 2013 -0400
 @@ -44,10 +44,6 @@
  qt4/plugins/accessible/libqtaccessiblecompatwidgets.la
  qt4/plugins/accessible/libqtaccessiblewidgets.la
@@ -35,17 +36,17 @@ diff -r 65b6cd34e0ab -r f0970c471d00 x11/qt4-libs/PLIST
  qt4/plugins/graphicssystems/libqglgraphicssystem.la
  qt4/plugins/graphicssystems/libqtracegraphicssystem.la
  qt4/plugins/iconengines/libqsvgicon.la
-diff -r 65b6cd34e0ab -r f0970c471d00 x11/qt4-libs/distinfo
---- a/x11/qt4-libs/distinfo	Fri Apr 05 19:15:25 2013 -0400
-+++ b/x11/qt4-libs/distinfo	Fri Apr 05 19:18:58 2013 -0400
-@@ -55,3 +55,4 @@
- SHA1 (patch-src_corelib_io_qfilesystemwatcher.cpp) = bb16b95d20286b1aa069dc25843d7e0067cc0268
+diff -r 2220d9b145f2 x11/qt4-libs/distinfo
+--- a/x11/qt4-libs/distinfo	Mon Apr 08 12:58:40 2013 -0400
++++ b/x11/qt4-libs/distinfo	Mon Apr 08 12:58:45 2013 -0400
+@@ -56,3 +56,4 @@
+ SHA1 (patch-src_declarative_util_qdeclarativefontloader.cpp) = 0bb76eac102a4325cadb5bcb4e7a1ac85a3d099f
  SHA1 (patch-src_network_ssl_qsslsocket__openssl__symbols.cpp) = 3ad682b86d2e9bd2b282caa298508dc3e9dd8566
  SHA1 (patch-src_network_ssl_qsslsocket__openssl__symbols__p.h) = 417846ba9edab8638cafa41a54ef60029467ef80
 +SHA1 (patch-qq) = 0b23302194af00685017cc4319c3b6cb10fc1fae
-diff -r 65b6cd34e0ab -r f0970c471d00 x11/qt4-libs/patches/patch-qq
+diff -r 2220d9b145f2 x11/qt4-libs/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/qt4-libs/patches/patch-qq	Fri Apr 05 19:18:58 2013 -0400
++++ b/x11/qt4-libs/patches/patch-qq	Mon Apr 08 12:58:45 2013 -0400
 @@ -0,0 +1,70 @@
 +diff -r bf00ba1f1322 mkspecs/linux-g++/qplatformdefs.h
 +--- mkspecs/linux-g++/qplatformdefs.h	Wed Mar 06 04:21:22 2013 +0000

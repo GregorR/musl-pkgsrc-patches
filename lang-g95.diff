@@ -1,16 +1,17 @@
 # HG changeset patch
-# Parent 6b9437d950b24b233b18f10f31e8e6218b605f13
-diff -r 6b9437d950b2 -r 9ee6a9f0e8c6 lang/g95/distinfo
---- a/lang/g95/distinfo	Mon Mar 11 16:55:37 2013 -0400
-+++ b/lang/g95/distinfo	Mon Mar 11 19:06:07 2013 -0400
-@@ -18,3 +18,4 @@
- SHA1 (patch-ac) = cc6811bb7ef29d9388a40851c403f8768b6f9e48
- SHA1 (patch-libf95.a-0.92_configure) = d17fc9fa66228489cfa5e49c23d4cfd32a91bfae
- SHA1 (patch-libf95.a-0.92_io_atof.c) = cd45d03e68573fdadb8c9a217e7dc1eab0db8314
+# Parent 4f06807d4a84d32e690afd7143539c05434082f6
+
+diff -r 4f06807d4a84 lang/g95/distinfo
+--- a/lang/g95/distinfo	Mon Apr 08 12:59:01 2013 -0400
++++ b/lang/g95/distinfo	Mon Apr 08 12:59:06 2013 -0400
+@@ -26,3 +26,4 @@
+ SHA1 (patch-libf95.a-0.93_math_ff.c) = 353121bc08a86765d18b0e6f051ba91f7e65e9c2
+ SHA1 (patch-libf95.a-0.93_math_x87.S) = d1eb02bd2358b6abb9b8dc3e32629cba540adcc4
+ SHA1 (patch-libf95.a-0.93_quad_power16.c) = fc7375aa90ecf75bb8ba26d41739614040b16e09
 +SHA1 (patch-musl) = c4ad3faffac94ade7964e359babe4b02a22a51d5
-diff -r 6b9437d950b2 -r 9ee6a9f0e8c6 lang/g95/patches/patch-musl
+diff -r 4f06807d4a84 lang/g95/patches/patch-musl
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/lang/g95/patches/patch-musl	Mon Mar 11 19:06:07 2013 -0400
++++ b/lang/g95/patches/patch-musl	Mon Apr 08 12:59:06 2013 -0400
 @@ -0,0 +1,119 @@
 +musl-cross 74d6e78976bd tip
 +diff -r d6f84a2db6ba config.sub

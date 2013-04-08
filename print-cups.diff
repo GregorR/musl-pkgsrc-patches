@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 1971655a81e224140d7632098aa4f3c916632572
+# Parent b4596252c783cf6ef48834efea47f1a8a21a834d
 
-diff -r 1971655a81e2 print/cups/Makefile
---- a/print/cups/Makefile	Mon Feb 18 12:30:34 2013 -0500
-+++ b/print/cups/Makefile	Mon Feb 18 12:30:38 2013 -0500
+diff -r b4596252c783 print/cups/Makefile
+--- a/print/cups/Makefile	Mon Apr 08 12:58:03 2013 -0400
++++ b/print/cups/Makefile	Mon Apr 08 12:58:08 2013 -0400
 @@ -71,8 +71,12 @@
  
  .if ${OPSYS} == "SunOS"

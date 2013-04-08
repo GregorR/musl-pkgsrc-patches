@@ -1,18 +1,18 @@
 # HG changeset patch
-# Parent b455158170159cf631878b5bb0f34ca786bff102
+# Parent 60467eb8606d1cbf0514b492ee7fd0fa5fcd625e
 
-diff -r b45515817015 databases/db4/distinfo
---- a/databases/db4/distinfo	Mon Feb 18 12:23:22 2013 -0500
-+++ b/databases/db4/distinfo	Mon Feb 18 12:23:27 2013 -0500
+diff -r 60467eb8606d databases/db4/distinfo
+--- a/databases/db4/distinfo	Mon Apr 08 12:52:21 2013 -0400
++++ b/databases/db4/distinfo	Mon Apr 08 12:52:26 2013 -0400
 @@ -7,4 +7,5 @@
  SHA1 (patch-ab) = 8f9ecc47527d338e28ee1ce71e694eaf2bdceb92
  SHA1 (patch-ac) = 045a3b83b9c6c164382ec546b06ae248620552cf
  SHA1 (patch-ae) = 43e574154de93dba60392b09d6ebddbca1036849
 +SHA1 (patch-aq) = 3baa90e922dc9cb075deee2a2a37d607affead9b
  SHA1 (patch-dbinc_atomic.h) = ff60e3af41ac1b000ebccc91bc673adde5c7463b
-diff -r b45515817015 databases/db4/patches/patch-aq
+diff -r 60467eb8606d databases/db4/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/databases/db4/patches/patch-aq	Mon Feb 18 12:23:27 2013 -0500
++++ b/databases/db4/patches/patch-aq	Mon Apr 08 12:52:26 2013 -0400
 @@ -0,0 +1,11 @@
 +diff -r 7a6cd6105754 dist/configure
 +--- dist/configure	Sat Apr 28 15:23:22 2012 +0000

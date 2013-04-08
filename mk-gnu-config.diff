@@ -1,8 +1,9 @@
 # HG changeset patch
-# Parent 9758579ce32a47200a07c6aea313801cbf1ff542
-diff -r 9758579ce32a -r 4b99852db98b mk/gnu-config/config.sub
---- a/mk/gnu-config/config.sub	Mon Mar 11 12:50:15 2013 -0400
-+++ b/mk/gnu-config/config.sub	Mon Mar 11 13:47:18 2013 -0400
+# Parent fd53e5832f31808999328025a2d2fb4af5b5c3fc
+
+diff -r fd53e5832f31 mk/gnu-config/config.sub
+--- a/mk/gnu-config/config.sub	Mon Apr 08 12:52:00 2013 -0400
++++ b/mk/gnu-config/config.sub	Mon Apr 08 12:52:05 2013 -0400
 @@ -124,7 +124,7 @@
  # Here we must recognize all the valid KERNEL-OS combinations.
  maybe_os=`echo $1 | sed 's/^\(.*\)-\([^-]*-[^-]*\)$/\2/'`

@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 04d1064735acbf875dfffa011a9e5d1ce4c77775
+# Parent 4a2d6e3e6ab0496fe7584fb9d32726b6ae21d124
 
-diff -r 04d1064735ac security/p5-Crypt-Rijndael/distinfo
---- a/security/p5-Crypt-Rijndael/distinfo	Mon Feb 18 12:26:44 2013 -0500
-+++ b/security/p5-Crypt-Rijndael/distinfo	Mon Feb 18 12:26:49 2013 -0500
+diff -r 4a2d6e3e6ab0 security/p5-Crypt-Rijndael/distinfo
+--- a/security/p5-Crypt-Rijndael/distinfo	Mon Apr 08 12:54:39 2013 -0400
++++ b/security/p5-Crypt-Rijndael/distinfo	Mon Apr 08 12:54:43 2013 -0400
 @@ -3,3 +3,4 @@
  SHA1 (Crypt-Rijndael-1.09.tar.gz) = 2edc7836a62c01c6db668586f907f8f57170a970
  RMD160 (Crypt-Rijndael-1.09.tar.gz) = a0fa349631ce7a5555a3f6a9fe6c23b1a745858d
  Size (Crypt-Rijndael-1.09.tar.gz) = 28994 bytes
 +SHA1 (patch-aq) = 4780039094f3df9bde4617f4f26c11a6f23b56bf
-diff -r 04d1064735ac security/p5-Crypt-Rijndael/patches/patch-aq
+diff -r 4a2d6e3e6ab0 security/p5-Crypt-Rijndael/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/security/p5-Crypt-Rijndael/patches/patch-aq	Mon Feb 18 12:26:49 2013 -0500
++++ b/security/p5-Crypt-Rijndael/patches/patch-aq	Mon Apr 08 12:54:43 2013 -0400
 @@ -0,0 +1,14 @@
 +diff -r d81bee0804d7 rijndael.h
 +--- rijndael.h	Mon Jul 02 16:04:39 2012 +0000

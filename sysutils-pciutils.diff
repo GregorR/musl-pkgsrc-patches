@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent bebc36328e6e70b3101b2681c795fe1afd35bf8d
+# Parent 9b0e80898c8843d020a1d45d699a4c60c2631356
 
-diff -r bebc36328e6e sysutils/pciutils/distinfo
---- a/sysutils/pciutils/distinfo	Mon Feb 18 12:28:46 2013 -0500
-+++ b/sysutils/pciutils/distinfo	Mon Feb 18 12:28:51 2013 -0500
+diff -r 9b0e80898c88 sysutils/pciutils/distinfo
+--- a/sysutils/pciutils/distinfo	Mon Apr 08 12:56:38 2013 -0400
++++ b/sysutils/pciutils/distinfo	Mon Apr 08 12:56:43 2013 -0400
 @@ -7,3 +7,4 @@
  SHA1 (patch-ab) = 1448bb418cdc908eb6652cc98994d23d0d78cea0
  SHA1 (patch-ac) = 4b90e99c051391b9cd3a6c1f5781f41b4a855c29
  SHA1 (patch-ad) = bfe9069e96fd46798afec73c93ad71db3a0e0e37
 +SHA1 (patch-aq) = 5546296816722c621aeb777ccd6f316c04173182
-diff -r bebc36328e6e sysutils/pciutils/patches/patch-aq
+diff -r 9b0e80898c88 sysutils/pciutils/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/pciutils/patches/patch-aq	Mon Feb 18 12:28:51 2013 -0500
++++ b/sysutils/pciutils/patches/patch-aq	Mon Apr 08 12:56:43 2013 -0400
 @@ -0,0 +1,26 @@
 +diff -r 285cb9c34d4e lib/configure
 +--- lib/configure	Fri Jul 20 01:48:40 2012 +0000

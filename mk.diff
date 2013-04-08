@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent a7e61058c7276789156f4ffc323ee6ba1e66e3c4
+# Parent d341e40404ae0111e9bda13fd2ecd741d824faab
 
-diff -r a7e61058c727 mk/compiler/gcc.mk
---- a/mk/compiler/gcc.mk	Mon Feb 18 12:29:03 2013 -0500
-+++ b/mk/compiler/gcc.mk	Mon Feb 18 12:29:07 2013 -0500
+diff -r d341e40404ae mk/compiler/gcc.mk
+--- a/mk/compiler/gcc.mk	Mon Apr 08 12:47:10 2013 -0400
++++ b/mk/compiler/gcc.mk	Mon Apr 08 12:52:00 2013 -0400
 @@ -175,10 +175,10 @@
  .endif
  _GCC_PKG=	gcc-${_GCC_VERSION:C/-.*$//}
@@ -28,9 +28,9 @@ diff -r a7e61058c727 mk/compiler/gcc.mk
  
  # Distill the GCC_REQD list into a single _GCC_REQD value that is the
  # highest version of GCC required.
-diff -r a7e61058c727 mk/pkginstall/usergroupfuncs.Linux
---- a/mk/pkginstall/usergroupfuncs.Linux	Mon Feb 18 12:29:03 2013 -0500
-+++ b/mk/pkginstall/usergroupfuncs.Linux	Mon Feb 18 12:29:07 2013 -0500
+diff -r d341e40404ae mk/pkginstall/usergroupfuncs.Linux
+--- a/mk/pkginstall/usergroupfuncs.Linux	Mon Apr 08 12:47:10 2013 -0400
++++ b/mk/pkginstall/usergroupfuncs.Linux	Mon Apr 08 12:52:00 2013 -0400
 @@ -96,13 +96,13 @@
  	case $userid in
  	"")
@@ -49,9 +49,9 @@ diff -r a7e61058c727 mk/pkginstall/usergroupfuncs.Linux
  		;;
  	esac
  }
-diff -r a7e61058c727 mk/platform/Linux.mk
---- a/mk/platform/Linux.mk	Mon Feb 18 12:29:03 2013 -0500
-+++ b/mk/platform/Linux.mk	Mon Feb 18 12:29:07 2013 -0500
+diff -r d341e40404ae mk/platform/Linux.mk
+--- a/mk/platform/Linux.mk	Mon Apr 08 12:47:10 2013 -0400
++++ b/mk/platform/Linux.mk	Mon Apr 08 12:52:00 2013 -0400
 @@ -23,7 +23,7 @@
  DEF_UMASK?=		022
  DEFAULT_SERIAL_DEVICE?=	/dev/null

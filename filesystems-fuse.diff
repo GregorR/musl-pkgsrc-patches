@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 14662b3ea1d64b3cf25e98ee2eb7179bce1aa3f2
+# Parent 25609edfd6d8cda75b53afa798a68064a71bc800
 
-diff -r 14662b3ea1d6 filesystems/fuse/distinfo
---- a/filesystems/fuse/distinfo	Mon Feb 18 12:24:34 2013 -0500
-+++ b/filesystems/fuse/distinfo	Mon Feb 18 12:24:39 2013 -0500
+diff -r 25609edfd6d8 filesystems/fuse/distinfo
+--- a/filesystems/fuse/distinfo	Mon Apr 08 12:53:03 2013 -0400
++++ b/filesystems/fuse/distinfo	Mon Apr 08 12:53:07 2013 -0400
 @@ -16,3 +16,4 @@
  SHA1 (patch-am) = 2abd07b403896bff5aad6cd865cb473553851a22
  SHA1 (patch-an) = 3f119dae5f08996dd483a0fb4fa0365507be2070
  SHA1 (patch-util_fusermount.c) = c65c377b917dc0c34cf5b8fb4d70e75075debcf9
 +SHA1 (patch-qq) = f8dc23f988fa537dcb41bdc54f4dc550eb479914
-diff -r 14662b3ea1d6 filesystems/fuse/patches/patch-qq
+diff -r 25609edfd6d8 filesystems/fuse/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/filesystems/fuse/patches/patch-qq	Mon Feb 18 12:24:39 2013 -0500
++++ b/filesystems/fuse/patches/patch-qq	Mon Apr 08 12:53:07 2013 -0400
 @@ -0,0 +1,48 @@
 +diff -r 18a7de07ebb3 example/fioclient.c
 +--- example/fioclient.c	Tue May 08 17:27:11 2012 +0000

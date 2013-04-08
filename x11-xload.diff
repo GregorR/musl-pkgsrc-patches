@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent f17d23f65db1c449c72c068f60a962bfa5e63ecc
+# Parent e2bed279fdf27da5cb032ac1b685d6f114e8aa02
 
-diff -r f17d23f65db1 x11/xload/distinfo
---- a/x11/xload/distinfo	Mon Feb 18 12:29:39 2013 -0500
-+++ b/x11/xload/distinfo	Mon Feb 18 12:29:44 2013 -0500
+diff -r e2bed279fdf2 x11/xload/distinfo
+--- a/x11/xload/distinfo	Mon Apr 08 12:57:20 2013 -0400
++++ b/x11/xload/distinfo	Mon Apr 08 12:57:25 2013 -0400
 @@ -3,3 +3,4 @@
  SHA1 (xload-1.1.1.tar.bz2) = 50f6ee958e6fb609af92cf9403e7bd68720575cb
  RMD160 (xload-1.1.1.tar.bz2) = 8c971e743cbd3e7cfe8ac2747d87ae2d4c0981d5
  Size (xload-1.1.1.tar.bz2) = 130887 bytes
 +SHA1 (patch-aq) = 91846822d3403048ca2b9b9ace3314bd1b880ebe
-diff -r f17d23f65db1 x11/xload/patches/patch-aq
+diff -r e2bed279fdf2 x11/xload/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/xload/patches/patch-aq	Mon Feb 18 12:29:44 2013 -0500
++++ b/x11/xload/patches/patch-aq	Mon Apr 08 12:57:25 2013 -0400
 @@ -0,0 +1,25 @@
 +diff -r 51a31ec23212 get_rload.c
 +--- get_rload.c	Sat Aug 11 06:34:00 2012 +0000

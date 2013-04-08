@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent f08cb526ff1449928f2459c38d5c881e4e660b24
+# Parent b5ea146e4881ddc95653aac0b881a8e645eb877e
 
-diff -r f08cb526ff14 graphics/aalib/distinfo
---- a/graphics/aalib/distinfo	Mon Feb 18 12:24:45 2013 -0500
-+++ b/graphics/aalib/distinfo	Mon Feb 18 12:24:50 2013 -0500
+diff -r b5ea146e4881 graphics/aalib/distinfo
+--- a/graphics/aalib/distinfo	Mon Apr 08 12:53:13 2013 -0400
++++ b/graphics/aalib/distinfo	Mon Apr 08 12:53:18 2013 -0400
 @@ -6,3 +6,4 @@
  SHA1 (patch-aa) = 927d69a8f499b99f0bd5f13cf220ce8cbb7ea591
  SHA1 (patch-ab) = 272f6f10dbe7a525c582a9b4c865f0ab9b2f9fba
  SHA1 (patch-ac) = 8d9c812b9b871f44dd1285d6a635eeab6e49bf49
 +SHA1 (patch-aq) = 285c28a811719d0e83f8df29c3a6bf93fb3eef8f
-diff -r f08cb526ff14 graphics/aalib/patches/patch-aq
+diff -r b5ea146e4881 graphics/aalib/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/graphics/aalib/patches/patch-aq	Mon Feb 18 12:24:50 2013 -0500
++++ b/graphics/aalib/patches/patch-aq	Mon Apr 08 12:53:18 2013 -0400
 @@ -0,0 +1,12 @@
 +diff -r 6fe3c134e687 src/aalinuxkbd.c
 +--- src/aalinuxkbd.c	Mon May 07 17:51:38 2012 +0000

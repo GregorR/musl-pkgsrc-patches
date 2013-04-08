@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent cf5b46327cf3ae3f26db01e17c48347e363593fe
+# Parent 50f858616c42fd5b84a63a133b1d6cdd43569196
 
-diff -r cf5b46327cf3 x11/vte/distinfo
---- a/x11/vte/distinfo	Mon Feb 18 12:28:18 2013 -0500
-+++ b/x11/vte/distinfo	Mon Feb 18 12:28:23 2013 -0500
+diff -r 50f858616c42 x11/vte/distinfo
+--- a/x11/vte/distinfo	Mon Apr 08 12:56:11 2013 -0400
++++ b/x11/vte/distinfo	Mon Apr 08 12:56:16 2013 -0400
 @@ -9,3 +9,4 @@
  SHA1 (patch-af) = 69ea7e022f6c495c3c9af681d05644b9d70e7bdc
  SHA1 (patch-ah) = 28cee2661439d7d6f1959ebf3c7d1b7b3fe0a764
  SHA1 (patch-ai) = 986dd7c2a5778c9c35100901cfaa25acd0cbdc32
 +SHA1 (patch-qq) = 92b66111090b44bea1e6ee933be879cd62aafcfd
-diff -r cf5b46327cf3 x11/vte/patches/patch-qq
+diff -r 50f858616c42 x11/vte/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/vte/patches/patch-qq	Mon Feb 18 12:28:23 2013 -0500
++++ b/x11/vte/patches/patch-qq	Mon Apr 08 12:56:16 2013 -0400
 @@ -0,0 +1,28 @@
 +diff -r af9a009fcb7c src/pty.c
 +--- src/pty.c	Thu Nov 22 04:46:24 2012 +0000

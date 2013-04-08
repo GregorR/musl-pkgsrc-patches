@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 43d7c032205c1db345b9569878bc151e8a4d47c0
+# Parent 7e541de0a38ac8c3a350488935c8a7ff135710ed
 
-diff -r 43d7c032205c pkgtools/bootstrap-mk-files/files/mods/Linux.bsd.man.mk
---- a/pkgtools/bootstrap-mk-files/files/mods/Linux.bsd.man.mk	Mon Feb 18 12:26:03 2013 -0500
-+++ b/pkgtools/bootstrap-mk-files/files/mods/Linux.bsd.man.mk	Mon Feb 18 12:26:08 2013 -0500
+diff -r 7e541de0a38a pkgtools/bootstrap-mk-files/files/mods/Linux.bsd.man.mk
+--- a/pkgtools/bootstrap-mk-files/files/mods/Linux.bsd.man.mk	Mon Apr 08 12:54:04 2013 -0400
++++ b/pkgtools/bootstrap-mk-files/files/mods/Linux.bsd.man.mk	Mon Apr 08 12:54:08 2013 -0400
 @@ -13,6 +13,7 @@
  .endif
  

@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 24199592246503e4679a86b305c107756186df7e
+# Parent 35f2dac3de28935abf6634131696587beca41ba4
 
-diff -r 241995922465 devel/libusb/distinfo
---- a/devel/libusb/distinfo	Mon Feb 18 12:30:49 2013 -0500
-+++ b/devel/libusb/distinfo	Mon Feb 18 12:30:54 2013 -0500
+diff -r 35f2dac3de28 devel/libusb/distinfo
+--- a/devel/libusb/distinfo	Mon Apr 08 12:58:18 2013 -0400
++++ b/devel/libusb/distinfo	Mon Apr 08 12:58:23 2013 -0400
 @@ -9,3 +9,4 @@
  SHA1 (patch-ad) = f81135a5f92bf0c2e1ca921368bd39482bd3b580
  SHA1 (patch-ae) = 49a01ebe66de4965f3611cf42db09703aa68c415
  SHA1 (patch-af) = e46e576a589fb65488011a41df95f744230c0c6c
 +SHA1 (patch-qq) = 587b3c9688214ed2391e69b4d7a57d0a7bfe718e
-diff -r 241995922465 devel/libusb/patches/patch-qq
+diff -r 35f2dac3de28 devel/libusb/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/libusb/patches/patch-qq	Mon Feb 18 12:30:54 2013 -0500
++++ b/devel/libusb/patches/patch-qq	Mon Apr 08 12:58:23 2013 -0400
 @@ -0,0 +1,24 @@
 +diff -r 43d083674a31 linux.h
 +--- linux.h	Thu Nov 22 07:21:33 2012 +0000

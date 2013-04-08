@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent d09d5ff7ed10a79191d1c45890124cc1d268b043
+# Parent 7806bfa485aeeb9266f1180cafa06eba6ce9b2bc
 
-diff -r d09d5ff7ed10 net/avahi/distinfo
---- a/net/avahi/distinfo	Mon Feb 18 12:29:34 2013 -0500
-+++ b/net/avahi/distinfo	Mon Feb 18 12:29:39 2013 -0500
+diff -r 7806bfa485ae net/avahi/distinfo
+--- a/net/avahi/distinfo	Mon Apr 08 12:57:15 2013 -0400
++++ b/net/avahi/distinfo	Mon Apr 08 12:57:19 2013 -0400
 @@ -7,3 +7,4 @@
  SHA1 (patch-ab) = 49110f3c5502a56448ca6ee4412130299697f255
  SHA1 (patch-ah) = 4b3ffdb927daef8c939527fd5c5893f9f88b3ff3
  SHA1 (patch-ai) = 406b314c8105e28cffb83a92bb80f2dc1b264c3f
 +SHA1 (patch-aq) = 35e215d2c43a17212d698f4fb7c6d9d8682f42e8
-diff -r d09d5ff7ed10 net/avahi/patches/patch-aq
+diff -r 7806bfa485ae net/avahi/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/net/avahi/patches/patch-aq	Mon Feb 18 12:29:39 2013 -0500
++++ b/net/avahi/patches/patch-aq	Mon Apr 08 12:57:19 2013 -0400
 @@ -0,0 +1,12 @@
 +diff -r dffd1f150cf8 avahi-daemon/sd-daemon.c
 +--- avahi-daemon/sd-daemon.c	Sat Aug 11 03:37:30 2012 +0000

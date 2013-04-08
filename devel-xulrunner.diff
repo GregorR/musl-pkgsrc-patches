@@ -1,9 +1,10 @@
 # HG changeset patch
-# Parent 51a2c11c4f018dcb4f2bea9112d1f68da9e82fe9
-diff -r 51a2c11c4f01 -r 2d6bc0a8d169 devel/xulrunner/Makefile
---- a/devel/xulrunner/Makefile	Fri Apr 05 19:15:46 2013 -0400
-+++ b/devel/xulrunner/Makefile	Fri Apr 05 19:17:25 2013 -0400
-@@ -23,6 +23,9 @@
+# Parent a7f0a8ade9523f39e6f15968bfcdfadec6c0aab1
+
+diff -r a7f0a8ade952 devel/xulrunner/Makefile
+--- a/devel/xulrunner/Makefile	Mon Apr 08 12:59:12 2013 -0400
++++ b/devel/xulrunner/Makefile	Mon Apr 08 12:59:16 2013 -0400
+@@ -24,6 +24,9 @@
  CONFIGURE_ARGS+=	--enable-application=xulrunner
  CONFIGURE_ARGS+=	--enable-libxul
  
@@ -13,28 +14,17 @@ diff -r 51a2c11c4f01 -r 2d6bc0a8d169 devel/xulrunner/Makefile
  ALL_ENV+=		MOZILLA_PKG_NAME=xulrunner
  
  MAKE_ENV+=		FREEBL_NO_DEPEND=0
-diff -r 51a2c11c4f01 -r 2d6bc0a8d169 devel/xulrunner/PLIST
---- a/devel/xulrunner/PLIST	Fri Apr 05 19:15:46 2013 -0400
-+++ b/devel/xulrunner/PLIST	Fri Apr 05 19:17:25 2013 -0400
-@@ -2502,7 +2502,6 @@
- include/xulrunner/theora/theora.h
- include/xulrunner/theora/theoradec.h
- include/xulrunner/theora/theoraenc.h
--include/xulrunner/tremor/ivorbiscodec.h
- include/xulrunner/txIEXSLTRegExFunctions.h
- include/xulrunner/txIFunctionEvaluationContext.h
- include/xulrunner/txINodeSet.h
-diff -r 51a2c11c4f01 -r 2d6bc0a8d169 devel/xulrunner/distinfo
---- a/devel/xulrunner/distinfo	Fri Apr 05 19:15:46 2013 -0400
-+++ b/devel/xulrunner/distinfo	Fri Apr 05 19:17:25 2013 -0400
-@@ -114,3 +114,4 @@
- SHA1 (patch-xpcom_ds_TimeStamp.h) = 99a590ea3cf6ada0c6e8781f5b39bff46a6990b9
- SHA1 (patch-xpcom_idl-parser_Makefile.in) = 0382a7ab00c2e7245f5ddbbe5a50036a8ae418ef
- SHA1 (patch-xpcom_typelib_xpidl_Makefile.in) = 4821d564e467494f65e70bb9ecec7cac2754ca0c
+diff -r a7f0a8ade952 devel/xulrunner/distinfo
+--- a/devel/xulrunner/distinfo	Mon Apr 08 12:59:12 2013 -0400
++++ b/devel/xulrunner/distinfo	Mon Apr 08 12:59:16 2013 -0400
+@@ -67,3 +67,4 @@
+ SHA1 (patch-xo) = aae6107dcfaf731bd3e9962d953fb8701fc5f163
+ SHA1 (patch-xpcom_Makefile.in) = e5f77ed56ed4ad26a08a67085e3dfec0e7af3fa6
+ SHA1 (patch-xpcom_ds_TimeStamp.h) = a1fb060f91720eb330f102b28d9373bbdbe96e30
 +SHA1 (patch-zqq) = 4d0f437ef6fb8402a0f0aa84ad17febd434612f0
-diff -r 51a2c11c4f01 -r 2d6bc0a8d169 devel/xulrunner/patches/patch-zqq
+diff -r a7f0a8ade952 devel/xulrunner/patches/patch-zqq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/xulrunner/patches/patch-zqq	Fri Apr 05 19:17:25 2013 -0400
++++ b/devel/xulrunner/patches/patch-zqq	Mon Apr 08 12:59:16 2013 -0400
 @@ -0,0 +1,325 @@
 +diff -r 9e9c423ca4ad memory/mozalloc/mozalloc.cpp
 +--- memory/mozalloc/mozalloc.cpp	Tue Apr 02 16:42:16 2013 +0000

@@ -1,16 +1,17 @@
 # HG changeset patch
-# Parent 6f7622851884a9a04a396cc23a0ca885ba3f61a3
-diff -r 6f7622851884 -r a3d589e5cb8f graphics/MesaLib/distinfo
---- a/graphics/MesaLib/distinfo	Wed Mar 13 22:25:51 2013 +0000
-+++ b/graphics/MesaLib/distinfo	Wed Mar 13 22:51:38 2013 +0000
+# Parent 542cfe6e394d8c5b7ef54b44b31b187bfa3e8b83
+
+diff -r 542cfe6e394d graphics/MesaLib/distinfo
+--- a/graphics/MesaLib/distinfo	Mon Apr 08 12:53:08 2013 -0400
++++ b/graphics/MesaLib/distinfo	Mon Apr 08 12:53:13 2013 -0400
 @@ -35,3 +35,4 @@
  SHA1 (patch-be) = 28caa14529347138ff1a86fa64964fe253989cb5
  SHA1 (patch-cb) = 83789d71de41aed2ba81a8239fb035a4cd295477
  SHA1 (patch-cc) = 737d8b474b1c296f3ceb4de515dd385aae072394
 +SHA1 (patch-savage_sys_timeb) = ac4304c7060d4c191a557c7017cc630a0de6a318
-diff -r 6f7622851884 -r a3d589e5cb8f graphics/MesaLib/patches/patch-savage_sys_timeb
+diff -r 542cfe6e394d graphics/MesaLib/patches/patch-savage_sys_timeb
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/graphics/MesaLib/patches/patch-savage_sys_timeb	Wed Mar 13 22:51:38 2013 +0000
++++ b/graphics/MesaLib/patches/patch-savage_sys_timeb	Mon Apr 08 12:53:13 2013 -0400
 @@ -0,0 +1,13 @@
 +sys/timeb.h is unportable and not even used
 +

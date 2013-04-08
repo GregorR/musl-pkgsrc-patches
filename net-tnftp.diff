@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 366a106ea4442d0ef7155aef1646db146d1d8767
+# Parent 63a54601728e233dd396cf34058e527070747760
 
-diff -r 366a106ea444 net/tnftp/files/libedit/tty.c
---- a/net/tnftp/files/libedit/tty.c	Mon Feb 18 12:25:58 2013 -0500
-+++ b/net/tnftp/files/libedit/tty.c	Mon Feb 18 12:26:02 2013 -0500
+diff -r 63a54601728e net/tnftp/files/libedit/tty.c
+--- a/net/tnftp/files/libedit/tty.c	Mon Apr 08 12:53:59 2013 -0400
++++ b/net/tnftp/files/libedit/tty.c	Mon Apr 08 12:54:03 2013 -0400
 @@ -40,6 +40,7 @@
   * tty.c: tty interface stuff
   */

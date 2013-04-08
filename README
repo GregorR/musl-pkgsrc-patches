@@ -1,7 +1,7 @@
 This is a collection of patches to pkgsrc for packages to build properly on
 musl-based Linux systems.
 
-It is currently based on pkgsrc 2012Q4. It can be applied with a tool such as
+It is currently based on pkgsrc 2013Q1. It can be applied with a tool such as
 quilt, mq or guilt, or simply
 
 $ cat .../musl-pkgsrc-patches/*.diff | patch -p1

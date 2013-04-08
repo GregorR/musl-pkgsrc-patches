@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent c6cabe84e30f7839daa8f02df7490cef1dfb285d
+# Parent 01a467237fa2641e976c7b7a7d830c3c44d1c019
 
-diff -r c6cabe84e30f graphics/gdk-pixbuf2/PLIST
---- a/graphics/gdk-pixbuf2/PLIST	Mon Feb 18 12:24:55 2013 -0500
-+++ b/graphics/gdk-pixbuf2/PLIST	Mon Feb 18 12:25:00 2013 -0500
+diff -r 01a467237fa2 graphics/gdk-pixbuf2/PLIST
+--- a/graphics/gdk-pixbuf2/PLIST	Mon Apr 08 12:53:19 2013 -0400
++++ b/graphics/gdk-pixbuf2/PLIST	Mon Apr 08 12:53:23 2013 -0400
 @@ -77,106 +77,3 @@
  share/gtk-doc/html/gdk-pixbuf/rn02.html
  share/gtk-doc/html/gdk-pixbuf/style.css

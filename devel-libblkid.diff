@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 29ae74726b689ae5dc310f88037c3b7c3de5b18c
+# Parent 015f004eaacac2f1cfab2d614368f7eedaeb7f45
 
-diff -r 29ae74726b68 devel/libblkid/distinfo
---- a/devel/libblkid/distinfo	Mon Feb 18 12:23:53 2013 -0500
-+++ b/devel/libblkid/distinfo	Mon Feb 18 12:23:58 2013 -0500
+diff -r 015f004eaaca devel/libblkid/distinfo
+--- a/devel/libblkid/distinfo	Mon Apr 08 12:52:47 2013 -0400
++++ b/devel/libblkid/distinfo	Mon Apr 08 12:52:52 2013 -0400
 @@ -10,3 +10,4 @@
  SHA1 (patch-ae) = df77e8c6da425609309505fd447b66ade05426a3
  SHA1 (patch-af) = ba6e34b5635437e755192064bfc5865bfa9c913a
  SHA1 (patch-ag) = 1898774d311562938281f825b50a0e9aa44a447d
 +SHA1 (patch-aq) = cb51811a855ad078e36113223c7afc3f19f5c32e
-diff -r 29ae74726b68 devel/libblkid/patches/patch-aq
+diff -r 015f004eaaca devel/libblkid/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/libblkid/patches/patch-aq	Mon Feb 18 12:23:58 2013 -0500
++++ b/devel/libblkid/patches/patch-aq	Mon Apr 08 12:52:52 2013 -0400
 @@ -0,0 +1,56 @@
 +diff -r 4aa4d9dd485b shlibs/blkid/src/Makefile.am
 +--- shlibs/blkid/src/Makefile.am	Sun May 06 03:11:57 2012 +0000

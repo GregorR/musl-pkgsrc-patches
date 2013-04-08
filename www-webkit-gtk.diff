@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 8bd09242719209ed4d03fdcb230e6551bb12d26a
+# Parent 8a2d65453a4685447ff0c7f5d0b74145708dbb48
 
-diff -r 8bd092427192 www/webkit-gtk/Makefile
---- a/www/webkit-gtk/Makefile	Mon Feb 18 12:27:42 2013 -0500
-+++ b/www/webkit-gtk/Makefile	Mon Feb 18 12:27:46 2013 -0500
-@@ -9,5 +9,8 @@
+diff -r 8a2d65453a46 www/webkit-gtk/Makefile
+--- a/www/webkit-gtk/Makefile	Mon Apr 08 12:55:35 2013 -0400
++++ b/www/webkit-gtk/Makefile	Mon Apr 08 12:55:40 2013 -0400
+@@ -10,5 +10,8 @@
  CONFIGURE_ARGS+=	--with-gtk=2.0
  CONFIGURE_ARGS+=	--disable-webkit2
  

@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 4559c786525f8d763c44fd69ce90f2f20df00d53
+# Parent 48bfaf1a202f0c148bccae225d5978e8a7e65318
 
-diff -r 4559c786525f archivers/pax/files/getid.c
---- a/archivers/pax/files/getid.c	Mon Feb 18 12:23:06 2013 -0500
-+++ b/archivers/pax/files/getid.c	Mon Feb 18 12:23:11 2013 -0500
+diff -r 48bfaf1a202f archivers/pax/files/getid.c
+--- a/archivers/pax/files/getid.c	Mon Apr 08 12:52:05 2013 -0400
++++ b/archivers/pax/files/getid.c	Mon Apr 08 12:52:10 2013 -0400
 @@ -152,12 +152,14 @@
  	if (!grstart() || !pwstart())
  		return (0);
@@ -19,9 +19,9 @@ diff -r 4559c786525f archivers/pax/files/getid.c
  
  	return (1);
  }
-diff -r 4559c786525f archivers/pax/files/options.c
---- a/archivers/pax/files/options.c	Mon Feb 18 12:23:06 2013 -0500
-+++ b/archivers/pax/files/options.c	Mon Feb 18 12:23:11 2013 -0500
+diff -r 48bfaf1a202f archivers/pax/files/options.c
+--- a/archivers/pax/files/options.c	Mon Apr 08 12:52:05 2013 -0400
++++ b/archivers/pax/files/options.c	Mon Apr 08 12:52:10 2013 -0400
 @@ -107,6 +107,8 @@
  #include "mtree.h"
  #endif	/* SMALL */
