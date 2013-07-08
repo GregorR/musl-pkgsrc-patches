@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent f30a9aaad6d018421338ccac7c2d370e453cada0
+# Parent efcdac1a7aab9db8454bab239d48401fee687186
 
-diff -r f30a9aaad6d0 shells/dash/Makefile
---- a/shells/dash/Makefile	Mon Apr 08 12:54:54 2013 -0400
-+++ b/shells/dash/Makefile	Mon Apr 08 12:54:59 2013 -0400
+diff -r efcdac1a7aab shells/dash/Makefile
+--- a/shells/dash/Makefile	Mon Jul 08 19:22:22 2013 -0400
++++ b/shells/dash/Makefile	Mon Jul 08 19:22:27 2013 -0400
 @@ -14,4 +14,6 @@
  USE_TOOLS+=		gmake
  PKG_SHELL=		bin/dash

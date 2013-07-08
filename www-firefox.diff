@@ -1,19 +1,19 @@
 # HG changeset patch
-# Parent 1ee1ca49dcca15415434785a9228e944579ce0a8
+# Parent 51063100e0d3300d5698a84ea5113ce72ccc7984
 
-diff -r 1ee1ca49dcca www/firefox/Makefile
---- a/www/firefox/Makefile	Mon Apr 08 12:55:30 2013 -0400
-+++ b/www/firefox/Makefile	Mon Apr 08 12:55:35 2013 -0400
-@@ -20,7 +20,7 @@
+diff -r 51063100e0d3 www/firefox/Makefile
+--- a/www/firefox/Makefile	Mon Jul 08 19:23:00 2013 -0400
++++ b/www/firefox/Makefile	Mon Jul 08 19:23:06 2013 -0400
+@@ -32,7 +32,7 @@
  
  LDFLAGS.DragonFly=	-lplc4 -lnspr4
  LDFLAGS.FreeBSD=	-lplc4 -lnspr4
 -LDFLAGS.Linux=		-lnspr4
 +LDFLAGS.Linux=		-lplc4 -lnspr4
  
- .include "../../devel/xulrunner/mozilla-common.mk"
+ .include "../../www/firefox/mozilla-common.mk"
  .include "options.mk"
-@@ -33,6 +33,9 @@
+@@ -50,6 +50,9 @@
  MOZILLA_NAME=	Browser
  .endif
  
@@ -22,4 +22,4 @@ diff -r 1ee1ca49dcca www/firefox/Makefile
 +
  pre-configure:
  	cd ${WRKSRC} && autoconf
- # XXX not built here, just to make check-portability.awk shut up.
+ 	cd ${WRKSRC}/js/src && autoconf

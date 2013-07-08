@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent ffb76af0ea51d63eede8bed5d8b3a5112a1c9be3
+# Parent c504a0f83c59bfb0f7a3fc043d638953d99933cb
 
-diff -r ffb76af0ea51 x11/motif/Makefile
---- a/x11/motif/Makefile	Mon Apr 08 12:58:56 2013 -0400
-+++ b/x11/motif/Makefile	Mon Apr 08 12:59:01 2013 -0400
+diff -r c504a0f83c59 x11/motif/Makefile
+--- a/x11/motif/Makefile	Mon Jul 08 19:26:47 2013 -0400
++++ b/x11/motif/Makefile	Mon Jul 08 19:26:53 2013 -0400
 @@ -21,6 +21,9 @@
  
  CONFLICTS+=		lesstif-[0-9]* openmotif-[0-9]*

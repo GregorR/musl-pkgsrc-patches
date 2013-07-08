@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 1e3376e02e19b77239d71c4a84e1c1e26802d103
+# Parent d624e2e7f2e8ce4a4bbfb7552d2f8d778adea637
 
-diff -r 1e3376e02e19 sysutils/libpciaccess/distinfo
---- a/sysutils/libpciaccess/distinfo	Mon Apr 08 12:56:22 2013 -0400
-+++ b/sysutils/libpciaccess/distinfo	Mon Apr 08 12:56:26 2013 -0400
-@@ -5,3 +5,4 @@
- Size (libpciaccess-0.13.1.tar.bz2) = 352351 bytes
- SHA1 (patch-aa) = 090e2dd9d811fc56354d5387cc51fb2b1b4a2820
- SHA1 (patch-ac) = f860e9f7d99f381613f8f830281d157f2eb90905
+diff -r d624e2e7f2e8 sysutils/libpciaccess/distinfo
+--- a/sysutils/libpciaccess/distinfo	Mon Jul 08 19:23:57 2013 -0400
++++ b/sysutils/libpciaccess/distinfo	Mon Jul 08 19:24:03 2013 -0400
+@@ -12,3 +12,4 @@
+ SHA1 (patch-src_pciaccess__private.h) = 56853598f50e5656ff7ba190b31f2940d66ec468
+ SHA1 (patch-src_solx__devfs.c) = 924649d561bc9922b6ee8335ffe5e997b1cb8c3c
+ SHA1 (patch-src_x86__pci.c) = b9820f8ff9306c18d040444e57270f520f95a58f
 +SHA1 (patch-qq) = f91b1ee7151c127f3f087c2dbe3a7c6e4cbdc0e4
-diff -r 1e3376e02e19 sysutils/libpciaccess/patches/patch-qq
+diff -r d624e2e7f2e8 sysutils/libpciaccess/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/libpciaccess/patches/patch-qq	Mon Apr 08 12:56:26 2013 -0400
++++ b/sysutils/libpciaccess/patches/patch-qq	Mon Jul 08 19:24:03 2013 -0400
 @@ -0,0 +1,23 @@
 +diff -r 4ecbc201fcdd src/linux_sysfs.c
 +--- src/linux_sysfs.c	Mon Mar 11 04:36:42 2013 +0000

@@ -1,11 +1,11 @@
 # HG changeset patch
-# Parent f6d8655cce7c6fb2ee0a085d4b472555f986876a
+# Parent 626a191f22c70f1192977a79a6bae2c53c6df023
 
-diff -r f6d8655cce7c shells/bash/Makefile
---- a/shells/bash/Makefile	Mon Apr 08 12:54:50 2013 -0400
-+++ b/shells/bash/Makefile	Mon Apr 08 12:54:54 2013 -0400
-@@ -85,6 +85,9 @@
- .include "../../devel/readline/buildlink3.mk"
+diff -r 626a191f22c7 shells/bash/Makefile
+--- a/shells/bash/Makefile	Mon Jul 08 19:22:17 2013 -0400
++++ b/shells/bash/Makefile	Mon Jul 08 19:22:22 2013 -0400
+@@ -100,6 +100,9 @@
+ CONFIGURE_ENV+=		bash_cv_wexitstatus_offset=8
  .endif
  
 +# [Gregor] mischeck for musl, safe everywhere

@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent b6566bb38ab868c049093bbd5242a168f3ace0fd
+# Parent 9cbf6b3b39cb40f4ccbe7acd3dfec1cb6672b4b7
 
-diff -r b6566bb38ab8 x11/fltk13/distinfo
---- a/x11/fltk13/distinfo	Mon Apr 08 12:57:36 2013 -0400
-+++ b/x11/fltk13/distinfo	Mon Apr 08 12:57:41 2013 -0400
+diff -r 9cbf6b3b39cb x11/fltk13/distinfo
+--- a/x11/fltk13/distinfo	Mon Jul 08 19:25:20 2013 -0400
++++ b/x11/fltk13/distinfo	Mon Jul 08 19:25:25 2013 -0400
 @@ -12,3 +12,4 @@
- SHA1 (patch-af) = dc14ca1e0ba878ef2e94a9947c1409165a925e5c
+ SHA1 (patch-af) = a4154e31fca9ecf125922a84ac39771bc71dcb0f
  SHA1 (patch-ag) = 87e890ac44b864c224855611942d58dd0ba4b2c9
- SHA1 (patch-test_Makefile) = 9256cea83cf83bef6ad8253c3af14783eb37b4d3
+ SHA1 (patch-test_Makefile) = 708decc3be69a9a4db82ab6fe473cf3417c969f2
 +SHA1 (patch-aq) = fd5e77ab917381bc599a5e9254d20da55c6684c3
-diff -r b6566bb38ab8 x11/fltk13/patches/patch-aq
+diff -r 9cbf6b3b39cb x11/fltk13/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/fltk13/patches/patch-aq	Mon Apr 08 12:57:41 2013 -0400
++++ b/x11/fltk13/patches/patch-aq	Mon Jul 08 19:25:25 2013 -0400
 @@ -0,0 +1,12 @@
 +diff -r dc68f9f71d44 src/filename_list.cxx
 +--- src/filename_list.cxx	Sat Aug 18 22:53:33 2012 +0000

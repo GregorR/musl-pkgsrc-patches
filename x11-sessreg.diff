@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 198772f187ed7287bd2341f8a613af8ee219591a
+# Parent 2ecbde68fb0fe3dd2201c93f19d6414a30a9176e
 
-diff -r 198772f187ed x11/sessreg/distinfo
---- a/x11/sessreg/distinfo	Mon Apr 08 12:57:09 2013 -0400
-+++ b/x11/sessreg/distinfo	Mon Apr 08 12:57:14 2013 -0400
+diff -r 2ecbde68fb0f x11/sessreg/distinfo
+--- a/x11/sessreg/distinfo	Mon Jul 08 19:24:50 2013 -0400
++++ b/x11/sessreg/distinfo	Mon Jul 08 19:24:57 2013 -0400
 @@ -3,3 +3,4 @@
  SHA1 (sessreg-1.0.8.tar.bz2) = dc4fa8b804e7cb4cfbadbef3708c3b97076ddb65
  RMD160 (sessreg-1.0.8.tar.bz2) = f74a47dc735365093ce6152f0b035a7964830214
  Size (sessreg-1.0.8.tar.bz2) = 126979 bytes
 +SHA1 (patch-zq) = bf1052f11c38daaeb281d5bd3166e40f46dcfc14
-diff -r 198772f187ed x11/sessreg/patches/patch-zq
+diff -r 2ecbde68fb0f x11/sessreg/patches/patch-zq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/sessreg/patches/patch-zq	Mon Apr 08 12:57:14 2013 -0400
++++ b/x11/sessreg/patches/patch-zq	Mon Jul 08 19:24:57 2013 -0400
 @@ -0,0 +1,25 @@
 +diff -r 4fdc7ea325ec sessreg.c
 +--- sessreg.c	Mon Aug 06 21:31:43 2012 +0000

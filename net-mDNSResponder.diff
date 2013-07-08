@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 7a8053857dac19de8ae11e84f847a7a96570a5ab
+# Parent e2a136c520c13cd55e6b9505d58967b6ad9bcfa7
 
-diff -r 7a8053857dac net/mDNSResponder/distinfo
---- a/net/mDNSResponder/distinfo	Mon Apr 08 12:58:29 2013 -0400
-+++ b/net/mDNSResponder/distinfo	Mon Apr 08 12:58:34 2013 -0400
+diff -r e2a136c520c1 net/mDNSResponder/distinfo
+--- a/net/mDNSResponder/distinfo	Mon Jul 08 19:26:18 2013 -0400
++++ b/net/mDNSResponder/distinfo	Mon Jul 08 19:26:24 2013 -0400
 @@ -10,3 +10,4 @@
  SHA1 (patch-ad) = 612390897ad2f395ceb7394b644f977c4858d6cc
  SHA1 (patch-ae) = 551ddcaa508a2e77361a3b683f9de841ca4957b4
  SHA1 (patch-af) = bce933daa008f081b72c5d509e84704be13360dc
 +SHA1 (patch-qq) = 8afa47acb539c5ace46182156c61812ea8ab216e
-diff -r 7a8053857dac net/mDNSResponder/patches/patch-qq
+diff -r e2a136c520c1 net/mDNSResponder/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/net/mDNSResponder/patches/patch-qq	Mon Apr 08 12:58:34 2013 -0400
++++ b/net/mDNSResponder/patches/patch-qq	Mon Jul 08 19:26:24 2013 -0400
 @@ -0,0 +1,51 @@
 +diff -r 807537ed80b4 mDNSPosix/nss_mdns.c
 +--- mDNSPosix/nss_mdns.c	Tue Feb 19 05:06:36 2013 +0000

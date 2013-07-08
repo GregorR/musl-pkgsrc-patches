@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent bee42adf1b7ead3146b642ad3d9e85e53e6c0c3a
+# Parent 11041fc6aa31eec8c7b2d5568d7f40c6142af01a
 
-diff -r bee42adf1b7e lang/python27/PLIST.common
---- a/lang/python27/PLIST.common	Mon Apr 08 12:53:38 2013 -0400
-+++ b/lang/python27/PLIST.common	Mon Apr 08 12:53:43 2013 -0400
-@@ -1836,7 +1836,6 @@
+diff -r 11041fc6aa31 lang/python27/PLIST.common
+--- a/lang/python27/PLIST.common	Mon Jul 08 19:21:01 2013 -0400
++++ b/lang/python27/PLIST.common	Mon Jul 08 19:21:07 2013 -0400
+@@ -1848,7 +1848,6 @@
  lib/python${PY_VER_SUFFIX}/lib-dynload/itertools.so
  lib/python${PY_VER_SUFFIX}/lib-dynload/math.so
  lib/python${PY_VER_SUFFIX}/lib-dynload/mmap.so

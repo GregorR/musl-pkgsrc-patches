@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent d2b66e0041b3ead0e76fefa82d9213c22f416945
+# Parent 6290115a4115c02677662a8083010550f8143445
 
-diff -r d2b66e0041b3 sysutils/hal/distinfo
---- a/sysutils/hal/distinfo	Mon Apr 08 12:56:49 2013 -0400
-+++ b/sysutils/hal/distinfo	Mon Apr 08 12:56:53 2013 -0400
+diff -r 6290115a4115 sysutils/hal/distinfo
+--- a/sysutils/hal/distinfo	Mon Jul 08 19:24:27 2013 -0400
++++ b/sysutils/hal/distinfo	Mon Jul 08 19:24:33 2013 -0400
 @@ -48,3 +48,4 @@
  SHA1 (patch-nb) = 1693b7a2faa5bee20a594f0b60b8ff6caea0efdc
  SHA1 (patch-nc) = 32453e49734902749ce24eb4364fc7f531986227
  SHA1 (patch-nd) = 877dcbafaca0cebd3fdce74c5a622721823c153b
 +SHA1 (patch-qq) = 92c9523ac758e2157a3b3d8d9e21e8c1588932e3
-diff -r d2b66e0041b3 sysutils/hal/patches/patch-qq
+diff -r 6290115a4115 sysutils/hal/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/hal/patches/patch-qq	Mon Apr 08 12:56:53 2013 -0400
++++ b/sysutils/hal/patches/patch-qq	Mon Jul 08 19:24:33 2013 -0400
 @@ -0,0 +1,168 @@
 +diff -r 47d03a2bd614 hald/linux/addons/addon-hid-ups.c
 +--- hald/linux/addons/addon-hid-ups.c	Sat Aug 11 16:54:20 2012 +0000

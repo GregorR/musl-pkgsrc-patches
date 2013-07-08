@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 4f06807d4a84d32e690afd7143539c05434082f6
+# Parent 474c69eb24005d1fd3dd46c4028fafad34383e14
 
-diff -r 4f06807d4a84 lang/g95/distinfo
---- a/lang/g95/distinfo	Mon Apr 08 12:59:01 2013 -0400
-+++ b/lang/g95/distinfo	Mon Apr 08 12:59:06 2013 -0400
+diff -r 474c69eb2400 lang/g95/distinfo
+--- a/lang/g95/distinfo	Mon Jul 08 19:26:53 2013 -0400
++++ b/lang/g95/distinfo	Mon Jul 08 19:26:59 2013 -0400
 @@ -26,3 +26,4 @@
  SHA1 (patch-libf95.a-0.93_math_ff.c) = 353121bc08a86765d18b0e6f051ba91f7e65e9c2
  SHA1 (patch-libf95.a-0.93_math_x87.S) = d1eb02bd2358b6abb9b8dc3e32629cba540adcc4
  SHA1 (patch-libf95.a-0.93_quad_power16.c) = fc7375aa90ecf75bb8ba26d41739614040b16e09
 +SHA1 (patch-musl) = c4ad3faffac94ade7964e359babe4b02a22a51d5
-diff -r 4f06807d4a84 lang/g95/patches/patch-musl
+diff -r 474c69eb2400 lang/g95/patches/patch-musl
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/lang/g95/patches/patch-musl	Mon Apr 08 12:59:06 2013 -0400
++++ b/lang/g95/patches/patch-musl	Mon Jul 08 19:26:59 2013 -0400
 @@ -0,0 +1,119 @@
 +musl-cross 74d6e78976bd tip
 +diff -r d6f84a2db6ba config.sub

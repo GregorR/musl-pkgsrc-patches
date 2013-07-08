@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 2a0380cca23e5f9906c335ad243cc676031d5b52
+# Parent c06d6bd21d173881efe7df533be013340eef06b4
 
-diff -r 2a0380cca23e lang/ruby193-base/Makefile
---- a/lang/ruby193-base/Makefile	Mon Apr 08 12:53:43 2013 -0400
-+++ b/lang/ruby193-base/Makefile	Mon Apr 08 12:53:48 2013 -0400
-@@ -165,6 +165,13 @@
+diff -r c06d6bd21d17 lang/ruby193-base/Makefile
+--- a/lang/ruby193-base/Makefile	Mon Jul 08 19:21:07 2013 -0400
++++ b/lang/ruby193-base/Makefile	Mon Jul 08 19:21:13 2013 -0400
+@@ -173,6 +173,13 @@
  		${DESTDIR}${PREFIX}/${RUBY_EG}/openssl
  .endfor
  	${RUBY_GENERATE_PLIST}
@@ -18,17 +18,17 @@ diff -r 2a0380cca23e lang/ruby193-base/Makefile
  
  .include "../../mk/bdb.buildlink3.mk"
  .include "../../converters/libiconv/buildlink3.mk"
-diff -r 2a0380cca23e lang/ruby193-base/distinfo
---- a/lang/ruby193-base/distinfo	Mon Apr 08 12:53:43 2013 -0400
-+++ b/lang/ruby193-base/distinfo	Mon Apr 08 12:53:48 2013 -0400
+diff -r c06d6bd21d17 lang/ruby193-base/distinfo
+--- a/lang/ruby193-base/distinfo	Mon Jul 08 19:21:07 2013 -0400
++++ b/lang/ruby193-base/distinfo	Mon Jul 08 19:21:13 2013 -0400
 @@ -28,3 +28,4 @@
  SHA1 (patch-test_rubygems_test__gem.rb) = fe8b8e436b255595122d2a01462ba0a686575f24
  SHA1 (patch-tool_rbinstall.rb) = f0497085a09b31145f57028b30e335b09acabcff
  SHA1 (patch-vsnprintf.c) = 7bb4ca07381536717518143ef7803634168ca9fa
 +SHA1 (patch-qq) = 7f4871f89582ebf99f4119a5397720c83a1603fd
-diff -r 2a0380cca23e lang/ruby193-base/patches/patch-qq
+diff -r c06d6bd21d17 lang/ruby193-base/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/lang/ruby193-base/patches/patch-qq	Mon Apr 08 12:53:48 2013 -0400
++++ b/lang/ruby193-base/patches/patch-qq	Mon Jul 08 19:21:13 2013 -0400
 @@ -0,0 +1,21 @@
 +diff -r 717f4d34f468 io.c
 +--- io.c	Tue Mar 05 06:12:37 2013 +0000

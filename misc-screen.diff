@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 943cb9a7e5eeb408880893c600c793f6b9ac1d82
+# Parent 0f879ff318a61d655209ea0599de8c6493f75e1b
 
-diff -r 943cb9a7e5ee misc/screen/distinfo
---- a/misc/screen/distinfo	Mon Apr 08 12:58:24 2013 -0400
-+++ b/misc/screen/distinfo	Mon Apr 08 12:58:29 2013 -0400
+diff -r 0f879ff318a6 misc/screen/distinfo
+--- a/misc/screen/distinfo	Mon Jul 08 19:26:12 2013 -0400
++++ b/misc/screen/distinfo	Mon Jul 08 19:26:18 2013 -0400
 @@ -19,3 +19,4 @@
  SHA1 (patch-aq) = 997a0ce76086f1dd966868b1fc9ca3bb96b4b4fb
  SHA1 (patch-ar) = cbbcb6e098e966d73c4f0bbbb26e655d88152224
  SHA1 (patch-as) = a6105d64d46df079d3f80965140c1d83b3e72268
 +SHA1 (patch-qq) = 4d48916311ad135765415ea4a07fc6773726c3b5
-diff -r 943cb9a7e5ee misc/screen/patches/patch-qq
+diff -r 0f879ff318a6 misc/screen/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/misc/screen/patches/patch-qq	Mon Apr 08 12:58:29 2013 -0400
++++ b/misc/screen/patches/patch-qq	Mon Jul 08 19:26:18 2013 -0400
 @@ -0,0 +1,12 @@
 +diff -r 8c20049ee2a3 utmp.c
 +--- utmp.c	Mon Nov 26 07:37:02 2012 +0000

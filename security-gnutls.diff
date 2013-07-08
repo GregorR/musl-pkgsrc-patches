@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 2fb0fdd55d8351808dbbef25fff849700d533d1b
+# Parent 337fee674f8b1ad8c231777e66983815ac138fbb
 
-diff -r 2fb0fdd55d83 security/gnutls/distinfo
---- a/security/gnutls/distinfo	Mon Apr 08 12:58:34 2013 -0400
-+++ b/security/gnutls/distinfo	Mon Apr 08 12:58:39 2013 -0400
+diff -r 337fee674f8b security/gnutls/distinfo
+--- a/security/gnutls/distinfo	Mon Jul 08 19:26:24 2013 -0400
++++ b/security/gnutls/distinfo	Mon Jul 08 19:26:30 2013 -0400
 @@ -6,3 +6,4 @@
  SHA1 (patch-ae) = 71fbbeb43ac1689fca6fec7f8348d8534c1dc38a
  SHA1 (patch-gl_stdio.in.h) = b5802da2cccddd6fab73bd39c49f7d62bef58464
  SHA1 (patch-lib_nettle_egd.c) = b7e9769e8c620519c43ca7b7481a558e9d389c68
 +SHA1 (patch-aq) = 0a652b1d49525308673e314cd25c0c7827ed70ec
-diff -r 2fb0fdd55d83 security/gnutls/patches/patch-aq
+diff -r 337fee674f8b security/gnutls/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/security/gnutls/patches/patch-aq	Mon Apr 08 12:58:39 2013 -0400
++++ b/security/gnutls/patches/patch-aq	Mon Jul 08 19:26:30 2013 -0400
 @@ -0,0 +1,12 @@
 +diff -r b1e971656a19 gl/fseterr.c
 +--- gl/fseterr.c	Tue Mar 05 16:37:03 2013 +0000

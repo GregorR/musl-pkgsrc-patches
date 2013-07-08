@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent d341e40404ae0111e9bda13fd2ecd741d824faab
+# Parent d4161934f42aacbf999ae64a5580fa9b289311c9
 
-diff -r d341e40404ae mk/compiler/gcc.mk
---- a/mk/compiler/gcc.mk	Mon Apr 08 12:47:10 2013 -0400
-+++ b/mk/compiler/gcc.mk	Mon Apr 08 12:52:00 2013 -0400
-@@ -175,10 +175,10 @@
+diff -r d4161934f42a mk/compiler/gcc.mk
+--- a/mk/compiler/gcc.mk	Mon Jul 08 18:49:50 2013 -0400
++++ b/mk/compiler/gcc.mk	Mon Jul 08 19:19:18 2013 -0400
+@@ -178,10 +178,10 @@
  .endif
  _GCC_PKG=	gcc-${_GCC_VERSION:C/-.*$//}
  
@@ -19,7 +19,7 @@ diff -r d341e40404ae mk/compiler/gcc.mk
  .  if !empty(_CC:M/*)
  #
  # GCC in older versions of Darwin report "Apple Computer ... based on gcc
-@@ -192,7 +192,7 @@
+@@ -195,7 +195,7 @@
  .  else
  _IS_BUILTIN_GCC=	NO
  .  endif
@@ -28,14 +28,14 @@ diff -r d341e40404ae mk/compiler/gcc.mk
  
  # Distill the GCC_REQD list into a single _GCC_REQD value that is the
  # highest version of GCC required.
-diff -r d341e40404ae mk/pkginstall/usergroupfuncs.Linux
---- a/mk/pkginstall/usergroupfuncs.Linux	Mon Apr 08 12:47:10 2013 -0400
-+++ b/mk/pkginstall/usergroupfuncs.Linux	Mon Apr 08 12:52:00 2013 -0400
+diff -r d4161934f42a mk/pkginstall/usergroupfuncs.Linux
+--- a/mk/pkginstall/usergroupfuncs.Linux	Mon Jul 08 18:49:50 2013 -0400
++++ b/mk/pkginstall/usergroupfuncs.Linux	Mon Jul 08 19:19:18 2013 -0400
 @@ -96,13 +96,13 @@
  	case $userid in
  	"")
  		${USERADD}					\
--			-c "$descr" -d "$home" -s "$shell"	\
+-			-r -c "$descr" -d "$home" -s "$shell"	\
 -			-g $group $user "$@"
 +			-D -g "$desc" -h "$home" -H -s "$shell"	\
 +			-G $group $user "$@"
@@ -49,9 +49,9 @@ diff -r d341e40404ae mk/pkginstall/usergroupfuncs.Linux
  		;;
  	esac
  }
-diff -r d341e40404ae mk/platform/Linux.mk
---- a/mk/platform/Linux.mk	Mon Apr 08 12:47:10 2013 -0400
-+++ b/mk/platform/Linux.mk	Mon Apr 08 12:52:00 2013 -0400
+diff -r d4161934f42a mk/platform/Linux.mk
+--- a/mk/platform/Linux.mk	Mon Jul 08 18:49:50 2013 -0400
++++ b/mk/platform/Linux.mk	Mon Jul 08 19:19:18 2013 -0400
 @@ -23,7 +23,7 @@
  DEF_UMASK?=		022
  DEFAULT_SERIAL_DEVICE?=	/dev/null

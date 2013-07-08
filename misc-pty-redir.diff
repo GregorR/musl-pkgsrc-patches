@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent a849f94bdff8a288b237c3cb35173f686bd58f4e
+# Parent 3b9b48e9977e7556b43dc01db6b90b3774838781
 
-diff -r a849f94bdff8 misc/pty-redir/distinfo
---- a/misc/pty-redir/distinfo	Mon Apr 08 12:53:48 2013 -0400
-+++ b/misc/pty-redir/distinfo	Mon Apr 08 12:53:53 2013 -0400
+diff -r 3b9b48e9977e misc/pty-redir/distinfo
+--- a/misc/pty-redir/distinfo	Mon Jul 08 19:21:12 2013 -0400
++++ b/misc/pty-redir/distinfo	Mon Jul 08 19:21:18 2013 -0400
 @@ -4,3 +4,4 @@
  RMD160 (pty-redir-0.1.tar.gz) = 75347881746dd1419e95e2ada30b23b2d9c0d223
  Size (pty-redir-0.1.tar.gz) = 8405 bytes
  SHA1 (patch-aa) = 28f8a1c22a9bf602e0e447ca45736e7cde6fddd5
 +SHA1 (patch-aq) = 17bdbfdef55312079c5ab32069556b50658dd771
-diff -r a849f94bdff8 misc/pty-redir/patches/patch-aq
+diff -r 3b9b48e9977e misc/pty-redir/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/misc/pty-redir/patches/patch-aq	Mon Apr 08 12:53:53 2013 -0400
++++ b/misc/pty-redir/patches/patch-aq	Mon Jul 08 19:21:18 2013 -0400
 @@ -0,0 +1,51 @@
 +--- pty-redir.c
 ++++ pty-redir.c

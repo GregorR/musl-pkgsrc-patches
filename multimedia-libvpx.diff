@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent 6454e7cf24dca2ea39a89be8d54cd3c1dab4955a
+# Parent 0385d2acf6de1093bd1826a5f09c052255e8e1d3
 
-diff -r 6454e7cf24dc multimedia/libvpx/Makefile
---- a/multimedia/libvpx/Makefile	Mon Apr 08 12:59:17 2013 -0400
-+++ b/multimedia/libvpx/Makefile	Mon Apr 08 12:59:21 2013 -0400
+diff -r 0385d2acf6de multimedia/libvpx/Makefile
+--- a/multimedia/libvpx/Makefile	Mon Jul 08 19:27:05 2013 -0400
++++ b/multimedia/libvpx/Makefile	Mon Jul 08 19:27:11 2013 -0400
 @@ -74,5 +74,8 @@
  post-extract:
  	${CP} ${FILESDIR}/strip_fPIC.sh ${WRKSRC}

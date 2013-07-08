@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent a8f8a87a5e233fa063b2d157efa265a816506058
+# Parent da3dff43d8592506c4f76074370b2d123267ed01
 
-diff -r a8f8a87a5e23 editors/vim-share/Makefile.common
---- a/editors/vim-share/Makefile.common	Mon Apr 08 12:52:58 2013 -0400
-+++ b/editors/vim-share/Makefile.common	Mon Apr 08 12:53:02 2013 -0400
+diff -r da3dff43d859 editors/vim-share/Makefile.common
+--- a/editors/vim-share/Makefile.common	Mon Jul 08 19:20:20 2013 -0400
++++ b/editors/vim-share/Makefile.common	Mon Jul 08 19:20:25 2013 -0400
 @@ -56,5 +56,8 @@
  ALTERNATIVES_SRC=
  .endif
