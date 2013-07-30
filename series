@@ -1,12 +1,10 @@
 mk.diff
-mk-gnu-config.diff
 archivers-pax.diff
 audio-alsa-lib.diff
 chat-irssi.diff
 databases-db4.diff
 devel-bmake.diff
 devel-flex.diff
-devel-gmake.diff
 devel-m4.diff
 devel-libblkid.diff
 devel-libuuid.diff

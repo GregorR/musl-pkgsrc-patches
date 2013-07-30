@@ -1,9 +1,8 @@
 # HG changeset patch
 # Parent d4161934f42aacbf999ae64a5580fa9b289311c9
-
-diff -r d4161934f42a mk/compiler/gcc.mk
+diff -r d4161934f42a -r 6d0bb4e804b7 mk/compiler/gcc.mk
 --- a/mk/compiler/gcc.mk	Mon Jul 08 18:49:50 2013 -0400
-+++ b/mk/compiler/gcc.mk	Mon Jul 08 19:19:18 2013 -0400
++++ b/mk/compiler/gcc.mk	Mon Jul 29 23:40:52 2013 -0400
 @@ -178,10 +178,10 @@
  .endif
  _GCC_PKG=	gcc-${_GCC_VERSION:C/-.*$//}
@@ -28,9 +27,30 @@ diff -r d4161934f42a mk/compiler/gcc.mk
  
  # Distill the GCC_REQD list into a single _GCC_REQD value that is the
  # highest version of GCC required.
-diff -r d4161934f42a mk/pkginstall/usergroupfuncs.Linux
+diff -r d4161934f42a -r 6d0bb4e804b7 mk/gnu-config/config.sub
+--- a/mk/gnu-config/config.sub	Mon Jul 08 18:49:50 2013 -0400
++++ b/mk/gnu-config/config.sub	Mon Jul 29 23:40:52 2013 -0400
+@@ -124,7 +124,7 @@
+ # Here we must recognize all the valid KERNEL-OS combinations.
+ maybe_os=`echo $1 | sed 's/^\(.*\)-\([^-]*-[^-]*\)$/\2/'`
+ case $maybe_os in
+-  nto-qnx* | linux-gnu* | linux-dietlibc | linux-newlib* | linux-uclibc* | \
++  nto-qnx* | linux-gnu* | linux-dietlibc | linux-newlib* | linux-uclibc* | linux-musl* | \
+   uclinux-uclibc* | uclinux-gnu* | kfreebsd*-gnu* | knetbsd*-gnu* | netbsd*-gnu* | \
+   kopensolaris*-gnu* | \
+   storm-chaos* | os2-emx* | rtmk-nova*)
+@@ -1295,7 +1295,7 @@
+ 	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
+ 	      | -chorusos* | -chorusrdb* | -cegcc* \
+ 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+-	      | -mingw32* | -linux-gnu* | -linux-newlib* | -linux-uclibc* \
++	      | -mingw32* | -linux-gnu* | -linux-newlib* | -linux-uclibc* | -linux-musl* \
+ 	      | -uxpv* | -beos* | -mpeix* | -udk* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+diff -r d4161934f42a -r 6d0bb4e804b7 mk/pkginstall/usergroupfuncs.Linux
 --- a/mk/pkginstall/usergroupfuncs.Linux	Mon Jul 08 18:49:50 2013 -0400
-+++ b/mk/pkginstall/usergroupfuncs.Linux	Mon Jul 08 19:19:18 2013 -0400
++++ b/mk/pkginstall/usergroupfuncs.Linux	Mon Jul 29 23:40:52 2013 -0400
 @@ -96,13 +96,13 @@
  	case $userid in
  	"")
@@ -49,9 +69,18 @@ diff -r d4161934f42a mk/pkginstall/usergroupfuncs.Linux
  		;;
  	esac
  }
-diff -r d4161934f42a mk/platform/Linux.mk
+@@ -149,7 +149,7 @@
+ 	if ${TEST} -n "${GROUPADD}" -a -x "${GROUPADD}"; then
+ 		${ECHO} "${PKGNAME}: Creating group \`\`$group''"
+ 		case $groupid in
+-		"")	${GROUPADD} -r $group ;;
++		"")	${GROUPADD} $group ;;
+ 		*)	${GROUPADD} -g $groupid $group ;;
+ 		esac
+ 	fi
+diff -r d4161934f42a -r 6d0bb4e804b7 mk/platform/Linux.mk
 --- a/mk/platform/Linux.mk	Mon Jul 08 18:49:50 2013 -0400
-+++ b/mk/platform/Linux.mk	Mon Jul 08 19:19:18 2013 -0400
++++ b/mk/platform/Linux.mk	Mon Jul 29 23:40:52 2013 -0400
 @@ -23,7 +23,7 @@
  DEF_UMASK?=		022
  DEFAULT_SERIAL_DEVICE?=	/dev/null
