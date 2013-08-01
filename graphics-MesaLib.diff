@@ -1,28 +1,37 @@
 # HG changeset patch
-# Parent 83bb198078aab1aceb8b590e51162acd5d7c847b
-
-diff -r 83bb198078aa graphics/MesaLib/distinfo
---- a/graphics/MesaLib/distinfo	Mon Jul 08 19:20:30 2013 -0400
-+++ b/graphics/MesaLib/distinfo	Mon Jul 08 19:20:36 2013 -0400
+# Parent d4161934f42aacbf999ae64a5580fa9b289311c9
+diff -r d4161934f42a -r 6dfbf52f2598 graphics/MesaLib/distinfo
+--- a/graphics/MesaLib/distinfo	Mon Jul 08 18:49:50 2013 -0400
++++ b/graphics/MesaLib/distinfo	Wed Jul 31 12:45:44 2013 -0400
 @@ -30,3 +30,4 @@
  SHA1 (patch-src_mesa_main_compiler.h) = b164781b541cb83b64597facbb7a7e21d8bdb686
  SHA1 (patch-src_mesa_main_imports.c) = d0c50004c749e4c5c136ac2ed50a6989ca90065f
  SHA1 (patch-src_mesa_main_imports.h) = f5a96195b3a14294ca3389c9fe17a6076c46db8a
-+SHA1 (patch-savage_sys_timeb) = ac4304c7060d4c191a557c7017cc630a0de6a318
-diff -r 83bb198078aa graphics/MesaLib/patches/patch-savage_sys_timeb
++SHA1 (patch-zz-musl) = e03a5242f54e339be660a4adc5396bc2e86e0afc
+diff -r d4161934f42a -r 6dfbf52f2598 graphics/MesaLib/patches/patch-zz-musl
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/graphics/MesaLib/patches/patch-savage_sys_timeb	Mon Jul 08 19:20:36 2013 -0400
-@@ -0,0 +1,13 @@
-+sys/timeb.h is unportable and not even used
-+
-+diff -r 4a616c1c5444 src/mesa/drivers/dri/savage/savageioctl.c
-+--- src/mesa/drivers/dri/savage/savageioctl.c	Wed Mar 13 22:28:00 2013 +0000
-++++ src/mesa/drivers/dri/savage/savageioctl.c	Wed Mar 13 22:42:15 2013 +0000
-+@@ -43,7 +43,6 @@
++++ b/graphics/MesaLib/patches/patch-zz-musl	Wed Jul 31 12:45:44 2013 -0400
+@@ -0,0 +1,23 @@
++diff -r a513bbc456d5 src/mesa/drivers/dri/savage/savageioctl.c
++--- src/mesa/drivers/dri/savage/savageioctl.c	Wed Jul 31 11:38:50 2013 +0000
+++++ src/mesa/drivers/dri/savage/savageioctl.c	Wed Jul 31 11:40:36 2013 +0000
++@@ -41,7 +41,6 @@
++ #include "savagespan.h"
 + 
 + #include "drm.h"
-+ #include <sys/ioctl.h>
 +-#include <sys/timeb.h>
 + 
 + #define DEPTH_SCALE_16 ((1<<16)-1)
 + #define DEPTH_SCALE_24 ((1<<24)-1)
++diff -r a513bbc456d5 src/mesa/main/querymatrix.c
++--- src/mesa/main/querymatrix.c	Wed Jul 31 11:38:50 2013 +0000
+++++ src/mesa/main/querymatrix.c	Wed Jul 31 11:40:36 2013 +0000
++@@ -73,7 +73,7 @@
++ #elif defined(__APPLE__) || defined(__CYGWIN__) || defined(__FreeBSD__) || \
++      defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__) || \
++      (defined(__sun) && defined(__C99FEATURES__)) || defined(__MINGW32__) || \
++-     (defined(__sun) && defined(__GNUC__))
+++     (defined(__sun) && defined(__GNUC__)) || 1
++ 
++ /* fpclassify is available. */
++ 

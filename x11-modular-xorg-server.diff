@@ -1,9 +1,8 @@
 # HG changeset patch
-# Parent 0c6d56c0ed04e490b4267af98e4b0ad3ae73a9ce
-
-diff -r 0c6d56c0ed04 x11/modular-xorg-server/Makefile
---- a/x11/modular-xorg-server/Makefile	Mon Jul 08 19:24:03 2013 -0400
-+++ b/x11/modular-xorg-server/Makefile	Mon Jul 08 19:24:09 2013 -0400
+# Parent f6ecb8fe2755b3119408f71e0acfa5935ae8b9ec
+diff -r f6ecb8fe2755 -r 3aabdbf5d084 x11/modular-xorg-server/Makefile
+--- a/x11/modular-xorg-server/Makefile	Wed Jul 31 12:45:57 2013 -0400
++++ b/x11/modular-xorg-server/Makefile	Wed Jul 31 15:32:21 2013 -0400
 @@ -128,6 +128,9 @@
  BUILD_DEPENDS+=		tradcpp-[0-9]*:../../devel/tradcpp
  CONFIGURE_ENV+=		ac_cv_path_RAWCPP="${PREFIX}/bin/tradcpp -Uunix"
@@ -14,33 +13,54 @@ diff -r 0c6d56c0ed04 x11/modular-xorg-server/Makefile
  .include "options.mk"
  
  .include "../../devel/ncurses/buildlink3.mk"
-diff -r 0c6d56c0ed04 x11/modular-xorg-server/distinfo
---- a/x11/modular-xorg-server/distinfo	Mon Jul 08 19:24:03 2013 -0400
-+++ b/x11/modular-xorg-server/distinfo	Mon Jul 08 19:24:09 2013 -0400
+diff -r f6ecb8fe2755 -r 3aabdbf5d084 x11/modular-xorg-server/PLIST
+--- a/x11/modular-xorg-server/PLIST	Wed Jul 31 12:45:57 2013 -0400
++++ b/x11/modular-xorg-server/PLIST	Wed Jul 31 15:32:21 2013 -0400
+@@ -129,8 +129,6 @@
+ include/xorg/xaarop.h
+ include/xorg/xaa.h
+ include/xorg/xaalocal.h
+-include/xorg/xace.h
+-include/xorg/xacestr.h
+ include/xorg/xf86.h
+ include/xorg/xf86Crtc.h
+ include/xorg/xf86Cursor.h
+diff -r f6ecb8fe2755 -r 3aabdbf5d084 x11/modular-xorg-server/distinfo
+--- a/x11/modular-xorg-server/distinfo	Wed Jul 31 12:45:57 2013 -0400
++++ b/x11/modular-xorg-server/distinfo	Wed Jul 31 15:32:21 2013 -0400
 @@ -6,3 +6,4 @@
  SHA1 (patch-configure) = 031bc0accf1dd71ed687e7aac3fcc9498cb06784
  SHA1 (patch-hw_xfree86_common_compiler.h) = 88de747715b80b22f448869ab32dce1641bcb6db
  SHA1 (patch-hw_xfree86_os-support_xf86__OSlib.h) = 7c2760509610b44915da077b22899bef9c338cc1
-+SHA1 (patch-qq) = 671f0f246a4570a73c5ec0aa7008d9dea3410108
-diff -r 0c6d56c0ed04 x11/modular-xorg-server/patches/patch-qq
++SHA1 (patch-qq) = 75364154810f7a805ded4e5da6f62ea7d91e05a8
+diff -r f6ecb8fe2755 -r 3aabdbf5d084 x11/modular-xorg-server/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/modular-xorg-server/patches/patch-qq	Mon Jul 08 19:24:09 2013 -0400
-@@ -0,0 +1,18 @@
-+diff -r a2b9db9818a9 hw/xfree86/os-support/xf86_OSlib.h
-+--- hw/xfree86/os-support/xf86_OSlib.h	Mon Mar 11 15:21:01 2013 +0000
-++++ hw/xfree86/os-support/xf86_OSlib.h	Mon Mar 11 16:36:31 2013 +0000
-+@@ -215,11 +215,14 @@
-+ # include <sys/types.h>
-+ # include <assert.h>
++++ b/x11/modular-xorg-server/patches/patch-qq	Wed Jul 31 15:32:21 2013 -0400
+@@ -0,0 +1,27 @@
++diff -r 9da799702a4b hw/xfree86/common/xf86Init.c
++--- hw/xfree86/common/xf86Init.c	Wed Jul 31 13:10:46 2013 +0000
+++++ hw/xfree86/common/xf86Init.c	Wed Jul 31 13:42:05 2013 +0000
++@@ -29,6 +29,8 @@
++  * the sale, use or other dealings in this Software without prior written
++  * authorization from the copyright holder(s) and author(s).
++  */
+++ 
+++#define _GNU_SOURCE /* for getres[ug]id */
 + 
-++#if 0
-+ # ifdef __linux__
-+ #  include <termio.h>
-+ # else /* __GLIBC__ */
-+ #  include <termios.h>
-+ # endif
-++#endif
-++#include <termios.h>
-+ # ifdef __sparc__
-+ #  include <sys/param.h>
-+ # endif
++ #ifdef HAVE_XORG_CONFIG_H
++ #include <xorg-config.h>
++diff -r 9da799702a4b hw/xfree86/os-support/xf86_OSlib.h
++--- hw/xfree86/os-support/xf86_OSlib.h	Wed Jul 31 13:10:46 2013 +0000
+++++ hw/xfree86/os-support/xf86_OSlib.h	Wed Jul 31 13:42:05 2013 +0000
++@@ -178,11 +178,7 @@
++ #include <sys/types.h>
++ #include <assert.h>
++ 
++-#ifdef __linux__
++-#include <termio.h>
++-#else                           /* __GLIBC__ */
++ #include <termios.h>
++-#endif
++ #ifdef __sparc__
++ #include <sys/param.h>
++ #endif

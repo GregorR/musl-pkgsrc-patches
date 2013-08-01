@@ -1,0 +1,108 @@
+# HG changeset patch
+# Parent 18f54114f55994222fe1bd7ac980e822bac04851
+diff -r 18f54114f559 -r 92b9d5cf2319 graphics/libv4l/Makefile
+--- a/graphics/libv4l/Makefile	Thu Aug 01 17:17:43 2013 -0400
++++ b/graphics/libv4l/Makefile	Thu Aug 01 18:00:40 2013 -0400
+@@ -27,8 +27,9 @@
+ 	${INSTALL_DATA} ${FILESDIR}/videoio.h ${DESTDIR}${PREFIX}/include/sys
+ .elif !exists(/usr/include/linux/videodev.h)
+ pre-configure:
+-	${MKDIR} ${BUILDLINK_DIR}/include
++	${MKDIR} ${BUILDLINK_DIR}/include/linux
+ 	cp ${FILESDIR}/videodev.h ${BUILDLINK_DIR}/include/videodev.h
++	cp ${FILESDIR}/videodev.h ${BUILDLINK_DIR}/include/linux/videodev.h
+ .endif
+ 
+ PLIST_VARS=	needs_videoio
+diff -r 18f54114f559 -r 92b9d5cf2319 graphics/libv4l/distinfo
+--- a/graphics/libv4l/distinfo	Thu Aug 01 17:17:43 2013 -0400
++++ b/graphics/libv4l/distinfo	Thu Aug 01 18:00:40 2013 -0400
+@@ -15,3 +15,4 @@
+ SHA1 (patch-ak) = 0465c3cc368609a3108f8d1aafcacf0ab3c61858
+ SHA1 (patch-al) = 8d020ef01f9956b37f718a529306e5f13aaa03a3
+ SHA1 (patch-am) = 23d75eb7e9d1959d2be87dd9aa961e55cfc58c52
++SHA1 (patch-qq-musl) = 44967dca9ff478f1512d91a24fa14bc25fa6c546
+diff -r 18f54114f559 -r 92b9d5cf2319 graphics/libv4l/patches/patch-qq-musl
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/graphics/libv4l/patches/patch-qq-musl	Thu Aug 01 18:00:40 2013 -0400
+@@ -0,0 +1,80 @@
++diff -r 98d97d46842a include/libv4l2.h
++--- include/libv4l2.h	Thu Aug 01 15:58:22 2013 +0000
+++++ include/libv4l2.h	Thu Aug 01 15:59:11 2013 +0000
++@@ -32,6 +32,10 @@
++ typedef off_t __off64_t;
++ #endif
++ typedef off_t __off_t;
+++#elif defined(__GLIBC__)
+++#elif 1
+++typedef off_t __off_t;
+++typedef off_t __off64_t;
++ #endif
++ 
++ #ifdef __cplusplus
++diff -r 98d97d46842a libv4l1/v4l1compat.c
++--- libv4l1/v4l1compat.c	Thu Aug 01 15:58:22 2013 +0000
+++++ libv4l1/v4l1compat.c	Thu Aug 01 15:59:11 2013 +0000
++@@ -65,7 +65,7 @@
++   return fd;
++ }
++ 
++-#if !(defined(__sun) && defined(_LP64))
+++#if !(defined(__sun) && defined(_LP64)) && 0
++ LIBV4L_PUBLIC int open64 (const char *file, int oflag, ...)
++ {
++   int fd;
++@@ -97,7 +97,7 @@
++   return v4l1_dup(fd);
++ }
++ 
++-LIBV4L_PUBLIC int ioctl (int fd, unsigned long int request, ...)
+++LIBV4L_PUBLIC int ioctl (int fd, int request, ...)
++ {
++   void *arg;
++   va_list ap;
++@@ -115,12 +115,12 @@
++ }
++ 
++ LIBV4L_PUBLIC void *mmap(void *start, size_t length, int prot, int flags, int fd,
++-  __off_t offset)
+++  off_t offset)
++ {
++   return v4l1_mmap(start, length, prot, flags, fd, offset);
++ }
++ 
++-#if !(defined(__sun) && defined(_LP64))
+++#if !(defined(__sun) && defined(_LP64)) && 0
++ LIBV4L_PUBLIC void *mmap64(void *start, size_t length, int prot, int flags, int fd,
++   __off64_t offset)
++ {
++diff -r 98d97d46842a libv4l2/v4l2convert.c
++--- libv4l2/v4l2convert.c	Thu Aug 01 15:58:22 2013 +0000
+++++ libv4l2/v4l2convert.c	Thu Aug 01 15:59:11 2013 +0000
++@@ -111,7 +111,7 @@
++   return fd;
++ }
++ 
++-#if !(defined(__sun) && defined(_LP64))
+++#if !(defined(__sun) && defined(_LP64)) && 0
++ LIBV4L_PUBLIC int open64(const char *file, int oflag, ...)
++ {
++   int fd;
++@@ -146,7 +146,7 @@
++   return v4l2_dup(fd);
++ }
++ 
++-LIBV4L_PUBLIC int ioctl (int fd, unsigned long int request, ...)
+++LIBV4L_PUBLIC int ioctl (int fd, int request, ...)
++ {
++   void *arg;
++   va_list ap;
++@@ -169,7 +169,7 @@
++   return v4l2_mmap(start, length, prot, flags, fd, offset);
++ }
++ 
++-#if !(defined(__sun) && defined(_LP64))
+++#if !(defined(__sun) && defined(_LP64)) && 0
++ LIBV4L_PUBLIC void *mmap64(void *start, size_t length, int prot, int flags, int fd,
++   __off64_t offset)
++ {
