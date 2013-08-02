@@ -1,0 +1,353 @@
+# HG changeset patch
+# Parent a7f0a8ade9523f39e6f15968bfcdfadec6c0aab1
+
+diff -r a7f0a8ade952 devel/xulrunner/Makefile
+--- a/devel/xulrunner/Makefile	Mon Apr 08 12:59:12 2013 -0400
++++ b/devel/xulrunner/Makefile	Mon Apr 08 12:59:16 2013 -0400
+@@ -24,6 +24,9 @@
+ CONFIGURE_ARGS+=	--enable-application=xulrunner
+ CONFIGURE_ARGS+=	--enable-libxul
+ 
++# [Gregor] Not sure what this is or why it doesn't work, but disable it
++CONFIGURE_ARGS+=	--disable-elf-hack
++
+ ALL_ENV+=		MOZILLA_PKG_NAME=xulrunner
+ 
+ MAKE_ENV+=		FREEBL_NO_DEPEND=0
+diff -r a7f0a8ade952 devel/xulrunner/distinfo
+--- a/devel/xulrunner/distinfo	Mon Apr 08 12:59:12 2013 -0400
++++ b/devel/xulrunner/distinfo	Mon Apr 08 12:59:16 2013 -0400
+@@ -67,3 +67,4 @@
+ SHA1 (patch-xo) = aae6107dcfaf731bd3e9962d953fb8701fc5f163
+ SHA1 (patch-xpcom_Makefile.in) = e5f77ed56ed4ad26a08a67085e3dfec0e7af3fa6
+ SHA1 (patch-xpcom_ds_TimeStamp.h) = a1fb060f91720eb330f102b28d9373bbdbe96e30
++SHA1 (patch-zqq) = 4d0f437ef6fb8402a0f0aa84ad17febd434612f0
+diff -r a7f0a8ade952 devel/xulrunner/patches/patch-zqq
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/devel/xulrunner/patches/patch-zqq	Mon Apr 08 12:59:16 2013 -0400
+@@ -0,0 +1,325 @@
++diff -r 9e9c423ca4ad memory/mozalloc/mozalloc.cpp
++--- memory/mozalloc/mozalloc.cpp	Tue Apr 02 16:42:16 2013 +0000
+++++ memory/mozalloc/mozalloc.cpp	Tue Apr 02 16:42:50 2013 +0000
++@@ -213,7 +213,7 @@
++ 
++ #if defined(XP_MACOSX)
++     return malloc_size(ptr);
++-#elif defined(MOZ_MEMORY) || (defined(XP_LINUX) && !defined(ANDROID)) || defined(__FreeBSD__)
+++#elif defined(MOZ_MEMORY) || (defined(XP_LINUX) && defined(__GLIBC__)) || defined(__FreeBSD__)
++     // Android bionic libc doesn't have malloc_usable_size.
++     return malloc_usable_size(ptr);
++ #elif defined(XP_WIN)
++diff -r d46477a2b48f ipc/chromium/src/base/debug_util_posix.cc
++--- ipc/chromium/src/base/debug_util_posix.cc	Tue Apr 02 21:25:12 2013 +0000
+++++ ipc/chromium/src/base/debug_util_posix.cc	Tue Apr 02 22:53:22 2013 +0000
++@@ -5,7 +5,7 @@
++ #include "build/build_config.h"
++ #include "base/debug_util.h"
++ 
++-#define MOZ_HAVE_EXECINFO_H (defined(OS_LINUX) && !defined(ANDROID))
+++#define MOZ_HAVE_EXECINFO_H (defined(OS_LINUX) && defined(__GLIBC__))
++ 
++ #include <errno.h>
++ #include <fcntl.h>
++diff -r d46477a2b48f ipc/chromium/src/base/file_util.h
++--- ipc/chromium/src/base/file_util.h	Tue Apr 02 21:25:12 2013 +0000
+++++ ipc/chromium/src/base/file_util.h	Tue Apr 02 22:53:22 2013 +0000
++@@ -16,7 +16,11 @@
++ #include <sys/stat.h>
++ #elif defined(OS_POSIX) 
++ #include <sys/types.h>
+++#ifndef __GLIBC__
+++#define NO_FTS
+++#else
++ #include <fts.h>
+++#endif
++ #include <sys/stat.h>
++ #endif
++ 
++@@ -466,7 +470,7 @@
++ #if defined(OS_WIN)
++   WIN32_FIND_DATA find_data_;
++   HANDLE find_handle_;
++-#elif defined(ANDROID)
+++#elif defined(NO_FTS)
++   void *fts_;
++ #elif defined(OS_POSIX)
++   FTS* fts_;
++diff -r d46477a2b48f ipc/chromium/src/base/file_util_posix.cc
++--- ipc/chromium/src/base/file_util_posix.cc	Tue Apr 02 21:25:12 2013 +0000
+++++ ipc/chromium/src/base/file_util_posix.cc	Tue Apr 02 22:53:22 2013 +0000
++@@ -8,13 +8,16 @@
++ #include <errno.h>
++ #include <fcntl.h>
++ #include <fnmatch.h>
++-#ifndef ANDROID
+++#ifndef __GLIBC__
+++#define NO_FTS
+++#endif
+++#ifndef NO_FTS
++ #include <fts.h>
++ #endif
++ #include <libgen.h>
++ #include <stdio.h>
++ #include <string.h>
++-#include <sys/errno.h>
+++#include <errno.h>
++ #include <sys/mman.h>
++ #include <sys/stat.h>
++ #include <sys/types.h>
++@@ -125,7 +128,7 @@
++   if (!recursive)
++     return (rmdir(path_str) == 0);
++ 
++-#ifdef ANDROID
+++#ifdef NO_FTS
++   // XXX Need ftsless impl for bionic
++   return false;
++ #else
++@@ -198,7 +201,7 @@
++     return false;
++   }
++ 
++-#ifdef ANDROID
+++#ifdef NO_FTS
++   // XXX Need ftsless impl for bionic
++   return false;
++ #else
++@@ -617,7 +620,7 @@
++ }
++ 
++ FileEnumerator::~FileEnumerator() {
++-#ifndef ANDROID
+++#ifndef NO_FTS
++   if (fts_)
++     fts_close(fts_);
++ #endif
++@@ -629,7 +632,7 @@
++   if (!is_in_find_op_)
++     return;
++ 
++-#ifndef ANDROID
+++#ifndef NO_FTS
++   memcpy(&(info->stat), fts_ent_->fts_statp, sizeof(info->stat));
++   info->filename.assign(fts_ent_->fts_name);
++ #endif
++@@ -640,7 +643,7 @@
++ // large directories with many files this can be quite deep.
++ // TODO(erikkay) - get rid of this recursive pattern
++ FilePath FileEnumerator::Next() {
++-#ifdef ANDROID
+++#ifdef NO_FTS
++   return FilePath();
++ #else
++   if (!is_in_find_op_) {
++diff -r d46477a2b48f ipc/chromium/src/base/time_posix.cc
++--- ipc/chromium/src/base/time_posix.cc	Tue Apr 02 21:25:12 2013 +0000
+++++ ipc/chromium/src/base/time_posix.cc	Tue Apr 02 22:53:22 2013 +0000
++@@ -65,8 +65,10 @@
++   timestruct.tm_wday   = exploded.day_of_week;  // mktime/timegm ignore this
++   timestruct.tm_yday   = 0;     // mktime/timegm ignore this
++   timestruct.tm_isdst  = -1;    // attempt to figure it out
+++#ifdef __GLIBC__
++   timestruct.tm_gmtoff = 0;     // not a POSIX field, so mktime/timegm ignore
++   timestruct.tm_zone   = NULL;  // not a POSIX field, so mktime/timegm ignore
+++#endif
++ 
++   time_t seconds;
++ #ifdef ANDROID
++diff -r d46477a2b48f media/webrtc/trunk/src/system_wrappers/source/aligned_malloc.cc
++--- media/webrtc/trunk/src/system_wrappers/source/aligned_malloc.cc	Tue Apr 02 21:25:12 2013 +0000
+++++ media/webrtc/trunk/src/system_wrappers/source/aligned_malloc.cc	Tue Apr 02 22:53:22 2013 +0000
++@@ -13,7 +13,7 @@
++ #include <assert.h>
++ #include <memory.h>
++ 
++-#ifdef WEBRTC_ANDROID
+++#if 1
++ #include <stdlib.h>
++ #endif
++ 
++diff -r d46477a2b48f media/webrtc/trunk/src/system_wrappers/source/atomic32_linux.h
++--- media/webrtc/trunk/src/system_wrappers/source/atomic32_linux.h	Tue Apr 02 21:25:12 2013 +0000
+++++ media/webrtc/trunk/src/system_wrappers/source/atomic32_linux.h	Tue Apr 02 22:53:22 2013 +0000
++@@ -16,6 +16,7 @@
++ 
++ #include <inttypes.h>
++ #include <malloc.h>
+++#include <stdlib.h>
++ 
++ #include "common_types.h"
++ 
++diff -r d46477a2b48f media/webrtc/trunk/src/system_wrappers/source/thread_posix.cc
++--- media/webrtc/trunk/src/system_wrappers/source/thread_posix.cc	Tue Apr 02 21:25:12 2013 +0000
+++++ media/webrtc/trunk/src/system_wrappers/source/thread_posix.cc	Tue Apr 02 22:53:22 2013 +0000
++@@ -122,7 +122,8 @@
++ 
++ #define HAS_THREAD_ID !defined(MAC_IPHONE) && !defined(MAC_IPHONE_SIM)  &&  \
++                       !defined(WEBRTC_MAC) && !defined(WEBRTC_MAC_INTEL) && \
++-                      !defined(MAC_DYLIB)  && !defined(MAC_INTEL_DYLIB)
+++                      !defined(MAC_DYLIB)  && !defined(MAC_INTEL_DYLIB) && \
+++                      (!defined(WEBRTC_LINUX) || defined(__GLIBC__))
++ #if HAS_THREAD_ID
++ bool ThreadPosix::Start(unsigned int& threadID)
++ #else
++@@ -197,7 +198,7 @@
++ 
++ // CPU_ZERO and CPU_SET are not available in NDK r7, so disable
++ // SetAffinity on Android for now.
++-#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID)))
+++#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID)) && defined(__GLIBC__))
++ bool ThreadPosix::SetAffinity(const int* processorNumbers,
++                               const unsigned int amountOfProcessors) {
++   if (!processorNumbers || (amountOfProcessors == 0)) {
++diff -r d46477a2b48f media/webrtc/trunk/testing/gtest/src/gtest.cc
++--- media/webrtc/trunk/testing/gtest/src/gtest.cc	Tue Apr 02 21:25:12 2013 +0000
+++++ media/webrtc/trunk/testing/gtest/src/gtest.cc	Tue Apr 02 22:53:22 2013 +0000
++@@ -47,6 +47,8 @@
++ #include <sstream>
++ #include <vector>
++ 
+++#include <sys/socket.h>
+++
++ #if GTEST_OS_LINUX
++ 
++ // TODO(kenton@google.com): Use autoconf to detect availability of
++diff -r d46477a2b48f toolkit/mozapps/update/common/updatedefines.h
++--- toolkit/mozapps/update/common/updatedefines.h	Tue Apr 02 21:25:12 2013 +0000
+++++ toolkit/mozapps/update/common/updatedefines.h	Tue Apr 02 22:53:22 2013 +0000
++@@ -107,8 +107,10 @@
++ #ifdef SOLARIS
++ # include <sys/stat.h>
++ #else
+++#if !defined(__linux__) || defined(__GLIBC__)
++ # include <fts.h>
++ #endif
+++#endif
++ # include <dirent.h>
++ 
++ #ifdef XP_MACOSX
++diff -r d46477a2b48f toolkit/mozapps/update/updater/updater.cpp
++--- toolkit/mozapps/update/updater/updater.cpp	Tue Apr 02 21:25:12 2013 +0000
+++++ toolkit/mozapps/update/updater/updater.cpp	Tue Apr 02 22:53:22 2013 +0000
++@@ -3192,6 +3192,7 @@
++ int add_dir_entries(const NS_tchar *dirpath, ActionList *list)
++ {
++   int rv = OK;
+++#if !defined(__linux__) || defined(__GLIBC__)
++   FTS *ftsdir;
++   FTSENT *ftsdirEntry;
++   NS_tchar searchpath[MAXPATHLEN];
++@@ -3294,6 +3295,7 @@
++   }
++ 
++   fts_close(ftsdir);
+++#endif
++ 
++   return rv;
++ }
++diff -r d46477a2b48f tools/profiler/platform-linux.cc
++--- tools/profiler/platform-linux.cc	Tue Apr 02 21:25:12 2013 +0000
+++++ tools/profiler/platform-linux.cc	Tue Apr 02 22:53:22 2013 +0000
++@@ -42,7 +42,7 @@
++ 
++ #define SIGNAL_SAVE_PROFILE SIGUSR2
++ 
++-#if defined(__GLIBC__)
+++#if 1
++ // glibc doesn't implement gettid(2).
++ #include <sys/syscall.h>
++ pid_t gettid()
++@@ -157,7 +157,7 @@
++       // Convert ms to us and subtract 100 us to compensate delays
++       // occuring during signal delivery.
++       // TODO measure and confirm this.
++-      const useconds_t interval = sampler_->interval_ * 1000 - 100;
+++      const unsigned long interval = sampler_->interval_ * 1000 - 100;
++       //int result = usleep(interval);
++       usleep(interval);
++     }
++diff -r d46477a2b48f tools/profiler/shared-libraries-linux.cc
++--- tools/profiler/shared-libraries-linux.cc	Tue Apr 02 21:25:12 2013 +0000
+++++ tools/profiler/shared-libraries-linux.cc	Tue Apr 02 22:53:22 2013 +0000
++@@ -12,7 +12,7 @@
++ #include "platform.h"
++ #include "shared-libraries.h"
++ 
++-#ifndef __GLIBC__
+++#if 0
++ /* a crapy version of getline, because it's not included in bionic */
++ static ssize_t getline(char **lineptr, size_t *n, FILE *stream)
++ {
++diff -r 45c389b34e68 media/libcubeb/src/cubeb_alsa.c
++--- media/libcubeb/src/cubeb_alsa.c	Wed Apr 03 01:31:28 2013 +0000
+++++ media/libcubeb/src/cubeb_alsa.c	Wed Apr 03 01:36:58 2013 +0000
++@@ -6,6 +6,7 @@
++  */
++ #undef NDEBUG
++ #define _BSD_SOURCE
+++#define _POSIX_C_SOURCE 200112L
++ #define _XOPEN_SOURCE 500
++ #include <pthread.h>
++ #include <sys/time.h>
++diff -r c8e4887a8a45 media/libcubeb/src/Makefile.in
++--- media/libcubeb/src/Makefile.in	Thu Apr 04 20:33:58 2013 +0000
+++++ media/libcubeb/src/Makefile.in	Thu Apr 04 20:39:12 2013 +0000
++@@ -38,7 +38,7 @@
++                 $(NULL)
++ endif
++ 
++-ifdef MOZ_ALSA
+++ifdef MOZ_ALSA_LIBS
++ CSRCS         = \
++               cubeb_alsa.c \
++               $(NULL)
++diff -r c8e4887a8a45 media/libsydneyaudio/src/Makefile.in
++--- media/libsydneyaudio/src/Makefile.in	Thu Apr 04 20:33:58 2013 +0000
+++++ media/libsydneyaudio/src/Makefile.in	Thu Apr 04 20:39:12 2013 +0000
++@@ -64,7 +64,7 @@
++ 		$(NULL)
++ endif
++ 
++-ifdef MOZ_ALSA
+++ifdef MOZ_ALSA_LIBS
++ CSRCS		= \
++ 		sydney_audio_alsa.c \
++ 		$(NULL)
++diff -r c8e4887a8a45 media/libsydneyaudio/src/sydney_audio_alsa.c
++--- media/libsydneyaudio/src/sydney_audio_alsa.c	Thu Apr 04 20:33:58 2013 +0000
+++++ media/libsydneyaudio/src/sydney_audio_alsa.c	Thu Apr 04 20:39:12 2013 +0000
++@@ -2,6 +2,10 @@
++  * License, v. 2.0. If a copy of the MPL was not distributed with this
++  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
++  */
+++ 
+++#define _POSIX_C_SOURCE 200112L
+++#define _GNU_SOURCE
+++ 
++ #include <pthread.h>
++ #include <stdlib.h>
++ #include <alsa/asoundlib.h>
++diff -r c8e4887a8a45 toolkit/library/Makefile.in
++--- toolkit/library/Makefile.in	Thu Apr 04 20:33:58 2013 +0000
+++++ toolkit/library/Makefile.in	Thu Apr 04 20:39:12 2013 +0000
++@@ -372,7 +372,7 @@
++ EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib) 
++ 
++ ifneq (,$(MOZ_CUBEB)$(MOZ_SYDNEYAUDIO))
++-ifdef MOZ_ALSA
+++ifdef MOZ_ALSA_LIBS
++ EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)
++ endif
++ ifdef MOZ_PULSEAUDIO
++diff -r c8e4887a8a45 xpcom/ds/nsMathUtils.h
++--- xpcom/ds/nsMathUtils.h	Thu Apr 04 20:33:58 2013 +0000
+++++ xpcom/ds/nsMathUtils.h	Thu Apr 04 20:39:12 2013 +0000
++@@ -98,7 +98,7 @@
++ #ifdef WIN32
++     // NOTE: '!!' casts an int to bool without spamming MSVC warning C4800.
++     return !!_finite(d);
++-#elif defined(XP_DARWIN)
+++#elif 1 /* isfinite is the standard */
++     // Darwin has deprecated |finite| and recommends |isfinite|. The former is
++     // not present in the iOS SDK.
++     return std::isfinite(d);
