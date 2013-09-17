@@ -48,7 +48,6 @@ sysutils-libpciaccess.diff
 x11-modular-xorg-server.diff
 sysutils-gamin.diff
 sysutils-pciutils.diff
-devel-libowfat.diff
 sysutils-hal.diff
 devel-libusb1.diff
 textproc-libxml2.diff
