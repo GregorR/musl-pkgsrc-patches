@@ -7,7 +7,6 @@ devel-libblkid.diff
 devel-libuuid.diff
 editors-vim-share.diff
 filesystems-fuse.diff
-graphics-aalib.diff
 graphics-gdk-pixbuf2.diff
 graphics-gimp.diff
 graphics-jpeg.diff
