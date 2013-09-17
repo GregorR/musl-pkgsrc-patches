@@ -1,6 +1,5 @@
 graphics-MesaLib.diff
 mk.diff
-archivers-pax.diff
 audio-alsa-lib.diff
 chat-irssi.diff
 databases-db4.diff
