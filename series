@@ -1,7 +1,6 @@
 graphics-MesaLib.diff
 mk.diff
 audio-alsa-lib.diff
-chat-irssi.diff
 databases-db4.diff
 devel-bmake.diff
 devel-flex.diff
