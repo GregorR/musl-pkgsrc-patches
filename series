@@ -2,7 +2,6 @@ graphics-MesaLib.diff
 mk.diff
 audio-alsa-lib.diff
 devel-bmake.diff
-devel-flex.diff
 devel-m4.diff
 devel-libblkid.diff
 devel-libuuid.diff
