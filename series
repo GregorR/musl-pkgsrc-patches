@@ -35,7 +35,6 @@ x11-pixman.diff
 x11-vte.diff
 sysutils-libpciaccess.diff
 x11-modular-xorg-server.diff
-sysutils-gamin.diff
 sysutils-pciutils.diff
 sysutils-hal.diff
 devel-libusb1.diff
