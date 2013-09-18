@@ -47,7 +47,6 @@ devel-boehm-gc.diff
 x11-fltk.diff
 security-heimdal.diff
 print-cups.diff
-time-xfce4-orage.diff
 x11-openmotif.diff
 devel-libusb.diff
 net-mDNSResponder.diff
