@@ -20,7 +20,6 @@ shells-bash.diff
 shells-dash.diff
 sysutils-coreutils.diff
 sysutils-xfce4-thunar.diff
-textproc-groff.diff
 textproc-hunspell.diff
 textproc-xmlrpc-c.diff
 wm-bsetroot.diff
