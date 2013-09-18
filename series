@@ -42,7 +42,6 @@ x11-sessreg.diff
 x11-xload.diff
 multimedia-x264-devel.diff
 devel-boehm-gc.diff
-x11-fltk.diff
 security-heimdal.diff
 print-cups.diff
 x11-openmotif.diff
