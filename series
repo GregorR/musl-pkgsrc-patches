@@ -47,7 +47,6 @@ multimedia-x264-devel.diff
 x11-fltk13.diff
 devel-boehm-gc.diff
 x11-fltk.diff
-sysutils-dbus.diff
 security-heimdal.diff
 print-cups.diff
 time-xfce4-orage.diff
