@@ -12,7 +12,6 @@ lang-python27.diff
 lang-ruby193-base.diff
 misc-pty-redir.diff
 pkgtools-bootstrap-mk-files.diff
-security-libgpg-error.diff
 security-openpam.diff
 security-openssl.diff
 security-p5-Crypt-Rijndael.diff
