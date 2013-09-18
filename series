@@ -26,7 +26,6 @@ wm-bsetroot.diff
 www-firefox.diff
 x11-libFS.diff
 x11-libXfont.diff
-x11-libdrm.diff
 x11-libxcb.diff
 x11-libxfce4menu.diff
 x11-pixman.diff
