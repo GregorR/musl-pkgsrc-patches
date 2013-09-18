@@ -56,7 +56,6 @@ time-xfce4-orage.diff
 x11-openmotif.diff
 devel-libusb.diff
 net-mDNSResponder.diff
-security-gnutls.diff
 x11-qt4-libs.diff
 devel-libf2c.diff
 sysutils-gnome-vfs.diff
