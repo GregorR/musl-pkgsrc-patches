@@ -24,7 +24,6 @@ textproc-hunspell.diff
 textproc-xmlrpc-c.diff
 wm-bsetroot.diff
 www-firefox.diff
-www-webkit-gtk.diff
 x11-libFS.diff
 x11-libXfont.diff
 x11-libdrm.diff
