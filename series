@@ -51,7 +51,6 @@ devel-glib2.diff
 x11-sessreg.diff
 net-avahi.diff
 x11-xload.diff
-math-nickle.diff
 multimedia-x264-devel.diff
 x11-fltk13.diff
 devel-boehm-gc.diff
