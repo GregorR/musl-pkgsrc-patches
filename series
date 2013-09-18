@@ -8,7 +8,6 @@ devel-libuuid.diff
 editors-vim-share.diff
 filesystems-fuse.diff
 graphics-gimp.diff
-graphics-jpeg.diff
 lang-f2c.diff
 lang-python27.diff
 lang-ruby193-base.diff
