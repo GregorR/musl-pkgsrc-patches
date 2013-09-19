@@ -26,6 +26,7 @@ wm-bsetroot.diff
 www-firefox.diff
 x11-libxfce4menu.diff
 x11-vte.diff
+security-openssh.diff
 sysutils-libpciaccess.diff
 x11-modular-xorg-server.diff
 sysutils-pciutils.diff
