@@ -1,0 +1,16 @@
+# HG changeset patch
+# Parent b06f63e4a2de60e3bf8def8c847c311b78c52efe
+diff -r b06f63e4a2de -r f55f3c2f1b64 www/libwww/Makefile
+--- a/www/libwww/Makefile	Fri Sep 20 06:18:16 2013 -0400
++++ b/www/libwww/Makefile	Fri Sep 20 15:54:05 2013 -0400
+@@ -26,8 +26,9 @@
+ 
+ .include "options.mk"
+ 
++# [Gregor] Changed to zcat because busybox gets confused if you misname its things
+ post-extract:
+-	gzcat ${DISTDIR}/libwww-configure-5.4.0nb2.gz > ${WRKSRC}/configure
++	zcat ${DISTDIR}/libwww-configure-5.4.0nb2.gz > ${WRKSRC}/configure
+ 
+ pre-configure:
+ 	chmod a+x ${WRKSRC}/configure
