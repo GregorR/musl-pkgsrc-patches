@@ -2,8 +2,7 @@ This is a collection of patches to pkgsrc for packages to build properly on
 musl-based Linux systems.
 
 It can be applied with a tool such as quilt, mq or guilt, or simply
+$ cat .../musl-pkgsrc-patches/*.diff | patch -p1
 
 This will probably only work with the expected version of pkgsrc, which is
 written in PKGSRC_VERSION.
-
-$ cat .../musl-pkgsrc-patches/*.diff | patch -p1
