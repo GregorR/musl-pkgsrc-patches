@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent bbda929d927451d193e1952efb957f865e91be20
+# Parent f8491ff906928ceadfbd577a9c0ad36daaef0775
 
-diff -r bbda929d9274 sysutils/pciutils/distinfo
---- a/sysutils/pciutils/distinfo	Mon Jul 08 19:24:15 2013 -0400
-+++ b/sysutils/pciutils/distinfo	Mon Jul 08 19:24:21 2013 -0400
+diff -r f8491ff90692 sysutils/pciutils/distinfo
+--- a/sysutils/pciutils/distinfo	Sat Mar 14 00:06:16 2015 -0400
++++ b/sysutils/pciutils/distinfo	Sat Mar 14 00:06:23 2015 -0400
 @@ -7,3 +7,4 @@
- SHA1 (patch-ab) = 1448bb418cdc908eb6652cc98994d23d0d78cea0
+ SHA1 (patch-ab) = 8837e3a6e6c87802614b50ac511d1c1b7375b908
  SHA1 (patch-ac) = 4b90e99c051391b9cd3a6c1f5781f41b4a855c29
  SHA1 (patch-ad) = bfe9069e96fd46798afec73c93ad71db3a0e0e37
 +SHA1 (patch-aq) = 5546296816722c621aeb777ccd6f316c04173182
-diff -r bbda929d9274 sysutils/pciutils/patches/patch-aq
+diff -r f8491ff90692 sysutils/pciutils/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/pciutils/patches/patch-aq	Mon Jul 08 19:24:21 2013 -0400
++++ b/sysutils/pciutils/patches/patch-aq	Sat Mar 14 00:06:23 2015 -0400
 @@ -0,0 +1,26 @@
 +diff -r 285cb9c34d4e lib/configure
 +--- lib/configure	Fri Jul 20 01:48:40 2012 +0000

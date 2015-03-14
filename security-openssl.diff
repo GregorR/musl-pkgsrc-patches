@@ -1,10 +1,7 @@
-# HG changeset patch
-# Parent aa988c695ecb2472bedaaf1beb3506c0a8bc77a3
-
-diff -r aa988c695ecb security/openssl/Makefile
---- a/security/openssl/Makefile	Mon Jul 08 19:22:00 2013 -0400
-+++ b/security/openssl/Makefile	Mon Jul 08 19:22:05 2013 -0400
-@@ -45,6 +45,7 @@
+diff -r 673665aea743 security/openssl/Makefile
+--- a/security/openssl/Makefile	Sat Mar 14 00:04:22 2015 -0400
++++ b/security/openssl/Makefile	Sat Mar 14 00:04:28 2015 -0400
+@@ -43,6 +43,7 @@
  # back to ./config's autodetection if not.
  .  if defined(OPENSSL_MACHINE_ARCH) && !empty(OPENSSL_MACHINE_ARCH)
  CONFIGURE_SCRIPT=	./Configure
@@ -12,7 +9,7 @@ diff -r aa988c695ecb security/openssl/Makefile
  .    if !empty(CC_VERSION:Mgcc*)
  CONFIGURE_ARGS+=	solaris${${ABI}==64:?64:}-${OPENSSL_MACHINE_ARCH}-gcc
  .    else
-@@ -138,8 +139,19 @@
+@@ -158,8 +159,19 @@
  
  INSTALLATION_DIRS+=	share/examples/openssl
  

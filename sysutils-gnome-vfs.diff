@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent f362273629d9dff678f15690c6e177ab40ba52ca
+# Parent 60cfedd801143fcaaf3a463d2667a49f623807f2
 
-diff -r f362273629d9 sysutils/gnome-vfs/distinfo
---- a/sysutils/gnome-vfs/distinfo	Mon Jul 08 19:26:42 2013 -0400
-+++ b/sysutils/gnome-vfs/distinfo	Mon Jul 08 19:26:48 2013 -0400
+diff -r 60cfedd80114 sysutils/gnome-vfs/distinfo
+--- a/sysutils/gnome-vfs/distinfo	Sat Mar 14 00:08:04 2015 -0400
++++ b/sysutils/gnome-vfs/distinfo	Sat Mar 14 00:08:11 2015 -0400
 @@ -23,3 +23,4 @@
  SHA1 (patch-cc) = 010674b9e7674cc4b84a57ac680a5769c5cffd29
  SHA1 (patch-cd) = 64ce812ca541dc34705586b4b01446b29bab8613
  SHA1 (patch-ce) = 718d7de318e85e58b7412345496263ca559e9a73
 +SHA1 (patch-qq) = ebf72df826151172ee4071a44075a8298cba2763
-diff -r f362273629d9 sysutils/gnome-vfs/patches/patch-qq
+diff -r 60cfedd80114 sysutils/gnome-vfs/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/gnome-vfs/patches/patch-qq	Mon Jul 08 19:26:48 2013 -0400
++++ b/sysutils/gnome-vfs/patches/patch-qq	Sat Mar 14 00:08:11 2015 -0400
 @@ -0,0 +1,13 @@
 +diff -r d1cf86f18da9 libgnomevfs/gnome-vfs-result.c
 +--- libgnomevfs/gnome-vfs-result.c	Mon Mar 11 18:50:48 2013 +0000

@@ -1,9 +1,9 @@
 # HG changeset patch
-# Parent e1502f889eb3b023f1db8c1ab30db39024b98e10
+# Parent 95350c987e77e90c3d7af7cb3899813160c17aca
 
-diff -r e1502f889eb3 devel/bmake/files/suff.c
---- a/devel/bmake/files/suff.c	Mon Jul 08 19:19:47 2013 -0400
-+++ b/devel/bmake/files/suff.c	Mon Jul 08 19:19:53 2013 -0400
+diff -r 95350c987e77 devel/bmake/files/suff.c
+--- a/devel/bmake/files/suff.c	Sat Mar 14 00:03:04 2015 -0400
++++ b/devel/bmake/files/suff.c	Sat Mar 14 00:03:10 2015 -0400
 @@ -67,6 +67,8 @@
   * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
   * SUCH DAMAGE.
@@ -13,9 +13,9 @@ diff -r e1502f889eb3 devel/bmake/files/suff.c
  
  #ifndef MAKE_NATIVE
  static char rcsid[] = "$NetBSD: suff.c,v 1.4 2009/09/18 21:27:25 joerg Exp $";
-diff -r e1502f889eb3 devel/bmake/files/targ.c
---- a/devel/bmake/files/targ.c	Mon Jul 08 19:19:47 2013 -0400
-+++ b/devel/bmake/files/targ.c	Mon Jul 08 19:19:53 2013 -0400
+diff -r 95350c987e77 devel/bmake/files/targ.c
+--- a/devel/bmake/files/targ.c	Sat Mar 14 00:03:04 2015 -0400
++++ b/devel/bmake/files/targ.c	Sat Mar 14 00:03:10 2015 -0400
 @@ -67,6 +67,8 @@
   * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
   * SUCH DAMAGE.
@@ -25,9 +25,9 @@ diff -r e1502f889eb3 devel/bmake/files/targ.c
  
  #ifndef MAKE_NATIVE
  static char rcsid[] = "$NetBSD: targ.c,v 1.5 2011/06/18 22:39:46 bsiegert Exp $";
-diff -r e1502f889eb3 devel/bmake/files/unit-tests/test.exp
---- a/devel/bmake/files/unit-tests/test.exp	Mon Jul 08 19:19:47 2013 -0400
-+++ b/devel/bmake/files/unit-tests/test.exp	Mon Jul 08 19:19:53 2013 -0400
+diff -r 95350c987e77 devel/bmake/files/unit-tests/test.exp
+--- a/devel/bmake/files/unit-tests/test.exp	Sat Mar 14 00:03:04 2015 -0400
++++ b/devel/bmake/files/unit-tests/test.exp	Sat Mar 14 00:03:10 2015 -0400
 @@ -27,6 +27,7 @@
  make: "error" line 3: just FYI
  make: "error" line 4: warning: this could be serious

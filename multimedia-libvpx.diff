@@ -1,15 +1,16 @@
 # HG changeset patch
-# Parent 0385d2acf6de1093bd1826a5f09c052255e8e1d3
+# Parent 198ba5f00887ec3598a4c98bae90a40a5b936893
 
-diff -r 0385d2acf6de multimedia/libvpx/Makefile
---- a/multimedia/libvpx/Makefile	Mon Jul 08 19:27:05 2013 -0400
-+++ b/multimedia/libvpx/Makefile	Mon Jul 08 19:27:11 2013 -0400
-@@ -74,5 +74,8 @@
- post-extract:
- 	${CP} ${FILESDIR}/strip_fPIC.sh ${WRKSRC}
+diff -r 198ba5f00887 multimedia/libvpx/Makefile
+--- a/multimedia/libvpx/Makefile	Sat Mar 14 00:08:30 2015 -0400
++++ b/multimedia/libvpx/Makefile	Sat Mar 14 00:08:36 2015 -0400
+@@ -86,6 +86,9 @@
+ .  endif
+ .endif
  
 +# [Gregor] bash script
 +BUILD_DEPENDS+=bash-[0-9]*:../../shells/bash
 +
- .include "../../mk/pthread.buildlink3.mk"
- .include "../../mk/bsd.pkg.mk"
+ .include "../../mk/compiler.mk"
+ .if !empty(PKGSRC_COMPILER:Mclang)
+ CXXFLAGS+=	-std=c++11

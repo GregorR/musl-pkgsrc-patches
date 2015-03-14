@@ -1,20 +1,19 @@
 # HG changeset patch
-# Parent 74fc9670e5a04e1c0b2f2314f5ce3ea48ac12cd5
+# Parent 3215313546a0a033abccd3b21904b3d906d7590b
 
-diff -r 74fc9670e5a0 print/cups/Makefile
---- a/print/cups/Makefile	Mon Jul 08 19:25:49 2013 -0400
-+++ b/print/cups/Makefile	Mon Jul 08 19:25:54 2013 -0400
-@@ -71,8 +71,12 @@
- 
- .if ${OPSYS} == "SunOS"
- CONFIGURE_ENV+=		LIBS_SSP=-lssp_nonshared
--LIBS.SunOS+=		-liconv
+diff -r 3215313546a0 print/cups/Makefile
+--- a/print/cups/Makefile	Sat Mar 14 00:07:23 2015 -0400
++++ b/print/cups/Makefile	Sat Mar 14 00:07:29 2015 -0400
+@@ -63,6 +63,12 @@
+ LIBS.SunOS+=		-liconv
  .endif
+ 
 +# [Gregor] Seems to be necessary on musl too
 +LIBS+=		-liconv
 +
 +# [Gregor] Needs strl* functions, but excludes them
 +CFLAGS+=	-D_BSD_SOURCE
- 
++
  PLIST_VARS+=		notmac
  .if ${OPSYS} != "Darwin"
+ PLIST.notmac=		yes

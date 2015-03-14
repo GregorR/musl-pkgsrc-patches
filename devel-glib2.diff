@@ -1,16 +1,14 @@
-# HG changeset patch
-# Parent 36a33cc9fdc71ad78d9752c2b0a18b9f9f88bfa9
-diff -r 36a33cc9fdc7 -r fbf8ed8bcb35 devel/glib2/distinfo
---- a/devel/glib2/distinfo	Wed Jul 31 15:32:26 2013 -0400
-+++ b/devel/glib2/distinfo	Wed Jul 31 19:18:11 2013 -0400
-@@ -34,3 +34,4 @@
- SHA1 (patch-glib_gfileutils.c) = 667e9ed2a8a9cca09f9eb4218e467d11544822f3
- SHA1 (patch-glib_gmarkup.c) = 238cce5f20d2fd9a12832d47d498edfd7290075b
- SHA1 (patch-glib_gstrfuncs.c) = 6719b83e35e1f4e4e8b1c113faa8596676fd9ae5
+diff -r f505706f6489 devel/glib2/distinfo
+--- a/devel/glib2/distinfo	Sat Mar 14 00:06:42 2015 -0400
++++ b/devel/glib2/distinfo	Sat Mar 14 00:06:49 2015 -0400
+@@ -25,3 +25,4 @@
+ SHA1 (patch-gio_gresource-tool.c) = 4eb7c9df25e9ac3e977edf3be8fb977a6fb39182
+ SHA1 (patch-glib_gthread-posix.c) = ca93c8dc358453eb79b518c884464c90d7628888
+ SHA1 (patch-glib_gtimezone.c) = d9686da52f171a073d80cfd9f80aa490088a00a3
 +SHA1 (patch-qq) = bde0378f7e5966bc445dc25aa7de96529583cd8e
-diff -r 36a33cc9fdc7 -r fbf8ed8bcb35 devel/glib2/patches/patch-qq
+diff -r f505706f6489 devel/glib2/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/glib2/patches/patch-qq	Wed Jul 31 19:18:11 2013 -0400
++++ b/devel/glib2/patches/patch-qq	Sat Mar 14 00:06:49 2015 -0400
 @@ -0,0 +1,59 @@
 +diff -r 9e8d43ec61dc configure
 +--- configure	Wed Jul 31 16:56:24 2013 +0000

@@ -1,16 +1,17 @@
 # HG changeset patch
-# Parent d4161934f42aacbf999ae64a5580fa9b289311c9
-diff -r d4161934f42a -r 6dfbf52f2598 graphics/MesaLib/distinfo
---- a/graphics/MesaLib/distinfo	Mon Jul 08 18:49:50 2013 -0400
-+++ b/graphics/MesaLib/distinfo	Wed Jul 31 12:45:44 2013 -0400
-@@ -30,3 +30,4 @@
- SHA1 (patch-src_mesa_main_compiler.h) = b164781b541cb83b64597facbb7a7e21d8bdb686
+# Parent 15af9b4fe06fe82eb86adcfc7d9b906e730e64f9
+
+diff -r 15af9b4fe06f graphics/MesaLib/distinfo
+--- a/graphics/MesaLib/distinfo	Fri Mar 13 11:41:38 2015 -0400
++++ b/graphics/MesaLib/distinfo	Sat Mar 14 00:02:51 2015 -0400
+@@ -34,3 +34,4 @@
+ SHA1 (patch-src_mesa_main_context.c) = 6b6f1e3ad4ea189291fcf221d4b8bfbd650f8908
  SHA1 (patch-src_mesa_main_imports.c) = d0c50004c749e4c5c136ac2ed50a6989ca90065f
  SHA1 (patch-src_mesa_main_imports.h) = f5a96195b3a14294ca3389c9fe17a6076c46db8a
 +SHA1 (patch-zz-musl) = e03a5242f54e339be660a4adc5396bc2e86e0afc
-diff -r d4161934f42a -r 6dfbf52f2598 graphics/MesaLib/patches/patch-zz-musl
+diff -r 15af9b4fe06f graphics/MesaLib/patches/patch-zz-musl
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/graphics/MesaLib/patches/patch-zz-musl	Wed Jul 31 12:45:44 2013 -0400
++++ b/graphics/MesaLib/patches/patch-zz-musl	Sat Mar 14 00:02:51 2015 -0400
 @@ -0,0 +1,23 @@
 +diff -r a513bbc456d5 src/mesa/drivers/dri/savage/savageioctl.c
 +--- src/mesa/drivers/dri/savage/savageioctl.c	Wed Jul 31 11:38:50 2013 +0000

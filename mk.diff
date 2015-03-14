@@ -1,8 +1,9 @@
 # HG changeset patch
-# Parent d4161934f42aacbf999ae64a5580fa9b289311c9
-diff -r d4161934f42a -r 6d0bb4e804b7 mk/compiler/gcc.mk
---- a/mk/compiler/gcc.mk	Mon Jul 08 18:49:50 2013 -0400
-+++ b/mk/compiler/gcc.mk	Mon Jul 29 23:40:52 2013 -0400
+# Parent 890d087e0d36c56f04a458613dc5046ea4a659a4
+
+diff -r 890d087e0d36 mk/compiler/gcc.mk
+--- a/mk/compiler/gcc.mk	Sat Mar 14 00:02:51 2015 -0400
++++ b/mk/compiler/gcc.mk	Sat Mar 14 00:02:57 2015 -0400
 @@ -178,10 +178,10 @@
  .endif
  _GCC_PKG=	gcc-${_GCC_VERSION:C/-.*$//}
@@ -27,30 +28,30 @@ diff -r d4161934f42a -r 6d0bb4e804b7 mk/compiler/gcc.mk
  
  # Distill the GCC_REQD list into a single _GCC_REQD value that is the
  # highest version of GCC required.
-diff -r d4161934f42a -r 6d0bb4e804b7 mk/gnu-config/config.sub
---- a/mk/gnu-config/config.sub	Mon Jul 08 18:49:50 2013 -0400
-+++ b/mk/gnu-config/config.sub	Mon Jul 29 23:40:52 2013 -0400
-@@ -124,7 +124,7 @@
+diff -r 890d087e0d36 mk/gnu-config/config.sub
+--- a/mk/gnu-config/config.sub	Sat Mar 14 00:02:51 2015 -0400
++++ b/mk/gnu-config/config.sub	Sat Mar 14 00:02:57 2015 -0400
+@@ -122,7 +122,7 @@
  # Here we must recognize all the valid KERNEL-OS combinations.
  maybe_os=`echo $1 | sed 's/^\(.*\)-\([^-]*-[^-]*\)$/\2/'`
  case $maybe_os in
--  nto-qnx* | linux-gnu* | linux-dietlibc | linux-newlib* | linux-uclibc* | \
-+  nto-qnx* | linux-gnu* | linux-dietlibc | linux-newlib* | linux-uclibc* | linux-musl* | \
-   uclinux-uclibc* | uclinux-gnu* | kfreebsd*-gnu* | knetbsd*-gnu* | netbsd*-gnu* | \
+-  nto-qnx* | linux-gnu* | linux-android* | linux-dietlibc | linux-newlib* | \
++  nto-qnx* | linux-gnu* | linux-android* | linux-dietlibc | linux-newlib* | linux-musl* | \
+   linux-uclibc* | uclinux-uclibc* | uclinux-gnu* | kfreebsd*-gnu* | \
+   knetbsd*-gnu* | netbsd*-gnu* | \
    kopensolaris*-gnu* | \
-   storm-chaos* | os2-emx* | rtmk-nova*)
-@@ -1295,7 +1295,7 @@
- 	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
+@@ -1360,7 +1360,7 @@
  	      | -chorusos* | -chorusrdb* | -cegcc* \
- 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
--	      | -mingw32* | -linux-gnu* | -linux-newlib* | -linux-uclibc* \
-+	      | -mingw32* | -linux-gnu* | -linux-newlib* | -linux-uclibc* | -linux-musl* \
+ 	      | -cygwin* | -msys* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+ 	      | -mingw32* | -linux-gnu* | -linux-android* \
+-	      | -linux-newlib* | -linux-uclibc* \
++	      | -linux-newlib* | -linux-uclibc* | -linux-musl* \
  	      | -uxpv* | -beos* | -mpeix* | -udk* \
  	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
  	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
-diff -r d4161934f42a -r 6d0bb4e804b7 mk/pkginstall/usergroupfuncs.Linux
---- a/mk/pkginstall/usergroupfuncs.Linux	Mon Jul 08 18:49:50 2013 -0400
-+++ b/mk/pkginstall/usergroupfuncs.Linux	Mon Jul 29 23:40:52 2013 -0400
+diff -r 890d087e0d36 mk/pkginstall/usergroupfuncs.Linux
+--- a/mk/pkginstall/usergroupfuncs.Linux	Sat Mar 14 00:02:51 2015 -0400
++++ b/mk/pkginstall/usergroupfuncs.Linux	Sat Mar 14 00:02:57 2015 -0400
 @@ -96,13 +96,13 @@
  	case $userid in
  	"")
@@ -78,19 +79,19 @@ diff -r d4161934f42a -r 6d0bb4e804b7 mk/pkginstall/usergroupfuncs.Linux
  		*)	${GROUPADD} -g $groupid $group ;;
  		esac
  	fi
-diff -r d4161934f42a -r 6d0bb4e804b7 mk/platform/Linux.mk
---- a/mk/platform/Linux.mk	Mon Jul 08 18:49:50 2013 -0400
-+++ b/mk/platform/Linux.mk	Mon Jul 29 23:40:52 2013 -0400
+diff -r 890d087e0d36 mk/platform/Linux.mk
+--- a/mk/platform/Linux.mk	Sat Mar 14 00:02:51 2015 -0400
++++ b/mk/platform/Linux.mk	Sat Mar 14 00:02:57 2015 -0400
 @@ -23,7 +23,7 @@
  DEF_UMASK?=		022
  DEFAULT_SERIAL_DEVICE?=	/dev/null
  EXPORT_SYMBOLS_LDFLAGS?=	# Don't add symbols to the dynamic symbol table
 -GROUPADD?=		/usr/sbin/groupadd
 +GROUPADD?=		/usr/bin/addgroup
- LIBC_BUILTINS=		iconv getopt sysexits gettext
  MOTIF_TYPE_DEFAULT?=	motif	# default 2.0 compatible libs type
  .if exists(/etc/ssdlinux_version)
-@@ -43,7 +43,7 @@
+ NOLOGIN?=		/sbin/nologin
+@@ -42,7 +42,7 @@
  ULIMIT_CMD_datasize?=	ulimit -d `ulimit -H -d`
  ULIMIT_CMD_stacksize?=	ulimit -s `ulimit -H -s`
  ULIMIT_CMD_memorysize?=	ulimit -m `ulimit -H -m`

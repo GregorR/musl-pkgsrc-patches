@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent 6235bfff0801cc3c0622507dee2883db0ea84d97
+# Parent ef439e98c8b4bb6d2dc1e15cb42735d1cf4456cd
 
-diff -r 6235bfff0801 textproc/xmlrpc-c/Makefile
---- a/textproc/xmlrpc-c/Makefile	Mon Jul 08 19:22:49 2013 -0400
-+++ b/textproc/xmlrpc-c/Makefile	Mon Jul 08 19:22:55 2013 -0400
-@@ -41,5 +41,7 @@
+diff -r ef439e98c8b4 textproc/xmlrpc-c/Makefile
+--- a/textproc/xmlrpc-c/Makefile	Sat Mar 14 00:05:21 2015 -0400
++++ b/textproc/xmlrpc-c/Makefile	Sat Mar 14 00:05:28 2015 -0400
+@@ -59,5 +59,7 @@
  
  .include "../../www/curl/buildlink3.mk"
  .include "../../www/libwww/buildlink3.mk"
@@ -12,17 +12,17 @@ diff -r 6235bfff0801 textproc/xmlrpc-c/Makefile
 +.include "../../devel/gettext-lib/buildlink3.mk"
  .include "../../mk/pthread.buildlink3.mk"
  .include "../../mk/bsd.pkg.mk"
-diff -r 6235bfff0801 textproc/xmlrpc-c/distinfo
---- a/textproc/xmlrpc-c/distinfo	Mon Jul 08 19:22:49 2013 -0400
-+++ b/textproc/xmlrpc-c/distinfo	Mon Jul 08 19:22:55 2013 -0400
-@@ -15,3 +15,4 @@
- SHA1 (patch-lib_curl__transport_curlmulti.c) = 1cea4c43b1ed3dcf73827afc14d7bb9267371121
- SHA1 (patch-lib_curl__transport_curltransaction.c) = 1dcf46c0dd1dd8e7fdfbb6c81e00b326f6d0b1f9
- SHA1 (patch-lib_curl__transport_xmlrpc__curl__transport.c) = ea132ebb46ff0ce9893d64e9c9205d5a155220ef
+diff -r ef439e98c8b4 textproc/xmlrpc-c/distinfo
+--- a/textproc/xmlrpc-c/distinfo	Sat Mar 14 00:05:21 2015 -0400
++++ b/textproc/xmlrpc-c/distinfo	Sat Mar 14 00:05:28 2015 -0400
+@@ -11,3 +11,4 @@
+ SHA1 (patch-ak) = 4525977b51a25f115c1266dccf0e2cc754dc80d3
+ SHA1 (patch-config.mk.in) = e3eef60ab28b92d1e903ac84997617dfafe1689c
+ SHA1 (patch-src_cpp_server_pstream.cpp) = 2a6b2f30ab5f9df1953f874ede41b91bd60a005a
 +SHA1 (patch-aq) = 434c86fea4f13a8d0ba92e82b11bf3476a3017da
-diff -r 6235bfff0801 textproc/xmlrpc-c/patches/patch-aq
+diff -r ef439e98c8b4 textproc/xmlrpc-c/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/textproc/xmlrpc-c/patches/patch-aq	Mon Jul 08 19:22:55 2013 -0400
++++ b/textproc/xmlrpc-c/patches/patch-aq	Sat Mar 14 00:05:28 2015 -0400
 @@ -0,0 +1,48 @@
 +diff -r 89442310b346 examples/interrupted_client.c
 +--- examples/interrupted_client.c	Mon Jul 02 16:31:43 2012 +0000

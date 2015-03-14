@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent d624e2e7f2e8ce4a4bbfb7552d2f8d778adea637
+# Parent 3e2bf37f9167a654045c22d1ad038ce3aa766ed3
 
-diff -r d624e2e7f2e8 sysutils/libpciaccess/distinfo
---- a/sysutils/libpciaccess/distinfo	Mon Jul 08 19:23:57 2013 -0400
-+++ b/sysutils/libpciaccess/distinfo	Mon Jul 08 19:24:03 2013 -0400
-@@ -12,3 +12,4 @@
- SHA1 (patch-src_pciaccess__private.h) = 56853598f50e5656ff7ba190b31f2940d66ec468
- SHA1 (patch-src_solx__devfs.c) = 924649d561bc9922b6ee8335ffe5e997b1cb8c3c
- SHA1 (patch-src_x86__pci.c) = b9820f8ff9306c18d040444e57270f520f95a58f
+diff -r 3e2bf37f9167 sysutils/libpciaccess/distinfo
+--- a/sysutils/libpciaccess/distinfo	Sat Mar 14 00:06:01 2015 -0400
++++ b/sysutils/libpciaccess/distinfo	Sat Mar 14 00:06:09 2015 -0400
+@@ -6,3 +6,4 @@
+ SHA1 (patch-configure) = 2b1bbc1ccd26372d7f45b0cbcf970823cafc6a7c
+ SHA1 (patch-src_common__interface.c) = cac11689864531fa4721e09374ead730bd1691a6
+ SHA1 (patch-src_solx__devfs.c) = 4800fde06d511592bbc4448f09656ee4d7abce2c
 +SHA1 (patch-qq) = f91b1ee7151c127f3f087c2dbe3a7c6e4cbdc0e4
-diff -r d624e2e7f2e8 sysutils/libpciaccess/patches/patch-qq
+diff -r 3e2bf37f9167 sysutils/libpciaccess/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/libpciaccess/patches/patch-qq	Mon Jul 08 19:24:03 2013 -0400
++++ b/sysutils/libpciaccess/patches/patch-qq	Sat Mar 14 00:06:09 2015 -0400
 @@ -0,0 +1,23 @@
 +diff -r 4ecbc201fcdd src/linux_sysfs.c
 +--- src/linux_sysfs.c	Mon Mar 11 04:36:42 2013 +0000

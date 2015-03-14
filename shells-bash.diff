@@ -1,12 +1,12 @@
 # HG changeset patch
-# Parent 626a191f22c70f1192977a79a6bae2c53c6df023
+# Parent 94f8d22d6ee8c21aacbefc7efd47b5b960143053
 
-diff -r 626a191f22c7 shells/bash/Makefile
---- a/shells/bash/Makefile	Mon Jul 08 19:22:17 2013 -0400
-+++ b/shells/bash/Makefile	Mon Jul 08 19:22:22 2013 -0400
-@@ -100,6 +100,9 @@
- CONFIGURE_ENV+=		bash_cv_wexitstatus_offset=8
- .endif
+diff -r 94f8d22d6ee8 shells/bash/Makefile
+--- a/shells/bash/Makefile	Sat Mar 14 00:04:41 2015 -0400
++++ b/shells/bash/Makefile	Sat Mar 14 00:04:47 2015 -0400
+@@ -104,6 +104,9 @@
+ pre-configure:
+ 	${RM} -f ${WRKSRC}/y.tab.c
  
 +# [Gregor] mischeck for musl, safe everywhere
 +CONFIGURE_ARGS+=		--without-bash-malloc

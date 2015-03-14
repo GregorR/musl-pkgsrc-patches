@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent 854693dcdce79d6028b76b40d78dafdede5aad62
+# Parent 6b42b3a1d79f0ae7d94ab164eee8c3e4dcb8a2d0
 
-diff -r 854693dcdce7 filesystems/fuse/distinfo
---- a/filesystems/fuse/distinfo	Mon Jul 08 19:20:25 2013 -0400
-+++ b/filesystems/fuse/distinfo	Mon Jul 08 19:20:30 2013 -0400
-@@ -16,3 +16,4 @@
- SHA1 (patch-am) = 2abd07b403896bff5aad6cd865cb473553851a22
- SHA1 (patch-an) = 3f119dae5f08996dd483a0fb4fa0365507be2070
- SHA1 (patch-util_fusermount.c) = c65c377b917dc0c34cf5b8fb4d70e75075debcf9
+diff -r 6b42b3a1d79f filesystems/fuse/distinfo
+--- a/filesystems/fuse/distinfo	Sat Mar 14 00:03:36 2015 -0400
++++ b/filesystems/fuse/distinfo	Sat Mar 14 00:03:43 2015 -0400
+@@ -4,3 +4,4 @@
+ RMD160 (fuse-2.9.3.tar.gz) = a81f350842a43aa82cff2cb75e0bf9f5b123ad5a
+ Size (fuse-2.9.3.tar.gz) = 572044 bytes
+ SHA1 (patch-aa) = 1179876c7a4f230d8df8a7a6724b90779c9fa0e3
 +SHA1 (patch-qq) = f8dc23f988fa537dcb41bdc54f4dc550eb479914
-diff -r 854693dcdce7 filesystems/fuse/patches/patch-qq
+diff -r 6b42b3a1d79f filesystems/fuse/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/filesystems/fuse/patches/patch-qq	Mon Jul 08 19:20:30 2013 -0400
++++ b/filesystems/fuse/patches/patch-qq	Sat Mar 14 00:03:43 2015 -0400
 @@ -0,0 +1,48 @@
 +diff -r 18a7de07ebb3 example/fioclient.c
 +--- example/fioclient.c	Tue May 08 17:27:11 2012 +0000

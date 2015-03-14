@@ -1,11 +1,12 @@
 # HG changeset patch
-# Parent dceca5f75a16ce8f645b4aa163320df8771dea36
-diff -r dceca5f75a16 -r 02e7eff25072 lang/g95/Makefile
---- a/lang/g95/Makefile	Fri Sep 20 06:18:15 2013 -0400
-+++ b/lang/g95/Makefile	Fri Sep 20 19:10:40 2013 -0400
-@@ -28,6 +28,10 @@
- GCC_CONFIGURE_ARGS+=	--enable-languages=c
- GCC_CONFIGURE_ARGS+=	--disable-multilib
+# Parent 1c86beb5d49b957f8a938512d56162979ea895fa
+
+diff -r 1c86beb5d49b lang/g95/Makefile
+--- a/lang/g95/Makefile	Sat Mar 14 00:08:17 2015 -0400
++++ b/lang/g95/Makefile	Sat Mar 14 00:08:24 2015 -0400
+@@ -33,6 +33,10 @@
+ # Avoid "ld: illegal text-relocation to half in .libs/x87.o"
+ LDFLAGS.Darwin+=	-Wl,-read_only_relocs,suppress
  
 +# [Gregor] No mudflap or libssp on musl
 +GCC_CONFIGURE_ARGS+=	--disable-libmudflap --disable-libssp
@@ -14,7 +15,7 @@ diff -r dceca5f75a16 -r 02e7eff25072 lang/g95/Makefile
  .include "../../mk/bsd.prefs.mk"
  .if ${OPSYS} == "SunOS"
  GCC_CONFIGURE_ENV+=	OBJDUMP=/usr/sfw/bin/gobjdump
-@@ -57,4 +61,8 @@
+@@ -67,4 +71,8 @@
  	cd ${DESTDIR}${PREFIX}/bin && ${LN} -sf ${MACHINE_GNU_PLATFORM:Q}-g95 g95
  	cd ${DESTDIR}${PREFIX}/bin && ${LN} -sf ${MACHINE_GNU_PLATFORM:Q}-g95 f95
  
@@ -23,17 +24,18 @@ diff -r dceca5f75a16 -r 02e7eff25072 lang/g95/Makefile
 +
 +# [Gregor] Compilers need to know their target
 +MACHINE_GNU_PLATFORM=${MACHINE_GNU_ARCH}-${LOWER_VENDOR}-${LOWER_OPSYS:C/[0-9]//g}-musl${APPEND_ELF}${LOWER_OPSYS_VERSUFFIX}
-diff -r dceca5f75a16 -r 02e7eff25072 lang/g95/distinfo
---- a/lang/g95/distinfo	Fri Sep 20 06:18:15 2013 -0400
-+++ b/lang/g95/distinfo	Fri Sep 20 19:10:40 2013 -0400
-@@ -26,3 +26,4 @@
+diff -r 1c86beb5d49b lang/g95/distinfo
+--- a/lang/g95/distinfo	Sat Mar 14 00:08:17 2015 -0400
++++ b/lang/g95/distinfo	Sat Mar 14 00:08:24 2015 -0400
+@@ -30,4 +30,5 @@
  SHA1 (patch-libf95.a-0.93_math_ff.c) = 353121bc08a86765d18b0e6f051ba91f7e65e9c2
  SHA1 (patch-libf95.a-0.93_math_x87.S) = d1eb02bd2358b6abb9b8dc3e32629cba540adcc4
  SHA1 (patch-libf95.a-0.93_quad_power16.c) = fc7375aa90ecf75bb8ba26d41739614040b16e09
 +SHA1 (patch-musl) = 8c02beac40b41abfb0e73e83c3bfe4ec3c101a0f
-diff -r dceca5f75a16 -r 02e7eff25072 lang/g95/patches/patch-musl
+ SHA1 (patch-libf95.a-0.93_runtime_main.c) = dfde68072f38bf5bbb9c54ebeea5b9ce07d0c6be
+diff -r 1c86beb5d49b lang/g95/patches/patch-musl
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/lang/g95/patches/patch-musl	Fri Sep 20 19:10:40 2013 -0400
++++ b/lang/g95/patches/patch-musl	Sat Mar 14 00:08:24 2015 -0400
 @@ -0,0 +1,121 @@
 +diff -r b69a113afeab gcc-4.1.2/config.sub
 +--- ../gcc-4.1.2/config.sub	Sat Aug 03 11:32:59 2013 +0000

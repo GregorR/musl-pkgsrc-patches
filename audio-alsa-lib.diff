@@ -1,17 +1,20 @@
 # HG changeset patch
-# Parent 79fb3c612c0f1db02bd3232edc788d18885c5a0d
+# Parent 4f6baf36abbc6dbc25689676e49521f26e037b6d
 
-diff -r 79fb3c612c0f audio/alsa-lib/distinfo
---- a/audio/alsa-lib/distinfo	Mon Jul 08 19:19:28 2013 -0400
-+++ b/audio/alsa-lib/distinfo	Mon Jul 08 19:19:37 2013 -0400
-@@ -43,3 +43,4 @@
- SHA1 (patch-include_iatomic.h) = 30099667b490c0e960a7e8883da52c39f4396b9d
- SHA1 (patch-include_pcm.h) = 1c458cd7d078356f4a970b0b3592aad139ac0918
+diff -r 4f6baf36abbc audio/alsa-lib/distinfo
+--- a/audio/alsa-lib/distinfo	Sat Mar 14 00:02:57 2015 -0400
++++ b/audio/alsa-lib/distinfo	Sat Mar 14 00:03:04 2015 -0400
+@@ -46,6 +46,7 @@
+ SHA1 (patch-src_compat_hsearch__r.c) = 017bf104203233e85e9f3083f43150de6f341ad5
+ SHA1 (patch-src_conf.c) = 43e35f6a133cf297d3309bc8c4846beb295e5242
  SHA1 (patch-src_control_control__hw.c) = 07cfe3abe586b32f6b989403cd162599da07e865
 +SHA1 (patch-qq) = a41ef5695898cde72f31489de2ed10088b0f476f
-diff -r 79fb3c612c0f audio/alsa-lib/patches/patch-qq
+ SHA1 (patch-src_pcm_pcm__mmap.c) = 8ce33dae5215ee441196414e0c1ba02e4757e32d
+ SHA1 (patch-src_seq_seq__midi__event.c) = 2a5de492d6ca19a0f0c564e8f5a065e5fc57ea5c
+ SHA1 (patch-src_shmarea.c) = e6da001119f4e164b606e19a4c12df9aa05caa6a
+diff -r 4f6baf36abbc audio/alsa-lib/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/audio/alsa-lib/patches/patch-qq	Mon Jul 08 19:19:37 2013 -0400
++++ b/audio/alsa-lib/patches/patch-qq	Sat Mar 14 00:03:04 2015 -0400
 @@ -0,0 +1,72 @@
 +diff -r bb67315ed01e include/global.h
 +--- include/global.h	Mon May 07 21:37:17 2012 +0000

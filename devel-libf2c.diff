@@ -1,17 +1,17 @@
 # HG changeset patch
-# Parent b34ecd21892d99449b899c015eb53421377a8908
+# Parent 493af8ff6a534bd23975f10acfa265d8044d554c
 
-diff -r b34ecd21892d devel/libf2c/distinfo
---- a/devel/libf2c/distinfo	Mon Jul 08 19:26:36 2013 -0400
-+++ b/devel/libf2c/distinfo	Mon Jul 08 19:26:42 2013 -0400
+diff -r 493af8ff6a53 devel/libf2c/distinfo
+--- a/devel/libf2c/distinfo	Sat Mar 14 00:07:57 2015 -0400
++++ b/devel/libf2c/distinfo	Sat Mar 14 00:08:04 2015 -0400
 @@ -6,3 +6,4 @@
  SHA1 (patch-ai) = 3213ead493c570eb70bbd43e47f6bbc4bb762796
  SHA1 (patch-aj) = 78ff4ad86970e1a32eb65ca4364dda0004959cf3
  SHA1 (patch-ak) = 0369faf3d5a09a308915452afd58850c6e6a1731
 +SHA1 (patch-qq) = 3876c4ed8d2a581572b480843b538fe9507e7161
-diff -r b34ecd21892d devel/libf2c/patches/patch-qq
+diff -r 493af8ff6a53 devel/libf2c/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/libf2c/patches/patch-qq	Mon Jul 08 19:26:42 2013 -0400
++++ b/devel/libf2c/patches/patch-qq	Sat Mar 14 00:08:04 2015 -0400
 @@ -0,0 +1,15 @@
 +diff -r 168721ec2b30 sysdep1.h0
 +--- sysdep1.h0	Mon Mar 11 19:39:44 2013 +0000

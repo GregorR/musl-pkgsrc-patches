@@ -1,16 +1,14 @@
-# HG changeset patch
-# Parent 2f231acc7d62380b0dff52cba2525475e36ff148
-diff -r 2f231acc7d62 -r 18f54114f559 devel/nss/distinfo
---- a/devel/nss/distinfo	Wed Jul 31 19:18:17 2013 -0400
-+++ b/devel/nss/distinfo	Thu Aug 01 17:17:43 2013 -0400
-@@ -13,3 +13,4 @@
- SHA1 (patch-mj) = 197fab0e00256dedc8a5f181ee0d0d6e42d8177f
- SHA1 (patch-mn) = a59f31b58547657b96a45a2753aab93866940203
- SHA1 (patch-security_nss_cmd_shlibsign_sign.sh) = 0f4a691aacd5f58ab59ce7f11e22b4f6714e6938
+diff -r 00ddfad14f10 devel/nss/distinfo
+--- a/devel/nss/distinfo	Sat Mar 14 00:08:36 2015 -0400
++++ b/devel/nss/distinfo	Sat Mar 14 00:08:43 2015 -0400
+@@ -15,3 +15,4 @@
+ SHA1 (patch-nss_coreconf_OpenBSD.mk) = fa545c993038e99bf9f59b59ec1d0bd1f6c192a9
+ SHA1 (patch-nss_lib_freebl_config.mk) = 1c198177da8ba7928cbfbd23e385503be99ebe27
+ SHA1 (patch-security_nss_cmd_shlibsign_sign.sh) = 7948b7b502a4c148ee185836dde8a84d3aa388af
 +SHA1 (patch-zz-cdefs) = 3d0d719b1bf9fbc9a854fcbc258660a46df4a57f
-diff -r 2f231acc7d62 -r 18f54114f559 devel/nss/patches/patch-zz-cdefs
+diff -r 00ddfad14f10 devel/nss/patches/patch-zz-cdefs
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/devel/nss/patches/patch-zz-cdefs	Thu Aug 01 17:17:43 2013 -0400
++++ b/devel/nss/patches/patch-zz-cdefs	Sat Mar 14 00:08:43 2015 -0400
 @@ -0,0 +1,12 @@
 +diff -r 0a1c1f54695a mozilla/dbm/include/mcom_db.h
 +--- dbm/include/mcom_db.h	Thu Aug 01 14:54:49 2013 +0000

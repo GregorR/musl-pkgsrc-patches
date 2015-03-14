@@ -54,3 +54,5 @@ devel-nss.diff
 graphics-libv4l.diff
 www-libwww.diff
 devel-cmake.diff
+graphics-netpbm.diff
+print-cups15.diff

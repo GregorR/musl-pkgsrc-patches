@@ -1,8 +1,9 @@
 # HG changeset patch
-# Parent 18f54114f55994222fe1bd7ac980e822bac04851
-diff -r 18f54114f559 -r 92b9d5cf2319 graphics/libv4l/Makefile
---- a/graphics/libv4l/Makefile	Thu Aug 01 17:17:43 2013 -0400
-+++ b/graphics/libv4l/Makefile	Thu Aug 01 18:00:40 2013 -0400
+# Parent 8bd660d22f23822ca05aa5e5dfc98f80456d0199
+
+diff -r 8bd660d22f23 graphics/libv4l/Makefile
+--- a/graphics/libv4l/Makefile	Sat Mar 14 00:08:43 2015 -0400
++++ b/graphics/libv4l/Makefile	Sat Mar 14 00:08:49 2015 -0400
 @@ -27,8 +27,9 @@
  	${INSTALL_DATA} ${FILESDIR}/videoio.h ${DESTDIR}${PREFIX}/include/sys
  .elif !exists(/usr/include/linux/videodev.h)
@@ -14,17 +15,17 @@ diff -r 18f54114f559 -r 92b9d5cf2319 graphics/libv4l/Makefile
  .endif
  
  PLIST_VARS=	needs_videoio
-diff -r 18f54114f559 -r 92b9d5cf2319 graphics/libv4l/distinfo
---- a/graphics/libv4l/distinfo	Thu Aug 01 17:17:43 2013 -0400
-+++ b/graphics/libv4l/distinfo	Thu Aug 01 18:00:40 2013 -0400
+diff -r 8bd660d22f23 graphics/libv4l/distinfo
+--- a/graphics/libv4l/distinfo	Sat Mar 14 00:08:43 2015 -0400
++++ b/graphics/libv4l/distinfo	Sat Mar 14 00:08:49 2015 -0400
 @@ -15,3 +15,4 @@
  SHA1 (patch-ak) = 0465c3cc368609a3108f8d1aafcacf0ab3c61858
  SHA1 (patch-al) = 8d020ef01f9956b37f718a529306e5f13aaa03a3
  SHA1 (patch-am) = 23d75eb7e9d1959d2be87dd9aa961e55cfc58c52
 +SHA1 (patch-qq-musl) = 44967dca9ff478f1512d91a24fa14bc25fa6c546
-diff -r 18f54114f559 -r 92b9d5cf2319 graphics/libv4l/patches/patch-qq-musl
+diff -r 8bd660d22f23 graphics/libv4l/patches/patch-qq-musl
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/graphics/libv4l/patches/patch-qq-musl	Thu Aug 01 18:00:40 2013 -0400
++++ b/graphics/libv4l/patches/patch-qq-musl	Sat Mar 14 00:08:49 2015 -0400
 @@ -0,0 +1,80 @@
 +diff -r 98d97d46842a include/libv4l2.h
 +--- include/libv4l2.h	Thu Aug 01 15:58:22 2013 +0000

@@ -1,38 +1,39 @@
 # HG changeset patch
-# Parent abff6db4aa0a3c67197acb617b70df1c631f4f15
-diff -r abff6db4aa0a -r 8ddd2294f98d www/firefox/Makefile
---- a/www/firefox/Makefile	Fri Sep 20 06:17:33 2013 -0400
-+++ b/www/firefox/Makefile	Fri Sep 20 06:18:06 2013 -0400
-@@ -32,7 +32,7 @@
+# Parent 011f7da249c23236a2ebbfe35fffd4c989cdd844
+
+diff -r 011f7da249c2 www/firefox/Makefile
+--- a/www/firefox/Makefile	Sat Mar 14 00:05:34 2015 -0400
++++ b/www/firefox/Makefile	Sat Mar 14 00:05:41 2015 -0400
+@@ -43,7 +43,7 @@
  
  LDFLAGS.DragonFly=	-lplc4 -lnspr4
  LDFLAGS.FreeBSD=	-lplc4 -lnspr4
 -LDFLAGS.Linux=		-lnspr4
 +LDFLAGS.Linux=		-lplc4 -lnspr4
  
- .include "../../www/firefox/mozilla-common.mk"
+ .include "mozilla-common.mk"
  .include "options.mk"
-@@ -50,6 +50,9 @@
- MOZILLA_NAME=	Browser
- .endif
+@@ -67,6 +67,9 @@
+ SUBST_FILES.sys-dic=	extensions/spellcheck/hunspell/src/mozHunspell.cpp
+ SUBST_VARS.sys-dic=	PREFIX
  
 +# [Gregor] Fixes for musl
 +CONFIGURE_ARGS+=--disable-jemalloc --disable-crashreporter
 +
  pre-configure:
+ 	cd ${WRKSRC} && mkdir ${OBJDIR}
  	cd ${WRKSRC} && autoconf
- 	cd ${WRKSRC}/js/src && autoconf
-diff -r abff6db4aa0a -r 8ddd2294f98d www/firefox/distinfo
---- a/www/firefox/distinfo	Fri Sep 20 06:17:33 2013 -0400
-+++ b/www/firefox/distinfo	Fri Sep 20 06:18:06 2013 -0400
-@@ -133,3 +133,4 @@
- SHA1 (patch-xpcom_reflect_xptcall_src_md_unix_xptcinvoke__gcc__x86__unix.cpp) = 8cd42915cd32756b55894a773a1e6d7c012b4467
- SHA1 (patch-xpcom_reflect_xptcall_src_md_unix_xptcstubs__gcc__x86__unix.cpp) = e9e336817c172187f3e15ddf539a8a2176e3e952
- SHA1 (patch-xpcom_string_public_nsAlgorithm.h) = 6cdce480510f0cebbb1271de385b6ec7f5c3ddee
+diff -r 011f7da249c2 www/firefox/distinfo
+--- a/www/firefox/distinfo	Sat Mar 14 00:05:34 2015 -0400
++++ b/www/firefox/distinfo	Sat Mar 14 00:05:41 2015 -0400
+@@ -171,3 +171,4 @@
+ SHA1 (patch-xpcom_reflect_xptcall_md_unix_xptcstubs__gcc__x86__unix.cpp) = d246f0695eb43d43bfd5571297945a4b7a88f72c
+ SHA1 (patch-xpcom_reflect_xptcall_md_unix_xptcstubs__netbsd__m68k.cpp) = 75db49c9cb6bf2993afba82b731d80389d866212
+ SHA1 (patch-xulrunner_installer_Makefile.in) = 9d32ff87d0962c0406ed38de995c0350dd372e49
 +SHA1 (patch-zqq) = 1ce0da5c533bd23e86e5f2932a2dbb57869985dd
-diff -r abff6db4aa0a -r 8ddd2294f98d www/firefox/patches/patch-zqq
+diff -r 011f7da249c2 www/firefox/patches/patch-zqq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/www/firefox/patches/patch-zqq	Fri Sep 20 06:18:06 2013 -0400
++++ b/www/firefox/patches/patch-zqq	Sat Mar 14 00:05:41 2015 -0400
 @@ -0,0 +1,571 @@
 +diff -r 06549f98901b ipc/chromium/src/base/debug_util_posix.cc
 +--- ipc/chromium/src/base/debug_util_posix.cc	Fri Aug 02 14:36:52 2013 +0000

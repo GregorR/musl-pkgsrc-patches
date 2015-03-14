@@ -1,10 +1,10 @@
 # HG changeset patch
-# Parent a1d899a597d941eb715d2f0ac067d33d87fb27e2
+# Parent befc3c076d5147000fe0a0592f2e2982315ff882
 
-diff -r a1d899a597d9 sysutils/coreutils/Makefile
---- a/sysutils/coreutils/Makefile	Mon Jul 08 19:22:27 2013 -0400
-+++ b/sysutils/coreutils/Makefile	Mon Jul 08 19:22:33 2013 -0400
-@@ -61,6 +61,8 @@
+diff -r befc3c076d51 sysutils/coreutils/Makefile
+--- a/sysutils/coreutils/Makefile	Sat Mar 14 00:05:00 2015 -0400
++++ b/sysutils/coreutils/Makefile	Sat Mar 14 00:05:07 2015 -0400
+@@ -65,6 +65,8 @@
  #MESSAGE_SUBST+=	OPSYS=${OPSYS:Q}
  #.endif
  
@@ -13,17 +13,17 @@ diff -r a1d899a597d9 sysutils/coreutils/Makefile
  .include "../../converters/libiconv/buildlink3.mk"
  .include "../../devel/gettext-lib/buildlink3.mk"
  .include "../../mk/bsd.pkg.mk"
-diff -r a1d899a597d9 sysutils/coreutils/distinfo
---- a/sysutils/coreutils/distinfo	Mon Jul 08 19:22:27 2013 -0400
-+++ b/sysutils/coreutils/distinfo	Mon Jul 08 19:22:33 2013 -0400
-@@ -6,3 +6,4 @@
- SHA1 (patch-configure) = bfe96fde14c73b2836f539cc2e9dad3a77b05c4b
- SHA1 (patch-lib-fflush.c) = e52e0da2127c5debbb14e967b1e206226efdaa4a
- SHA1 (patch-lib-fseeko.c) = ab62b8c7faa9a601191475c040c7466e1bd52fe1
+diff -r befc3c076d51 sysutils/coreutils/distinfo
+--- a/sysutils/coreutils/distinfo	Sat Mar 14 00:05:00 2015 -0400
++++ b/sysutils/coreutils/distinfo	Sat Mar 14 00:05:07 2015 -0400
+@@ -7,3 +7,4 @@
+ SHA1 (patch-lib-fflush.c) = 106e9c7d05fff290f24cb69e1b2c80d0077c62bd
+ SHA1 (patch-lib-fseeko.c) = 9f4b0294698648011c64869fc0e642f910e9d47f
+ SHA1 (patch-lib_string.in.h) = 37167af962d1cfe9196d11e4250d9e9628d9eb73
 +SHA1 (patch-aq) = 02186df2372b3317cc2df6a8230cc198ac3eb4e9
-diff -r a1d899a597d9 sysutils/coreutils/patches/patch-aq
+diff -r befc3c076d51 sysutils/coreutils/patches/patch-aq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/sysutils/coreutils/patches/patch-aq	Mon Jul 08 19:22:33 2013 -0400
++++ b/sysutils/coreutils/patches/patch-aq	Sat Mar 14 00:05:07 2015 -0400
 @@ -0,0 +1,23 @@
 +diff -r fb0a1c120d18 lib/fseterr.c
 +--- lib/fseterr.c	Sat May 05 16:00:33 2012 +0000

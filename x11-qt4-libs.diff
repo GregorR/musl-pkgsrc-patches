@@ -1,33 +1,33 @@
 # HG changeset patch
-# Parent 13466d561bb20437694079e59794a77ec36aa2d1
+# Parent 5fc7410107cfb43e454e8b45b29704c52859cab7
 
-diff -r 13466d561bb2 x11/qt4-libs/Makefile
---- a/x11/qt4-libs/Makefile	Mon Jul 08 19:26:30 2013 -0400
-+++ b/x11/qt4-libs/Makefile	Mon Jul 08 19:26:36 2013 -0400
-@@ -99,11 +99,12 @@
- 	${LIBTOOL} --mode=install ${INSTALL_LIB} \
+diff -r 5fc7410107cf x11/qt4-libs/Makefile
+--- a/x11/qt4-libs/Makefile	Sat Mar 14 00:07:51 2015 -0400
++++ b/x11/qt4-libs/Makefile	Sat Mar 14 00:07:58 2015 -0400
+@@ -113,11 +113,12 @@
  		${WRKSRC}/plugins/bearer/libqgenericbearer.la \
  		${DESTDIR}${QTPREFIX}/plugins/bearer/
--.for codec in qcncodecs qjpcodecs qkrcodecs qtwcodecs
+ #.endfor
+-.for f in qcncodecs qjpcodecs qkrcodecs qtwcodecs
 -	${LIBTOOL} --mode=install ${INSTALL_LIB} \
--		${WRKSRC}/plugins/codecs/lib${codec}.la \
+-		${WRKSRC}/plugins/codecs/lib${f}.la \
 -		${DESTDIR}${QTPREFIX}/plugins/codecs/
 -.endfor
 +# [Gregor] We don't actually build these codecs on musl
-+#.for codec in qcncodecs qjpcodecs qkrcodecs qtwcodecs
++#.for f in qcncodecs qjpcodecs qkrcodecs qtwcodecs
 +#	${LIBTOOL} --mode=install ${INSTALL_LIB} \
-+#		${WRKSRC}/plugins/codecs/lib${codec}.la \
++#		${WRKSRC}/plugins/codecs/lib${f}.la \
 +#		${DESTDIR}${QTPREFIX}/plugins/codecs/
 +#.endfor
- .for plug in qglgraphicssystem qtracegraphicssystem
+ .for f in qglgraphicssystem qtracegraphicssystem
  	${LIBTOOL} --mode=install ${INSTALL_LIB} \
- 		${WRKSRC}/plugins/graphicssystems/lib${plug}.la \
-diff -r 13466d561bb2 x11/qt4-libs/PLIST
---- a/x11/qt4-libs/PLIST	Mon Jul 08 19:26:30 2013 -0400
-+++ b/x11/qt4-libs/PLIST	Mon Jul 08 19:26:36 2013 -0400
-@@ -44,10 +44,6 @@
- qt4/plugins/accessible/libqtaccessiblecompatwidgets.la
+ 		${WRKSRC}/plugins/graphicssystems/lib${f}.la \
+diff -r 5fc7410107cf x11/qt4-libs/PLIST
+--- a/x11/qt4-libs/PLIST	Sat Mar 14 00:07:51 2015 -0400
++++ b/x11/qt4-libs/PLIST	Sat Mar 14 00:07:58 2015 -0400
+@@ -46,10 +46,6 @@
  qt4/plugins/accessible/libqtaccessiblewidgets.la
+ ${PLIST.mac}qt4/plugins/bearer/libqcorewlanbearer.la
  qt4/plugins/bearer/libqgenericbearer.la
 -qt4/plugins/codecs/libqcncodecs.la
 -qt4/plugins/codecs/libqjpcodecs.la
@@ -36,17 +36,19 @@ diff -r 13466d561bb2 x11/qt4-libs/PLIST
  qt4/plugins/graphicssystems/libqglgraphicssystem.la
  qt4/plugins/graphicssystems/libqtracegraphicssystem.la
  qt4/plugins/iconengines/libqsvgicon.la
-diff -r 13466d561bb2 x11/qt4-libs/distinfo
---- a/x11/qt4-libs/distinfo	Mon Jul 08 19:26:30 2013 -0400
-+++ b/x11/qt4-libs/distinfo	Mon Jul 08 19:26:36 2013 -0400
-@@ -78,3 +78,4 @@
- SHA1 (patch-src_gui_kernel_qt_cocoa_helpers_mac_p.h) = 84d356628d764797524fe72139ea6829a33524ea
+diff -r 5fc7410107cf x11/qt4-libs/distinfo
+--- a/x11/qt4-libs/distinfo	Sat Mar 14 00:07:51 2015 -0400
++++ b/x11/qt4-libs/distinfo	Sat Mar 14 00:07:58 2015 -0400
+@@ -69,5 +69,6 @@
+ SHA1 (patch-src_gui_kernel_qcocoaapplicationdelegate__mac.mm) = 0caa9b006b3ffee4ab747fca9fd224c7c49211c9
  SHA1 (patch-src_network_ssl_qsslsocket__openssl__symbols.cpp) = 3ad682b86d2e9bd2b282caa298508dc3e9dd8566
  SHA1 (patch-src_network_ssl_qsslsocket__openssl__symbols__p.h) = 417846ba9edab8638cafa41a54ef60029467ef80
 +SHA1 (patch-qq) = 0b23302194af00685017cc4319c3b6cb10fc1fae
-diff -r 13466d561bb2 x11/qt4-libs/patches/patch-qq
+ SHA1 (patch-src_plugins_accessible_widgets_itemviews.cpp) = 1456fbaacef33f3b2422158d758d02990845048a
+ SHA1 (patch-src_scripttools_debugging_qscriptdebuggerconsole.cpp) = eea948f07fd9e595c7813aa485e985407dfcfbf9
+diff -r 5fc7410107cf x11/qt4-libs/patches/patch-qq
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/x11/qt4-libs/patches/patch-qq	Mon Jul 08 19:26:36 2013 -0400
++++ b/x11/qt4-libs/patches/patch-qq	Sat Mar 14 00:07:58 2015 -0400
 @@ -0,0 +1,70 @@
 +diff -r bf00ba1f1322 mkspecs/linux-g++/qplatformdefs.h
 +--- mkspecs/linux-g++/qplatformdefs.h	Wed Mar 06 04:21:22 2013 +0000
