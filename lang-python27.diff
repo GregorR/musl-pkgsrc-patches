@@ -1,10 +1,15 @@
-# HG changeset patch
-# Parent 26e0e50ab7361d5574bc76001f72ee0581431638
-
-diff -r 26e0e50ab736 lang/python27/PLIST.common
---- a/lang/python27/PLIST.common	Sat Mar 14 00:03:49 2015 -0400
-+++ b/lang/python27/PLIST.common	Sat Mar 14 00:03:56 2015 -0400
-@@ -1928,7 +1928,6 @@
+diff -ru a/lang/python27/PLIST.common b/lang/python27/PLIST.common
+--- a/lang/python27/PLIST.common	2014-12-16 03:45:12.000000000 -0500
++++ b/lang/python27/PLIST.common	2015-03-19 14:34:00.641310552 -0400
+@@ -1906,7 +1906,6 @@
+ lib/python${PY_VER_SUFFIX}/lib-dynload/_multiprocessing.so
+ lib/python${PY_VER_SUFFIX}/lib-dynload/_random.so
+ lib/python${PY_VER_SUFFIX}/lib-dynload/_socket.so
+-lib/python${PY_VER_SUFFIX}/lib-dynload/_ssl.so
+ lib/python${PY_VER_SUFFIX}/lib-dynload/_struct.so
+ lib/python${PY_VER_SUFFIX}/lib-dynload/_testcapi.so
+ lib/python${PY_VER_SUFFIX}/lib-dynload/array.so
+@@ -1928,7 +1927,6 @@
  lib/python${PY_VER_SUFFIX}/lib-dynload/itertools.so
  lib/python${PY_VER_SUFFIX}/lib-dynload/math.so
  lib/python${PY_VER_SUFFIX}/lib-dynload/mmap.so

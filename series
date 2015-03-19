@@ -33,7 +33,6 @@ sysutils-pciutils.diff
 sysutils-hal.diff
 devel-libusb1.diff
 textproc-libxml2.diff
-devel-glib2.diff
 x11-sessreg.diff
 x11-xload.diff
 multimedia-x264-devel.diff
@@ -53,6 +52,5 @@ multimedia-libvpx.diff
 devel-nss.diff
 graphics-libv4l.diff
 www-libwww.diff
-devel-cmake.diff
 graphics-netpbm.diff
 print-cups15.diff
